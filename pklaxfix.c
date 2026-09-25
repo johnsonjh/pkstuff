@@ -2,7 +2,7 @@
 
 /*
  * PKLAXFIX: PKLITE <1.50 Executable Postprocessor (fixes AX restore bug)
- * Copyright (c) 2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
+ * Copyright (c) 1993-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
  * Copyright (c) 2023-2026 Jason Summers <jason1@pobox.com>
  * SPDX-License-Identifer: MIT
  * scspell-id: baa28f58-b88c-11f1-9f53-80ee73e9b8e7

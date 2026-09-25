@@ -2,7 +2,7 @@
 
 /*
  * PKL2FIX: PKLITE 2.01 Executable Postprocessor (8086/8088 compatibility)
- * Copyright (c) 2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
+ * Copyright (c) 1996-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
  * SPDX-License-Identifer: MIT
  * scspell-id: 73bf7bea-b88d-11f1-87b1-80ee73e9b8e7
  */
