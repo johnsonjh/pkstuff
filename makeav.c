@@ -374,9 +374,9 @@ fmt_b36 (unsigned long val, char out[8])
 
   for (pos = 6; pos >= 0; --pos)
     {
-      unsigned long rem = val % (unsigned long)36;
-      val /= (unsigned long)36;
-      out[pos] = dig[(unsigned int)rem];
+      unsigned long rem  = val % (unsigned long)36;
+      val               /= (unsigned long)36;
+      out[pos]           = dig[(unsigned int)rem];
     }
 
   out[7] = '\0';
@@ -502,7 +502,7 @@ static void
 av_iter_init (av_iterator *it)
 {
   it->pos = (unsigned int)0;
-  it->k = (unsigned long)0;
+  it->k   = (unsigned long)0;
 }
 
 /*****************************************************************************/
@@ -519,7 +519,7 @@ av_iter_next (av_iterator *it)
 
   do
     {
-      b = av_data[it->pos++];
+      b      = av_data[it->pos++];
       delta |= (unsigned long)(b & (unsigned char)0x7F) << shift;
       shift += (unsigned int)7;
     }
@@ -551,7 +551,7 @@ find_first (unsigned int code, unsigned long *seed_out)
   for (i = (unsigned int)0; i < (unsigned int)AV_COUNT; ++i)
     {
       unsigned long seed = av_iter_next (&it);
-      unsigned int c = av_code (seed);
+      unsigned int c     = av_code (seed);
 
       if (c == code)
         {

@@ -119,7 +119,7 @@ main (int argc, char **argv)
       return 1;
     }
 
-  input_path = argv[1];
+  input_path  = argv[1];
   output_path = argv[2];
 
   fin = fopen (input_path, "rb");

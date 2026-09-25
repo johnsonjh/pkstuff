@@ -327,7 +327,7 @@ putu16 (struct ctx *c, unsigned val, long offset)
 #endif
     }
 
-  c->blob[offset] = (unsigned char)(val % 256u);
+  c->blob[offset]     = (unsigned char)(val % 256u);
   c->blob[offset + 1] = (unsigned char)(val / 256u);
 }
 
@@ -426,9 +426,9 @@ pkl_read_exe (struct ctx *c)
   unsigned e_cblp, e_cp, e_cparhdr;
   long cs;
 
-  e_cblp = getu16 (c, 2);
-  e_cp = getu16 (c, 4);
-  e_cparhdr = getu16 (c, 8);
+  e_cblp       = getu16 (c, 2);
+  e_cp         = getu16 (c, 4);
+  e_cparhdr    = getu16 (c, 8);
   c->codestart = (long)e_cparhdr * 16;
 
   if (e_cblp == 0)
@@ -440,8 +440,8 @@ pkl_read_exe (struct ctx *c)
       c->codeend = (long)512 * ((long)e_cp - 1) + (long)e_cblp;
     }
 
-  c->ip = getu16 (c, 20);
-  cs = gets16 (c, 22);
+  c->ip         = getu16 (c, 20);
+  cs            = gets16 (c, 22);
   c->entrypoint = c->codestart + 16 * cs + (long)c->ip;
 
   c->is_win3x = is_win3x_pklite_format (c);
@@ -487,65 +487,65 @@ pkl_decode_intro (struct ctx *c)
   if (bseq_match (c, pos, PAT_SHORT4, PAT_SHORT4_LEN))
     {
       c->initial_DX_known = 1;
-      c->initial_DX = getu16 (c, pos + 4);
+      c->initial_DX       = getu16 (c, pos + 4);
     }
   else if (bseq_match (c, pos, PAT_SHORT5, PAT_SHORT5_LEN))
     {
       c->initial_DX_known = 1;
-      c->initial_DX = getu16 (c, pos + 5);
+      c->initial_DX       = getu16 (c, pos + 5);
     }
 
   if (isbeta1)
     {
-      intro_found = 1;
+      intro_found                 = 1;
       c->beta_exe_structure_known = 1;
-      c->beta_exe_structure = 1;
+      c->beta_exe_structure       = 1;
     }
   else if (isbeta2)
     {
-      intro_found = 1;
+      intro_found                 = 1;
       c->beta_exe_structure_known = 1;
-      c->beta_exe_structure = 1;
+      c->beta_exe_structure       = 1;
     }
   else if (bseq_match (c, pos, PAT_V100, PAT_V100_LEN))
     {
-      intro_found = 1;
+      intro_found           = 1;
       c->is_scrambled_known = 1;
-      c->is_scrambled = 0;
-      c->position2_known = 1;
-      c->position2 = pos + 16;
+      c->is_scrambled       = 0;
+      c->position2_known    = 1;
+      c->position2          = pos + 16;
     }
   else if (bseq_match (c, pos, PAT_V112, PAT_V112_LEN))
     {
-      intro_found = 1;
+      intro_found        = 1;
       c->position2_known = 1;
-      c->position2 = pos + 15;
+      c->position2       = pos + 15;
     }
   else if (bseq_match (c, pos, PAT_V114, PAT_V114_LEN))
     {
-      intro_found = 1;
+      intro_found        = 1;
       c->position2_known = 1;
-      c->position2 = follow_1byte_jmp (c, pos + 14);
+      c->position2       = follow_1byte_jmp (c, pos + 14);
     }
   else if (bseq_match (c, pos, PAT_MEGALITE, PAT_MEGALITE_LEN))
     {
-      intro_found = 1;
+      intro_found        = 1;
       c->position2_known = 1;
-      c->position2 = follow_1byte_jmp (c, pos + 14);
+      c->position2       = follow_1byte_jmp (c, pos + 14);
     }
   else if (bseq_match (c, pos, PAT_V150, PAT_V150_LEN))
     {
-      intro_found = 1;
+      intro_found        = 1;
       c->position2_known = 1;
-      c->position2 = follow_1byte_jmp (c, pos + 15);
+      c->position2       = follow_1byte_jmp (c, pos + 15);
     }
   else if (bseq_match (c, pos, PAT_UN2PACK, PAT_UN2PACK_LEN))
     {
-      intro_found = 1;
+      intro_found           = 1;
       c->is_scrambled_known = 1;
-      c->is_scrambled = 0;
-      c->position2_known = 1;
-      c->position2 = pos + 18 + 16;
+      c->is_scrambled       = 0;
+      c->position2_known    = 1;
+      c->position2          = pos + 18 + 16;
     }
   else if (bseq_match (c, pos, PAT_UN2PACK_CORRUPT, PAT_UN2PACK_CORRUPT_LEN))
     {
@@ -555,7 +555,7 @@ pkl_decode_intro (struct ctx *c)
   if (!c->initial_key_known && c->initial_DX_known)
     {
       c->initial_key_known = 1;
-      c->initial_key = c->initial_DX;
+      c->initial_key       = c->initial_DX;
     }
 
   if (!intro_found)
@@ -569,7 +569,7 @@ pkl_decode_intro (struct ctx *c)
   if (!c->beta_exe_structure_known)
     {
       c->beta_exe_structure_known = 1;
-      c->beta_exe_structure = 0;
+      c->beta_exe_structure       = 0;
     }
 }
 
@@ -579,15 +579,16 @@ static void
 pkl_detect_and_decode_descrambler (struct ctx *c)
 {
   long pos;
-  int found = 0;
+  int found                = 0;
   long pos_of_endpos_field = 0;
-  long pos_of_jmp_field = 0;
-  long op_pos = 0;
+  long pos_of_jmp_field    = 0;
+  long op_pos              = 0;
 
   if (c->beta_exe_structure_known && c->beta_exe_structure)
     {
       c->is_scrambled_known = 1;
-      c->is_scrambled = 0;
+      c->is_scrambled       = 0;
+
       return;
     }
 
@@ -605,84 +606,84 @@ pkl_detect_and_decode_descrambler (struct ctx *c)
 
   if (bseq_match (c, pos, PAT_D114, PAT_D114_LEN))
     {
-      c->descrambler_name = "114";
+      c->descrambler_name            = "114";
       c->pos_of_scrambled_word_count = pos + 11;
-      pos_of_endpos_field = pos + 14;
-      pos_of_jmp_field = pos + 22;
-      op_pos = pos + 25;
-      found = 1;
+      pos_of_endpos_field            = pos + 14;
+      pos_of_jmp_field               = pos + 22;
+      op_pos                         = pos + 25;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_D120V1A, PAT_D120V1A_LEN))
     {
-      c->descrambler_name = "120var1a";
+      c->descrambler_name            = "120var1a";
       c->pos_of_scrambled_word_count = pos + 10;
-      pos_of_endpos_field = pos + 13;
-      pos_of_jmp_field = pos + 20;
-      op_pos = pos + 23;
-      found = 1;
+      pos_of_endpos_field            = pos + 13;
+      pos_of_jmp_field               = pos + 20;
+      op_pos                         = pos + 23;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_D120V1B, PAT_D120V1B_LEN))
     {
-      c->descrambler_name = "120var1b";
+      c->descrambler_name            = "120var1b";
       c->pos_of_scrambled_word_count = pos + 10;
-      pos_of_endpos_field = pos + 13;
-      pos_of_jmp_field = pos + 21;
-      op_pos = pos + 24;
-      found = 1;
+      pos_of_endpos_field            = pos + 13;
+      pos_of_jmp_field               = pos + 21;
+      op_pos                         = pos + 24;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_D150, PAT_D150_LEN))
     {
-      c->descrambler_name = "150";
+      c->descrambler_name            = "150";
       c->pos_of_scrambled_word_count = pos + 20;
-      pos_of_endpos_field = pos + 23;
-      pos_of_jmp_field = pos + 38;
-      op_pos = pos + 45;
-      found = 1;
+      pos_of_endpos_field            = pos + 23;
+      pos_of_jmp_field               = pos + 38;
+      op_pos                         = pos + 45;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_D120V2, PAT_D120V2_LEN))
     {
-      c->descrambler_name = "120var2";
+      c->descrambler_name            = "120var2";
       c->pos_of_scrambled_word_count = pos + 16;
-      pos_of_endpos_field = pos + 19;
-      pos_of_jmp_field = pos + 28;
-      op_pos = pos + 31;
-      found = 1;
+      pos_of_endpos_field            = pos + 19;
+      pos_of_jmp_field               = pos + 28;
+      op_pos                         = pos + 31;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_DPKZIP204C, PAT_DPKZIP204C_LEN))
     {
-      c->descrambler_name = "pkzip204clike";
+      c->descrambler_name            = "pkzip204clike";
       c->pos_of_scrambled_word_count = pos + 16;
-      pos_of_endpos_field = pos + 19;
-      pos_of_jmp_field = pos + 29;
-      op_pos = pos + 32;
-      found = 1;
+      pos_of_endpos_field            = pos + 19;
+      pos_of_jmp_field               = pos + 29;
+      op_pos                         = pos + 32;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_DPKLITE201, PAT_DPKLITE201_LEN))
     {
-      c->descrambler_name = "pklite201like";
+      c->descrambler_name            = "pklite201like";
       c->pos_of_scrambled_word_count = pos + 21;
-      pos_of_endpos_field = pos + 24;
-      pos_of_jmp_field = pos + 35;
-      op_pos = pos + 38;
-      found = 1;
+      pos_of_endpos_field            = pos + 24;
+      pos_of_jmp_field               = pos + 35;
+      op_pos                         = pos + 38;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_DCHK4LITE201, PAT_DCHK4LITE201_LEN))
     {
-      c->descrambler_name = "chk4lite201like";
+      c->descrambler_name            = "chk4lite201like";
       c->pos_of_scrambled_word_count = pos + 17;
-      pos_of_endpos_field = pos + 20;
-      pos_of_jmp_field = pos + 27;
-      op_pos = pos + 30;
-      found = 1;
+      pos_of_endpos_field            = pos + 20;
+      pos_of_jmp_field               = pos + 27;
+      op_pos                         = pos + 30;
+      found                          = 1;
     }
   else if (bseq_match (c, pos, PAT_D150BETA, PAT_D150BETA_LEN))
     {
-      c->descrambler_name = "150b";
+      c->descrambler_name            = "150b";
       c->pos_of_scrambled_word_count = pos + 13;
-      pos_of_endpos_field = pos + 16;
-      pos_of_jmp_field = pos + 24;
-      op_pos = pos + 27;
-      found = 1;
+      pos_of_endpos_field            = pos + 16;
+      pos_of_jmp_field               = pos + 24;
+      op_pos                         = pos + 27;
+      found                          = 1;
     }
 
   if (found)
@@ -691,7 +692,7 @@ pkl_detect_and_decode_descrambler (struct ctx *c)
       unsigned scrambled_endpos_raw;
 
       c->is_scrambled_known = 1;
-      c->is_scrambled = 1;
+      c->is_scrambled       = 1;
 
       scrambled_count_raw = getu16 (c, c->pos_of_scrambled_word_count);
 
@@ -700,7 +701,7 @@ pkl_detect_and_decode_descrambler (struct ctx *c)
           c->scrambled_word_count = (long)scrambled_count_raw - 1;
         }
 
-      scrambled_endpos_raw = getu16 (c, pos_of_endpos_field);
+      scrambled_endpos_raw          = getu16 (c, pos_of_endpos_field);
       c->pos_of_last_scrambled_word = ip_to_filepos (c, scrambled_endpos_raw);
 
       c->scrambled_section_startpos_known = 1;
@@ -713,12 +714,12 @@ pkl_detect_and_decode_descrambler (struct ctx *c)
           if (op_byte == 0x33)
             {
               c->scramble_algorithm_known = 1;
-              c->scramble_algorithm = 1;
+              c->scramble_algorithm       = 1;
             }
           else if (op_byte == 0x03)
             {
               c->scramble_algorithm_known = 1;
-              c->scramble_algorithm = 2;
+              c->scramble_algorithm       = 2;
             }
         }
     }
@@ -744,7 +745,7 @@ pkl_descramble (struct ctx *c)
     }
 
   if (!c->scrambled_section_startpos_known
-      || c->pos_of_last_scrambled_word == 0)
+    || c->pos_of_last_scrambled_word == 0)
     {
       return;
     }
@@ -764,7 +765,8 @@ pkl_descramble (struct ctx *c)
   alg_ADD = (c->scramble_algorithm == 2);
 
   start = c->pos_of_last_scrambled_word + 2 - (c->scrambled_word_count * 2);
-  stop = c->pos_of_last_scrambled_word + 2;
+  stop  = c->pos_of_last_scrambled_word + 2;
+
   for (i = start; i < stop; i += 2)
     {
       unsigned n1 = getu16 (c, i);
@@ -939,7 +941,8 @@ apply_clear_regs_fix (struct ctx *c)
     }
 
   count = 0;
-  p = 0;
+  p     = 0;
+
   for (;;)
     {
       p = find_bytes (c->blob, c->blob_len, CLEAR_REGS_PATTERN, 15, p);
@@ -994,11 +997,11 @@ apply_ax_trampoline (struct ctx const *c, long *out_len)
   long total_out_len;
   unsigned char *out;
 
-  header_size = c->codestart;
-  orig_e_ip = c->ip;
+  header_size   = c->codestart;
+  orig_e_ip     = c->ip;
   orig_e_cs_raw = getu16 (c, 22);
 
-  lm_len = c->blob_len - header_size;
+  lm_len               = c->blob_len - header_size;
   trampoline_lm_offset = lm_len;
 
   new_e_cs = (unsigned long)trampoline_lm_offset / 16;
@@ -1039,7 +1042,7 @@ apply_ax_trampoline (struct ctx const *c, long *out_len)
 #endif
     }
 
-  new_lm_len = lm_len + 17;
+  new_lm_len      = lm_len + 17;
   new_load_module = malloc ((size_t)new_lm_len);
 
   if (!new_load_module)
@@ -1053,18 +1056,18 @@ apply_ax_trampoline (struct ctx const *c, long *out_len)
   (void)memcpy (new_load_module, c->blob + header_size, (size_t)lm_len);
   (void)memcpy (new_load_module + lm_len, trampoline, 17);
 
-  e_crlc = getu16 (c, 6);
-  e_cparhdr = (unsigned)(header_size / 16);
+  e_crlc     = getu16 (c, 6);
+  e_cparhdr  = (unsigned)(header_size / 16);
   e_minalloc = getu16 (c, 10);
   e_maxalloc = getu16 (c, 12);
-  e_ss = getu16 (c, 14);
-  e_sp = getu16 (c, 16);
-  e_lfarlc = getu16 (c, 24);
-  e_ovno = getu16 (c, 26);
+  e_ss       = getu16 (c, 14);
+  e_sp       = getu16 (c, 16);
+  e_lfarlc   = getu16 (c, 24);
+  e_ovno     = getu16 (c, 26);
 
   new_total_size = (unsigned long)header_size + (unsigned long)new_lm_len;
-  e_cp = (unsigned)((new_total_size + 511) / 512);
-  e_cblp = (unsigned)(new_total_size % 512);
+  e_cp           = (unsigned)((new_total_size + 511) / 512);
+  e_cblp         = (unsigned)(new_total_size % 512);
 
   header[0] = 'M';
   header[1] = 'Z';
@@ -1083,7 +1086,7 @@ apply_ax_trampoline (struct ctx const *c, long *out_len)
   put_le16 (header + 26, e_ovno);
 
   total_out_len = header_size + new_lm_len;
-  out = malloc ((size_t)total_out_len);
+  out           = malloc ((size_t)total_out_len);
 
   if (!out)
     {
@@ -1122,15 +1125,15 @@ fmt_long (long num)
   if (num < 0)
     {
       is_negative = 1;
-      abs_num = (unsigned long)(-num);
+      abs_num     = (unsigned long)(-num);
     } else {
       abs_num = (unsigned long)num;
     }
 
   do
     {
-      temp[j++] = (char)('0' + (abs_num % 10));
-      abs_num /= 10;
+      temp[j++]  = (char)('0' + (abs_num % 10));
+      abs_num   /= 10;
     } while (abs_num > 0);
 
   i = 0;
