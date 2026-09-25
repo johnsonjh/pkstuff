@@ -264,6 +264,7 @@ fatal (const char *fmt, ...)
   (void)vfprintf (stderr, fmt, ap);
   va_end (ap);
   (void)fprintf (stderr, "\n");
+
   exit (EXIT_FAILURE);
 }
 
@@ -1103,6 +1104,7 @@ apply_ax_trampoline (struct ctx const *c, long *out_len)
   free (new_load_module);
 
   *out_len = total_out_len;
+
   return out;
 }
 
@@ -1176,6 +1178,7 @@ main (int argc, char **argv)
   if (argc != 3)
     {
       (void)fprintf (stderr, "\nUsage: %s input.exe output.exe\n", argv[0]);
+
       return EXIT_FAILURE;
     }
 

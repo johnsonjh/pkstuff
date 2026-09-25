@@ -605,7 +605,7 @@ main (void)
     {
       (void)fprintf (stderr, "ERROR: unsigned long <32 bits.\n");
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   (void)printf ("Company Name (less than 50 printable ASCII characters)? ");
@@ -617,7 +617,7 @@ main (void)
     {
       (void)fprintf (stderr, "ERROR: Company Name is required.\n");
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   for (;;)
@@ -665,7 +665,7 @@ main (void)
             {
               (void)fprintf (stderr, "ERROR: No randomizable AV entries.\n");
 
-              return 1;
+              return EXIT_FAILURE;
             }
 
           srand ((unsigned int)time ((time_t *)0));
@@ -777,7 +777,7 @@ main (void)
     (void)printf ("\nAV Stamp : %s\n", stamp);
   }
 
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 /*****************************************************************************/

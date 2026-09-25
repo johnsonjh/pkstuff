@@ -116,7 +116,7 @@ main (int argc, char **argv)
       (void)fprintf (stdout,
         "Usage: %s <input.exe> <output.exe>\n", argv[0]);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   input_path  = argv[1];
@@ -130,7 +130,7 @@ main (int argc, char **argv)
         "[!] Error: Input file '%s' does not exist or cannot be opened.\n",
         input_path);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   if (fseek (fin, 0, SEEK_END) != 0)
@@ -140,7 +140,7 @@ main (int argc, char **argv)
 
       (void)fclose (fin);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   file_size = ftell (fin);
@@ -151,7 +151,7 @@ main (int argc, char **argv)
 
       (void)fclose (fin);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   rewind (fin);
@@ -169,7 +169,7 @@ main (int argc, char **argv)
 
       (void)fclose (fin);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   if (errno)
@@ -193,7 +193,7 @@ main (int argc, char **argv)
 
       (void)fclose (fin);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   bytes_read = fread (buffer, 1, (size_t)file_size, fin);
@@ -207,7 +207,7 @@ main (int argc, char **argv)
 
       (void)free (buffer);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   if (buffer[0] != 'M' || buffer[1] != 'Z')
@@ -218,7 +218,7 @@ main (int argc, char **argv)
 
       free (buffer);
 
-      return 1;
+      return EXIT_FAILURE;
     }
 
   (void)fprintf (stdout,
@@ -263,7 +263,7 @@ main (int argc, char **argv)
 
           free (buffer);
 
-          return 1;
+          return EXIT_FAILURE;
         }
 
       if (fwrite (buffer, 1, (size_t)file_size, fout) < (size_t)file_size)
@@ -274,7 +274,7 @@ main (int argc, char **argv)
 
           free (buffer);
 
-          return 1;
+          return EXIT_FAILURE;
         }
 
       (void)fclose (fout);
@@ -293,7 +293,7 @@ main (int argc, char **argv)
 
   free (buffer);
 
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 /*****************************************************************************/
