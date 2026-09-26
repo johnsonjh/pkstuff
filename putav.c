@@ -429,8 +429,8 @@ patch_file (const char *filename, const unsigned char patch[PATCH_LEN])
 
       if (errno)
         {
-	  (void)fprintf (stderr, "Error: %s\n", strerror(errno));
-	}
+          (void)fprintf (stderr, "Error: %s\n", strerror(errno));
+        }
 
       return 0;
     }
@@ -457,18 +457,18 @@ patch_file (const char *filename, const unsigned char patch[PATCH_LEN])
   if (match != MARKER_LEN)
     {
       if (ferror (fp))
-	{
+        {
           (void)fprintf(stderr, "\nError reading: '%s'\n", filename);
-	}
+        }
       else
-	{
+        {
           (void)fprintf(stderr, "\nError in: '%s'\n", filename);
         }
 
       if (errno)
         {
-	  (void)fprintf (stderr, "Error: %s\n", strerror(errno));
-	}
+          (void)fprintf (stderr, "Error: %s\n", strerror(errno));
+        }
 
       (void)fclose (fp);
 
@@ -481,8 +481,8 @@ patch_file (const char *filename, const unsigned char patch[PATCH_LEN])
 
       if (errno)
         {
-	  (void)fprintf (stderr, "Error: %s\n", strerror(errno));
-	}
+          (void)fprintf (stderr, "Error: %s\n", strerror(errno));
+        }
 
       (void)fclose(fp);
 
@@ -497,8 +497,8 @@ patch_file (const char *filename, const unsigned char patch[PATCH_LEN])
 
       if (errno)
         {
-	  (void)fprintf (stderr, "Error: %s\n", strerror(errno));
-	}
+          (void)fprintf (stderr, "Error: %s\n", strerror(errno));
+        }
 
       (void)fclose (fp);
 
@@ -511,8 +511,8 @@ patch_file (const char *filename, const unsigned char patch[PATCH_LEN])
 
       if (errno)
         {
-	  (void)fprintf (stderr, "Error: %s\n", strerror(errno));
-	}
+          (void)fprintf (stderr, "Error: %s\n", strerror(errno));
+        }
 
       return 0;
     }
