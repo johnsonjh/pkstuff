@@ -540,7 +540,7 @@ main (int argc, char **argv)
 
   if ((uls * CHAR_BIT) < (unsigned long)32) /* //-V547 */
     {
-      (void)fprintf (stderr, "ERROR: unsigned long <32 bits.\n");
+      (void)fprintf (stderr, "\nError: unsigned long <32 bits.\n");
 
       return EXIT_FAILURE;
     }
