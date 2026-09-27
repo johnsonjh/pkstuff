@@ -49,17 +49,18 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   but it does **not** actually create a "scrambled" decompression stub
   or do any of the other things that the real Professional version would do.
 
-* The fake UCF 1.50 release was encrypted and compressed using a "*warez*"
-  *scene*" (**`TEDSUO II [TED/UCF] PaCKeD`**) polymorphic executable packer,
-  which I was able to reverse engineer without too much hassle.
+* The fake UCF 1.50 release was not packed with PKLITE as usual, but was
+  instead encrypted and compressed with what seems to be a "*warez scene*"
+  (`TEDSUO II [TED/UCF] PaCKeD`) polymorphic executable packer, which was
+  reverse engineered to produce unpacked binaries.
 
 #### `TEDSUO II [TED/UCF]` unpacker
 
-* I have included a Python-based [`unpacker`](1.50f/unpacked/ted_unpack.py)
-  for it, which is able to decrypt and unpack this `TEDSUO II [TED/UCF]` file
-  (and without running any of its code directly).  It is currently specific to
-  this file, but if other files are found that use the packer, it would
-  possible to create a generic of the unpacking tool.
+* The included a Python-based [`unpacker`](1.50f/unpacked/ted_unpack.py)
+  is able to decrypt and unpack this `TEDSUO II [TED/UCF]` file, without
+  executing any of its code directly.  It is currently specific to this file,
+  but if other files are found that use the same packer, it would possible to
+  create a generic of the unpacking tool.
 
 ### Fake PKLITE Professinal 1.20
 
