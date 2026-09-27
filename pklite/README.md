@@ -120,8 +120,8 @@ being released under available under the open source MIT license.
 ### `PKL2FIX`
 
 > [!WARNING]
-> PKLITE 2.01 compressed with are **not compatible** with systems using
-> 8086/8088 processors with patching!
+> PKLITE 2.01 generated compressed executables are **not compatible** with
+> systems using 8086/8088 processors (with patching)!
 
 * The [`PKL2FIX`](../pkl2fix.c) "PKLITE 2.01 Executable Postprocessor" is an
   open source utility that patches PKLITE 2.01 generated compressed
