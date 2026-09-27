@@ -9,9 +9,9 @@
   * [Fake PKLITE Professinal 1.20](#fake-pklite-professinal-120)
   * [Other PKLITE versions](#other-pklite-versions)
 - [PKLITE utilities](#pklite-utilities)
-  * [PKLAXFIX](#pklaxfix)
-  * [PKPSPFIX](#pkpspfix)
-  * [PKL2FIX](#pkl2fix)
+  * [`PKLAXFIX`](#pklaxfix)
+  * [`PKPSPFIX`](#pkpspfix)
+  * [`PKL2FIX`](#pkl2fix)
 - [Latest known versions](#latest-known-versions)
 - [External links](#external-links)
 

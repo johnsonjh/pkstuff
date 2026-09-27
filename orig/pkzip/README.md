@@ -2,8 +2,8 @@
 
 <!-- toc -->
 
-- [PKZIP 2.05/2.06](#pkzip-205206)
-- [IBM PKZIP 2.06](#ibm-pkzip-206)
+- [PKZIP 2.04](#pkzip-204)
+- [PKZIP 2.06 (IBM)](#pkzip-206-ibm)
 - [PKZIP 2.50](#pkzip-250)
 - [PKZIP utilities](#pkzip-utilities)
   * [Authenticity Verification](#authenticity-verification)
