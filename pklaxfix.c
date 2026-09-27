@@ -1175,6 +1175,7 @@ main (int argc, char **argv)
   (void)printf (" (AX restoration fix)\n");
   (void)printf ("Copyright (c) 1993-2026");
   (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
+  (void)printf ("Copyright (c) 2023-2026 Jason Summers <jason1@pobox.com>\n");
   (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n");
 
   if (argc != 3)

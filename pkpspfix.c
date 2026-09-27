@@ -332,6 +332,7 @@ main (int argc, char **argv)
   (void)printf (" (add PSP protection code)\n");
   (void)printf ("Copyright (c) 1994-2026");
   (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
+  (void)printf ("Copyright (c) 2023-2026 Jason Summers <jason1@pobox.com>\n");
   (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n\n");
 
   if (argc != 4)

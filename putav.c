@@ -1,7 +1,7 @@
 /*****************************************************************************/
 
 /*
- * PUTAV: Put Authenticity Verification in PKZIP 2.04/2.06
+ * PUTAV: Put Authenticity Verification in PKZIP 2.04/2.06/2.50
  * Copyright (c) 1994-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
  * SPDX-License-Identifer: MIT
  * scspell-id: 82e600c6-b93c-11f1-ada6-80ee73e9b8e7
@@ -543,7 +543,7 @@ main (int argc, char **argv)
     }
 
   (void)printf ("\nPUTAV:");
-  (void)printf (" Put Authenticity Verification in PKZIP 2.04/2.06\n");
+  (void)printf (" Put Authenticity Verification in PKZIP 2.04/2.06/2.50\n");
   (void)printf ("Copyright (c) 1994-2026");
   (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
   (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n");
