@@ -7,7 +7,7 @@ necessary.  The unpacked versions are useful for further reverse engineering
 and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 |        Directory | Description         | Version | Date    |
-|-----------------:|:--------------------|:------ -|:--------|
+|-----------------:|:--------------------|:--------|:--------|
 | [`1.11p`](1.11p) | PKLITE Professional | 1.11    | 5-15-91 |
 | [`1.12p`](1.12p) | PKLITE Professional | 1.12    | 6-15-91 |
 | [`1.13p`](1.13p) | PKLITE Professional | 1.13    | 8-01-91 |
@@ -29,8 +29,10 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   (`[TED/UCF]`) polymorphic executable packer (which I was able to reverse
   engineer without too much hassle).  I have included a Python-based
   [`unpacker`](1.50f/unpacked/ted_unpack.py), which is specific to this file.
-  If other files are found that use this same packer, it should be possible
-  to create a generic version of the unpacking tool.
+  * If other files are found that use this same packer, it should be possible
+    to create a generic version of this unpacking tool.
+
+### Fake PKLITE Pro 1.20
 
 * NOTE: I have *hundreds* of PKLITE "*1.20 Professional*" versions, and
   *every* *single* *one* is the same (fake) 1.12 Pro hack.  You can use Jason
@@ -39,11 +41,15 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   fake 1.20 Pro releases here (because they are misleading and also useless,
   because they are essentially identical to the legitimate 1.12 Pro).
 
+## Latest versions
+
 * The latest known 1.x version of [PKLITE Professional is 1.15](1.15).
 
 * The latest known 1.x version of [PKLITE Standard is 1.50](1.50).
 
 * The latest known 2.x version of [PKLITE Standard is 2.01](2.01).
+
+## External links
 
 * For more detailed information about PKLITE see
   [Jason Summers' PKLITE articles](https://entropymine.wordpress.com/tag/pklite/),
