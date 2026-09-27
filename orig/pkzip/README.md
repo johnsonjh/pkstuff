@@ -13,9 +13,9 @@
 
 <!-- tocstop -->
 
-## PKZIP 2.05/2.06
+## PKZIP 2.04
 
-The latest DOS PKZIP 2.04/2.06 releases are archived here, both in their
+The latest DOS PKZIP 2.04 releases are archived here, both in their
 original forms including documentation and utilities where available, as
 well as binaries that have been ***properly*** unpacked, decrypted, and
 *PSP patched* when necessary.  The unpacked versions are useful for further
@@ -27,15 +27,16 @@ reverse engineering and analysis and also load faster on slow machines
 | [`2.04/docs`](2.04/docs)             | PKZIP 2.04 Documentation      | 1993-1994   |
 | [`2.04/shareware`](2.04/shareware)   | PKZIP 2.04g Shareware         | 02-01-1993  |
 | [`2.04/registered`](2.04/registered) | PKZIP 2.04g Registered        | 02-01-1993  |
-| [`2.04/ibm`](2.04/ibm)               | PKZIP **2.06** (IBM Licensed) | 01-24-1994  |
 
 The above directories are meant to be *additive* (*or cumulative*):
-* The files in the **Documentation** directory apply to PKZIP versions.
+* The files in the **Documentation** directory apply to
+  all PKZIP 2.04/2.06 versions.
 * The files in the **Shareware** directory represent the complete PKZIP
   **2.04g** shareware release.
-* The files in the **Registered** directory *replace* the **Shareware** files.
-* The files in the **IBM Licensed** directory *replace* the
-  **Registered** files.
+* The files in the **Registered** directory *replace* the **2.04g**
+  **Shareware** files.
+* The files in the **IBM Licensed** directory (*see below*) *replace* the
+  **2.04g** **Registered** files.
 
 > [!TIP]
 > To make a complete PKZIP binary distribution, first create a directory
@@ -45,7 +46,11 @@ The above directories are meant to be *additive* (*or cumulative*):
 > **IBM Licensed** 2.06 release, but you should read the following section
 > for more details first.
 
-## IBM PKZIP 2.06
+## PKZIP 2.06 (IBM)
+
+|                            Directory | Description                   | Date        |
+|-------------------------------------:|:------------------------------|:------------|
+| [`2.06/ibm`](2.06/ibm)               | PKZIP **2.06** (IBM Licensed) | 01-24-1994  |
 
 > [!NOTE]
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
