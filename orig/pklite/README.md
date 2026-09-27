@@ -71,8 +71,8 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   fake PKLITE 1.20 Professional versions by their `-e` output.)
 
 * I **will not** be distributing the fake "1.20 Professional" releases here
-  (because it not only misleading but *useless*, since it is essentially
-  identical to the *legitimate* PKLITE 1.12 Professional).
+  (because it is not just misleading but *useless*, as it is essentially
+  identical to the *legitimate* PKLITE 1.12 Professional release).
 
 * **It is most likely the real PKLITE "1.20 Professional" was an internal
   PKWARE tool and was never made available as a public release.**
