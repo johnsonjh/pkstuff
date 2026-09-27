@@ -129,14 +129,12 @@ being released under available under the open source MIT license.
 
 ## Latest known versions
 
-* The latest known 1.x Professional version is
+* The latest known **1.x Professional** version is
   [PKLITE Professional 1.15](1.15p).
-
-* The latest known 1.x Standard version is
+* The latest known **1.x Standard** version is
   [PKLITE Standard 1.50](1.50).
-
-* The latest known 2.x Standard version is
-  [PKLITE Standard is 2.01](2.01).
+* The latest known **2.x Standard** version is
+  [PKLITE Standard 2.01](2.01).
 
 ## External links
 
