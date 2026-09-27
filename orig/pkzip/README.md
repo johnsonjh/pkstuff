@@ -53,10 +53,10 @@ The above directories are meant to be *additive* (*or cumulative*):
 []()
 
 []()
-|                                    Directory | Description               | Date     |
-|---------------------------------------------:|:--------------------------|:---------|
-| [`2.50/registred/doc`](2.50/registered/docs) | PKZIP 2.50 Documentation  | 1999     |
-| [`2.50/registred`](2.50/registered)          | PKZIP 2.50 Registered     | 03-01-99 |
+|                                     Directory | Description               | Date     |
+|----------------------------------------------:|:--------------------------|:---------|
+| [`2.50/registered/doc`](2.50/registered/docs) | PKZIP 2.50 Documentation  | 1999     |
+| [`2.50/registered`](2.50/registered)          | PKZIP 2.50 Registered     | 03-01-99 |
 
 ## External links
 
