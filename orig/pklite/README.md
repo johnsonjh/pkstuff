@@ -104,13 +104,13 @@ being released under available under the open source MIT license.
 
 * The [`PKPSPFIX`](../../pkpspfix.c) "PKLITE Executable Postprocessor
   (add PSP protection code)" is an open source utility used to patch
-  *decompressed* PKLITE executables that look for a PKLITE
-  [PSP signature](http://justsolve.archiveteam.org/wiki/PKLITE#PSP_signature)
-  to detect tampering.  Programs can check for the PSP signature in multiple
-  places using obfuscated code making manual patching time-consuming.
-  `PKPSPFIX` automatically inserts code into the executable to set a
-  PSP signature, so no other modifications to the decompressed program are
-  needed for it to run correctly.
+  *decompressed* executables (previously compressed with PKLITE) that look for
+  a [PSP signature](http://justsolve.archiveteam.org/wiki/PKLITE#PSP_signature)
+  to detect unpacking or other tampering.  Because programs can check for the
+  PSP signature in multiple places using obfuscated code, manual patching
+  can be tedious.  `PKPSPFIX` automatically inserts code into the unpacked
+  executable to set the PSP signature, so no other modifications to the
+  program are needed for it to run correctly.
 
 > [!TIP]
 > I ***highly*** recommend decompressing using Jason Summers'
