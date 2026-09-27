@@ -1,7 +1,7 @@
 /*****************************************************************************/
 
 /*
- * PKLAXFIX: PKLITE <1.50 Executable Postprocessor (fixes AX restore bug)
+ * PKLAXFIX: PKLITE <1.50 Executable Postprocessor (AX restoration fix)
  * Copyright (c) 1993-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
  * Copyright (c) 2023-2026 Jason Summers <jason1@pobox.com>
  * SPDX-License-Identifer: MIT
@@ -1171,9 +1171,11 @@ main (int argc, char **argv)
   long patched_len;
   FILE *out_f;
 
-  (void)printf ("PKLAXFIX: PKLITE Executable Postprocessor\n");
-  (void)printf ("Copyright (c) 2026");
+  (void)printf ("PKLAXFIX: PKLITE Executable Postprocessor");
+  (void)printf (" (AX restoration fix)\n");
+  (void)printf ("Copyright (c) 1993-2026");
   (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
+  (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n");
 
   if (argc != 3)
     {

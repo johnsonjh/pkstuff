@@ -107,9 +107,12 @@ main (int argc, char **argv)
   targets[5].replacement = crc_large_chk_pch;
   targets[5].length      = sizeof (crc_large_chk_tgt);
 
-  (void)fprintf (stdout,
-    "PKL2FIX: PKLITE 2.01 Executable Postprocessor "
-    "(8086/8088 compatibility)\n");
+  (void)printf ("\nPKL2FIX:");
+  (void)printf (" PKLITE 2.01 Executable Postprocessor");
+  (void)printf (" (8086/8088 compatibility)\n");
+  (void)printf ("Copyright (c) 1996-2026");
+  (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
+  (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n\n");
 
   if (argc < 3)
     {

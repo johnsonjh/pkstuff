@@ -535,15 +535,18 @@ main (int argc, char **argv)
   unsigned long check;
   unsigned long uls = (unsigned long)sizeof (unsigned long);
 
-  (void)fprintf (stdout,
-    "PUTAV: Put Authenticity Verification in PKZIP 2.04/2.06\n");
-
   if ((uls * CHAR_BIT) < (unsigned long)32) /* //-V547 */
     {
       (void)fprintf (stderr, "\nError: unsigned long <32 bits.\n");
 
       return EXIT_FAILURE;
     }
+
+  (void)printf ("\nPUTAV:");
+  (void)printf (" Put Authenticity Verification in PKZIP 2.04/2.06\n");
+  (void)printf ("Copyright (c) 1994-2026");
+  (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
+  (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n");
 
   if (argc < 2)
     {

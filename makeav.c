@@ -608,6 +608,12 @@ main (void)
       return EXIT_FAILURE;
     }
 
+  (void)printf ("\nMAKEAV:");
+  (void)printf (" PKZIP 2.04/2.06 Authenticity Verification Generator\n");
+  (void)printf ("Copyright (c) 1994-2026");
+  (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
+  (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n\n");
+
   (void)printf ("Company Name (less than 50 printable ASCII characters)? ");
   (void)fflush (stdout);
 
@@ -774,7 +780,7 @@ main (void)
 
     (void)printf ("\nSerial 1 : %s", txt1);
     (void)printf ("\nSerial 2 : %s", txt2);
-    (void)printf ("\nAV Stamp : %s\n", stamp);
+    (void)printf ("\nAV Stamp : %s\n\n", stamp);
   }
 
   return EXIT_SUCCESS;
