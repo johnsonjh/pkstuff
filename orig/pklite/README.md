@@ -6,7 +6,7 @@
 - [PKLITE notes](#pklite-notes)
   * [Fake PKLite 1.50 (`-e` enabled)](#fake-pklite-150--e-enabled)
     + [`TEDSUO II [TED/UCF]` unpacker](#tedsuo-ii-teducf-unpacker)
-  * [Fake PKLITE Professinal 1.20](#fake-pklite-professinal-120)
+  * [Fake PKLITE Professional 1.20](#fake-pklite-professional-120)
   * [Other PKLITE versions](#other-pklite-versions)
 - [PKLITE utilities](#pklite-utilities)
   * [`PKLAXFIX`](#pklaxfix)
@@ -62,7 +62,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   but if other files are found that use the same packer, it would possible to
   create a generic version of the unpacking tool.
 
-### Fake PKLITE Professinal 1.20
+### Fake PKLITE Professional 1.20
 
 * After examining ***hundreds*** of PKLITE "1.20 Professional" versions,
   and *every* *single* *one* is the same (fake) 1.12 Professional hack.  You
