@@ -1,0 +1,39 @@
+**********************************************************************
+** Important information for use with PKLITE(R)                     **
+** Copyright 1990-1992,1995,1996 by PKWARE Inc. All Rights Reserved.**
+** PKLITE Reg. U.S. Pat. and Tm. Off.                               **
+** Portions of this software were obtained from BRM Technologies    **
+** Ltd. and are protected by the following copyright:               **
+** Copyright 1993-1996 BRM Technologies Ltd.  All Rights Reserved.  **
+** Used with permission.                                            **
+**********************************************************************
+
+The following items are new, changed, or fixed from version 1.50
+of PKLITE in this release, version 2.01:
+
+
+- Added the ability to compress Windows 16-bit (.EXE and .DLL)
+  program files.
+  ***NOTE THAT WINDOWS FILES COMPRESSED WITH PKLITE CAN NOT BE
+     DECOMPRESSED.***
+
+- Added the detection of Windows resources (icons, dialog boxes and other
+  bitmaps) so they can be compressed.
+
+- Added the automatic detection of a Windows or DOS .EXE program file.
+
+- Corrected a bug with the checksum option for DOS files.
+
+- Corrected problems with compression of DOS .SYS device drivers.
+
+- Allows for compression of read-only files to an output file.
+
+- Corrected bug with uncompressing EXEPACK files before compression
+  with PKLITE.
+
+- Shows the overall compression achieved when compressing multiple
+  files.
+
+- Corrected the problem with OS/2 loading files above 64K after
+  being compressed with PKLITE.
+

@@ -1,0 +1,804 @@
+                        ----------------------------------
+                         PKZFIND (tm)  USER MANUAL
+                        ----------------------------------
+
+Copyright (C)  1999 PKWARE, Inc. All Rights Reserved.
+
+No part of this publication may be reproduced, transmitted,
+transcribed, stored in a retrieval system, or translated into
+any other language in whole or in part, in any form or by
+any means, whether it be electronic, mechanical, magnetic,
+optical, manual or otherwise, without prior written consent
+of PKWARE, Inc.
+
+PKWARE, INC. DISCLAIMS ALL WARRANTIES AS TO THIS SOFTWARE,
+WHETHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, FUNCTIONALITY, DATA INTEGRITY OR
+PROTECTION.
+
+PKWARE, the PKWARE logo, and PKZIP are registered
+trademarks of PKWARE, Inc.  PKZFIND is a trademark of PKWARE, Inc.
+
+Trademarks of other companies mentioned in this documentation
+appear for identification purposes only and are the property
+of their respective companies.
+
+
+FIND FILES FAST AND EASY WITH PKZFIND
+
+PKZFIND is a powerful yet easy to use file search utility that will
+quickly search your hard disk, floppy diskettes, and network drives
+and locate files based on criteria that you provide. PKZFIND's wide
+array of search options allows you to construct simple and complex
+searches alike. PKZFIND will even locate files archived in .ZIP
+files. PKZFIND is a command line based product that is compatible
+with DOS, Windows 95/98, Windows NT, and OS/2. Additionally, PKZFIND
+supports Long File Names (LFNs) on the Windows 95/98 platform.
+
+
+USING PKZFIND
+
+PKZFIND can search for any file on your hard disk, including files
+that are in a .ZIP file (files compressed by PKZIP). You may tell
+PKZFIND to just search for a file, or search for a file "and"
+automatically move to the directory in which that file exists.
+
+With PKZFIND, you may search for:
+
+    *     A single file.
+
+    *     Multiple files.
+
+    *     Files that are contained in a .ZIP file.
+
+    *     Files that are contained in a self-extracting .ZIP
+          file (.EXE files).
+
+    *     Directory names.
+
+You may also access multiple drives.
+
+Even if you don't know the exact name of a file, you may specify a
+partial filename and PKZFIND will find all files that match that
+file pattern. Whatever your file-finding needs, you may customize
+PKZFIND to fit those needs.
+
+Note:     PKZFIND looks at files in "share" mode, meaning that it is
+          compatible with network software and LANs.
+
+
+USING PKZFIND WITH THE COMMAND LINE
+
+PKZFIND is command-line driven, which means that you type all of your
+commands at an operating system command prompt. PKZFIND uses DOS
+based commands and syntax. For example, if your computer is currently
+on the C drive, you would type your PKZFIND commands at the following
+prompt:
+
+     C:\>
+
+Because it uses the command line, PKZFIND takes advantage of
+several DOS based features. For example, you may tell PKZFIND
+to search in a specific directory or on a specific drive. You may
+also use such features as wildcards (* or ?) to help PKZFIND
+further define your search.
+
+Although this is not a operating system manual, it does contain
+basic information on DOS based conventions, as it pertains to using
+PKZFIND. If you're unfamiliar with DOS conventions, refer to your
+operating system documentation. The Sample Search Commands
+section at the end of this section contains several examples of file
+searches. Hopefully, these examples will closely fit your own file
+searching needs.
+
+
+THE pkzfind COMMAND
+
+The command you use to search for files is pkzfind. No matter what
+DOS conventions you use, pkzfind is always the first thing you type
+at the command prompt.
+
+
+UNDERSTANDING PKZFIND
+
+When PKZFIND finds an occurrence of the file that you request, it
+displays information about that file. It also allows you to continue
+the search for other occurrences, or end the search. This is handy
+when you specify a partial match, for example, if you want to search
+for all files that begin with the letter "B." Because there might be
+more files that begin with the letter B than can fit on one screen,
+displaying one file at a time prevents you from missing some of the
+files that PKZFIND finds.
+
+You may customize PKZFIND to display all files at once. Refer to
+ENHANCING YOUR SEARCH WITH PKZFIND OPTIONS for more information.
+
+
+WHERE CAN PKZFIND SEARCH?
+
+PKZFIND can search wherever you tell it to. You may search a specific
+drive on your computer, or in a specific directory. If you do not
+specify a drive or directory, PKZFIND automatically searches on the
+current drive that you're working on, and begins from the root
+directory. So even if you are a couple of directories deep on your
+drive, for example, \jobs\full\, PKZFIND searches "backwards" to the
+"\" directory.
+
+Note:     The "root" directory is the highest directory level on a
+          drive, often denoted as \ . For example, if you're on the
+          C drive, it would be C:\.
+
+With PKZFIND, you may also search on more than one drive at the same
+time.
+
+Refer to the SEARCHING ON A DIFFERENT DRIVE and SEARCHING IN A
+SPECIFIC DIRECTORY sections under GETTING STARTED for more
+information.
+
+
+CANCELING A SEARCH
+
+You may cancel your search at any time. To do so, hold down the Ctrl
+key and type c. The search stops and the command prompt appears.
+
+
+USING HELP
+
+Help for PKZFIND is always available. At the command prompt,
+type pkzfind -h and press ENTER. You may also just type pkzfind.
+
+Sometimes, when you type the pkzfind command incorrectly, help
+automatically appears on your screen.
+
+
+GETTING STARTED
+
+This section contains all the information you need to perform a
+simple search using PKZFIND. It also shows you what happens when
+PKZFIND finds a file and what happens when PKZFIND doesn't find a
+file.
+
+In this section, you will learn to:
+
+    *     Search for a single file.
+
+    *     Search for multiple files.
+
+
+SEARCHING FOR A SINGLE FILE
+
+To search for a file:
+
+1.   Start your computer. Make sure your screen is at a command
+     prompt (for example, C:\). If you are running Windows, start
+     a DOS window.
+
+2.   At the command prompt, type pkzfind, a space, and the name of
+     the file you want to search for. For example, if you want to
+     search for a file named resume.doc, you would type the following
+     and press ENTER:
+
+          pkzfind  resume.doc
+
+     If PKZFIND finds the file, the following happens:
+
+     Version and copyright information appear, then
+     the following prompt:
+
+          /JOB/RESUME.DOC 4534 09-2-1994 0:45:48 More (ynj)?
+
+     The more (ynj)? prompt allows you to continue or
+     stop your search. For information on how to
+     respond to this prompt, go to step 3.
+
+     PKZFIND displays the following information
+     when it finds a file:
+
+          *    PKZFIND copyright information.
+
+          *    The directory in which the file is located.
+
+          *    The name of the file.
+
+          *    The size of the file in bytes.
+
+          *    The date and time the file was last
+               modified.
+
+     If PKZFIND doesn't find a file, the following happens:
+
+     The following message appears:
+
+          No files found
+
+     Note:     PKZFIND version and copyright information also appear.
+
+     The command prompt appears.
+
+3. To search for the next matching file, type y.
+
+    PKZFIND continues to search. If another match is found, the
+    information pertaining to that file is displayed and
+    the following prompt appears:
+
+          more (ynj)?
+
+     If PKZFIND does not find another
+     match, the following appears, followed
+     by the command prompt:
+
+          (x) files found.
+
+     where x is the number of files found.
+
+     To stop searching, type n.
+
+     PKZFIND stops searching and the command prompt appears.
+
+To jump to the directory in which the file appears and stop searching
+type j. PKZFIND jumps to the directory in which the file appears and
+stops searching. The command prompt appears.
+
+
+SEARCHING FOR MULTIPLE FILES
+
+PKZFIND allows you to search for multiple files at one time. You may
+use one of the following methods:
+
+     *    Typing more than one filename.
+
+     *    Using wildcards to specify a partial file pattern.
+
+
+TYPING MORE THAN ONE FILENAME
+
+To type more than one filename, put a space between each filename in
+your pkzfind command. For example, if you want to search for a file
+named RESUME.DOC and a file named letter.doc, you would type the
+following and press ENTER:
+
+     pkzfind  resume.doc  letter.doc
+
+
+SPECIFYING A FILE PATTERN USING WILDCARDS
+
+Sometimes when you're searching for a file, you're not sure of the
+entire name of the file, but know at least a partial name or the
+file extension (for example, .DOC). In this case, you may use an
+asterisk (*) wildcard symbol. For example, you might want to search
+for all files that contain the .DOC extension. To search for
+those files, you would type the following and press ENTER:
+
+     pkzfind  *.DOC
+
+This tells PKZFIND to search for all files on the current drive that
+end in .DOC. The asterisk indicates that the name of the file can be
+anything, as long as it ends in .DOC.
+
+For more information on wildcards, refer to your operating system
+documentation.
+
+
+TELLING PKZFIND WHERE TO SEARCH
+
+Now that you've learned to do a basic file search with PKZFIND, the
+next step is to learn how to tell PKZFIND to search in a particular
+location, for example, a specific directory or drive.
+
+In this section, you will learn to:
+
+     *    Search on a different drive.
+
+     *    Search on multiple drives.
+
+     *    Search in a specific directory.
+
+
+SEARCHING ON A DIFFERENT DRIVE
+
+PKZFIND allows you to search on a drive other than the drive you are
+on. To search on a different drive, type the name of the drive after
+the filename. For example, if you want to search for the file named
+RESUME.DOC on the D: drive while you are on the C: drive, you would
+type the following and press ENTER:
+
+     pkzfind  resume.doc  d:
+
+If you type only the drive letter with a backslash (\) and not a
+directory, PKZFIND starts the search in the root directory, which is
+\.
+
+For more information on designating drives at the command prompt,
+refer to your operating system documentation.
+
+
+SEARCHING ON MULTIPLE DRIVES
+
+With PKZFIND, you may search on multiple drives at the same time. For
+example, if you know that the file named RESUME.DOC is either on the
+C drive or D drive, you could type the following and press ENTER:
+
+     pkzfind  resume.doc  c:  d:
+
+If the file resides on both drives, PKZFIND will find and display
+both occurrences of that file.
+
+
+SEARCHING IN A SPECIFIC DIRECTORY
+
+If you don't specify a directory in which to search, PKZFIND
+automatically starts to search from the root directory on your
+current drive (for example, C:\) and searches through every directory
+under that root directory. However, with PKZFIND, you may search in
+any directory that you want.
+
+For example, if you know that the file named RESUME.DOC is
+somewhere under a directory named jobs and you want PKZFIND to only
+search under that directory, you could type the following and press
+ENTER:
+
+     pkzfind  resume.doc  \JOBS
+
+If the file you're searching for is on a different drive, for example,
+D:, you would type something similar to the following:
+
+     pkzfind  resume.doc  d:\JOBS
+
+     Note:     Don't forget to put the backslash (\) before the name
+               of the directory. When you specify directories using
+               PKZFIND, follow standard command line rules. For more
+               information on specifying directories on the command
+               line, refer to your operating system documentation.
+
+
+ENHANCING YOUR SEARCH WITH PKZFIND OPTIONS
+
+PKZFIND contains several options that help you enhance your file
+search. For example, you may tell PKZFIND to jump to the location at
+which it finds a file, or you may indicate that you only want PKZFIND
+to search inside .ZIP files. Each option is represented by a single
+letter that you include in the pkzfind command. You may also combine
+most of these options in a single command. (For a list of commands
+you cannot use together, refer to Options You Cannot Use Together.)
+
+The information that PKZFIND displays when it finds a file differs
+from option to option. For example, if you use the -b option
+(display only the filename), PKZFIND only displays the name of the
+file, not the size, date or time. If you use the -z option (search
+only in .ZIP files), PKZFIND displays the name of the .ZIP file "and"
+the file that you're searching for that is contained in that .ZIP
+file.
+
+The following is a list of PKZFIND options:
+
+
+     -b   Display only the filename
+
+
+     -c   List all matching files without stopping,
+          and skip the more (ynj)? prompt
+
+          Normally, PKZFIND searches one file
+          at a time and gives you the opportunity
+          to continue the search or stop the search.
+
+     -d   List directories that have the same name
+          as the file(s) that you specified
+
+
+     -j   Jump to the drive and directory in which
+          PKZFIND finds a file
+
+
+     -z   Search only in .ZIP files (for files that
+          were compressed by PKZIP)
+
+
+     -e   Search also in self-extracting .ZIP files
+          (.EXE files)
+
+
+     -n   Search only for files that are "not"
+          contained in a .ZIP file
+
+     -p   Pause after each screen
+
+     -a   Search for files by the specified (e.g. h=Hidden;
+          r=Read-only; s=System; d=Directories; a=archive) file
+          attribute(s). (Example syntax: 'pkzfind -ars *.*' will find
+          all files that have Read-only AND System attributes)
+
+You may also search for a file based on "size." You may specify
+bytes, kilobytes, or megabytes, depending on your needs. You may also
+specify a range of sizes. For example, you may search for all files
+that are larger than 100 bytes but smaller than 200 bytes.
+
+     *    To search for files that are equal to or "larger" than
+          xxx bytes type a forward slash (/) "or" minus sign (-),
+          a plus sign (+), and the number of bytes (for example,
+          pkzfind  /+555).
+
+          PKZFIND finds all files that are equal to or larger than
+          the number of bytes you type.
+
+     *    To search for files that are equal to or "smaller" than xxx
+          "bytes," type forward slash (/) "or" minus sign (-), a
+          minus sign (-), and the number of bytes (for example,
+          pkzfind  /-555).
+
+          PKZFIND finds all files that are equal to or smaller than
+          the number of bytes you type.
+
+     *    To search for files that fall within a size range, in
+          "bytes" (for example, equal to or "larger" than 9500 bytes
+          but smaller than or equal to 11,000 bytes), type a forward
+          slash (/), a plus sign (+), the minimum number of bytes, a
+          minus sign (-) and the maximum number of bytes (for
+          example, pkzfind  /+9500-11000).
+
+          Do not put a space between the two values.
+
+          Also, you may type the values in any order. For example,
+          the maximum value first and the minimum value last
+          (pkzfind  /-11000+9500). You must put the forward slash in
+          front of the "first" value you type.
+
+     *    To search for files that are equal to or "larger" than xxx
+          kilobytes, type forward slash (/) "or" minus sign (-), a
+          plus sign (+), the number of kilobytes, and the letter k.
+
+          Do not put a space between the number and the letter (for
+          example, pkzfind  /+100k).
+
+     *    To search for files that fall within a size range, in
+          "kilobytes" (for example, equal to or "larger" than 95
+          kilobytes but smaller than or equal to 110 kilobytes), type
+          a forward slash (/), a plus sign (+), the minimum number of
+          kilobytes, the letter k, a minus sign (-), the maximum
+          number of kilobytes, and the letter k (for example, pkzfind
+          /+95k-110k).
+
+          Do not put a space between the two values.
+
+          Also, you may type the values in any order. For example,
+          the maximum value first and the minimum value last (pkzfind
+          /-110k+95k). You must put the forward slash in front of the
+          "first" value you type.
+
+     *    To search for files that are equal to or "larger" than xxx
+          megabytes, type forward slash (/) "or" minus sign (-), a
+          plus sign (+), the number of megabytes, and the letter m.
+
+          Do not put a space between the
+          number and the letter (for example, pkzfind  /+10m).
+
+     *    To search for files that fall within a size range, in
+          "megabytes" (for example, equal to or "larger" than 2
+          megabytes but smaller than or equal to 3 megabytes), type a
+          forward slash (/), a plus sign (+), the minimum number of
+          megabytes, the letter m, a minus sign (-), the maximum
+          number of megabytes, and the letter m (for example, pkzfind
+          /+2m-3m).
+
+          Do not put a space between the two values.
+
+          Also, you may type the values in any order. For example,
+          the maximum value first and the minimum value last (pkzfind
+          /-3m+2m). You must put the forward slash in front of the
+          "first" value you type.
+
+For more information on the options listed above, refer to the
+appropriate sections in this file. For information on how to use
+these options, refer to the INCLUDING AN OPTION IN THE pkzfind
+COMMAND and USING MORE THAN ONE OPTION SIMULTANEOUSLY sections that
+follow.
+
+
+INCLUDING AN OPTION IN THE pkzfind COMMAND
+
+You may put a PKZFIND option anywhere in the command line, but it
+must be separated from other elements in the command (for example, a
+filename) by spaces. The example below uses the -d option, which
+allows you to search for directories.
+
+     pkzfind  -d  resume.doc
+
+In this example, you also could have typed one of the following:
+
+     pkzfind  resume.doc  -d
+
+     pkzfind  resume.doc  /d
+
+     pkzfind  /d  resume.doc
+
+
+USING MORE THAN ONE OPTION SIMULTANEOUSLY
+
+PKZFIND allows you to use more than one option in a single command.
+To combine options, type the options right next to each other in the
+pkzfind command, using one dash (-). Do not put a space between each
+option. For example, if you combined the -b (display only the name of
+the file) and -j (jump to a directory) options and are searching for
+the file RESUME.DOC, you would type the following and press ENTER:
+
+     pkzfind  -jb  resume.doc
+
+You may type the options in any order.
+
+
+OPTIONS YOU CANNOT USE TOGETHER
+
+Some commands cannot be used simultaneously because they are not
+compatible. For example, you cannot use the -z and -n (search only
+for files that are not contained in a .ZIP file) options nor the -n
+and -e (search in self-extracting .ZIP files) options together.
+
+
+DISPLAYING FILENAMES ONLY
+
+Normally, when PKZFIND displays a file, it includes the name, size,
+date, and time for that file. When you use the -b option, PKZFIND
+only displays the name of the file. For example, if you type
+pkzfind  -b  resume.doc and PKZFIND finds the file named RESUME.DOC
+in the \work\jobs directory, your screen would look similar to the
+following:
+
+     C:\> pkzfind  -b  resume.doc
+
+      /WORK/JOBS/RESUME.DOC
+
+     1 file found.
+
+     C:\>
+
+Note:     PKZFIND version and copyright information also appears.
+
+
+DISPLAYING ALL MATCHING FILES AT ONCE
+
+Normally, PKZFIND displays one file at a time and prompts you if you
+want to search for more. When you use the -c option, PKZFIND displays
+all matching files at once and does not prompt you.
+
+Note:     If you search for a file match and anticipate more than one
+          screen full of matches, you might not want to use this
+          option because some files might flash on and off your
+          screen before you have a chance to see them.
+
+
+DISPLAYING DIRECTORIES WITH THE SAME NAME AS A FILE
+
+When you use the -d option, PKZFIND displays directories that have
+the same name as the file(s) you specified. For example, if you have
+a file named jobs and a directory named jobs, PKZFIND would display
+both and look similar to the following:
+
+     C:\>  pkzfind  -d  jobs
+
+     /JOBS/                               08-23-1994   12:24:34
+
+     /WORK/RESUME/JOBS             3792   10-12-1994   10:02:28
+
+
+     1 file found.
+
+     1 directory found.
+
+     C:\>
+
+The first line contains the directory name.
+
+Note:     PKZFIND version and copyright information also appears.
+
+
+JUMPING TO A DIRECTORY IN WHICH A FILE WAS FOUND
+
+When you use the -j option, PKZFIND automatically jumps to the
+directory in which the file is located. For example, if you type
+pkzfind  -j  resume.doc and PKZFIND finds the file named
+RESUME.DOC in the \work\jobs directory, your screen would look
+similar to the following:
+
+     C:\> pkzfind  -j  resume.doc
+
+      /WORK/JOBS/RESUME.DOC          33792   10-12-1994   10:02:28
+
+
+     1 file found.
+
+     C:\WORK\JOBS>
+
+Note:     PKZFIND version and copyright information also appears.
+
+Notice that you are now in the directory in which PKZFIND found the
+file (in this example, \work\jobs).
+
+
+SEARCHING FOR FILES CONTAINED IN .EXE FILES
+
+When you use the -e option, PKZFIND also searches for files that are
+contained in a self-extracting .ZIP file (a self-extracting .ZIP file
+that has a .EXE extension). When PKZFIND displays files that are
+contained in a self-extracting .ZIP file, those files appear indented
+under the name of the .EXE file. For example, if you have a file
+named RESUME.DOC that is contained in a self-extracting .EXE file
+named work.exe, your screen would look similar to the following:
+
+     C:\> pkzfind  -e  resume.doc
+
+     /WORK/*JOBS/WORK.EXE
+
+          * RESUME.DOC             3792   10-12-1994   10:02:28
+
+     1 file found.
+
+     C:\>
+
+Note:     PKZFIND version and copyright information also appears.
+
+
+SEARCHING ONLY FOR FILES CONTAINED IN A .ZIP FILE
+
+When you use the -z option, PKZFIND searches only for files that are
+contained in a .ZIP file. To include self-extracting .ZIP files in
+your search, use the -e option also. In the following example, the
+file named RESUME.DOC is displayed only because it is contained in a
+.ZIP file:
+
+     C:\> pkzfind  -z  resume.doc
+
+     /WORK/JOBS/TEMP.ZIP
+
+          * RESUME.DOC             3792   10-12-1994   10:02:28
+
+
+     1 file found.
+
+
+     C:\>
+
+Note:     PKZFIND version and copyright information also appears.
+
+
+SEARCHING ONLY FOR FILES NOT CONTAINED IN .ZIP FILES
+
+When you use the -n option, PKZFIND does not look in .ZIP files. For
+example, if the file named RESUME.DOC appeared in the \work\jobs
+directory in its regular form and in compressed form in a .ZIP file,
+PKZFIND displays only the non-zipped version, as shown in the
+following:
+
+     C:\> pkzfind  -n  resume.doc
+
+
+     /WORK/JOBS/RESUME.DOC              33792   10-12-1994   10:02:28
+
+
+     1 file found.
+
+     C:\>
+
+Note:     PKZFIND version and copyright information also appears.
+
+
+SAMPLE SEARCH COMMANDS
+
+This section contains some sample PKZFIND search commands. The
+purpose of these samples is to show you some of the ways you may
+search for files, including the use of PKZFIND options. While
+browsing through these examples, you will notice that there is
+usually more than one way to type a command for the same search. All
+of these samples use an example file named RESUME.DOC.
+
+Each sample contains the following:
+
+     *    The search criteria used.
+
+     *    The command(s) that you may type.
+
+     *    A brief description of the sample.
+
+
+Sample 1  -  Search on the current drive for a single file.
+
+                    pkzfind  resume
+
+This is the simplest pkzfind command you may type.
+
+
+Sample 2  -  Search on the current drive for any file that begins
+             with any specific file pattern.
+
+                    pkzfind  resume.*
+
+             The wildcard (*) indicates that the file may end in
+             any text, as long as it begins with "resume."
+
+
+Sample 3  -  Search on the current drive for any file that ends with
+             the a specific extension.
+
+                    pkzfind  *.doc
+
+The wildcard (*) indicates that the filename may be anything, as
+long as the extension is .DOC.
+
+
+Sample 4  -  Search for a file in a specific directory under the root
+             directory (\).
+
+                    pkzfind  resume.doc  \work\jobs
+
+                    pkzfind  resume.doc  work\jobs
+
+                    pkzfind  \work\jobs  resume.doc
+
+                    pkzfind  work\jobs  resume.doc
+
+This sample assumes that you are typing from the root directory.
+Notice that you have the option of whether or not to begin the
+directory path with a backslash (\).
+
+
+Sample 5  -  Search for a file in a sub-directory of the directory
+             that is immediately above the directory you are in.
+
+                    pkzfind  resume.doc  ..\jobs
+
+                    pkzfind  ..\jobs  resume.doc
+
+The double periods (..) indicate that you want to search from the
+directory that appears above the directory that you are in.
+
+
+Sample 6  -  Search for a file on the current drive and only display
+             the filename (not the size, date, and time).
+
+                    pkzfind  resume.doc -b
+
+                    pkzfind  resume.doc /b
+
+                    pkzfind  -b  resume.doc
+
+                    pkzfind  /b  resume.doc
+
+You may use either the dash (-) or forward slash (/) to precede a
+PKZFIND option.
+
+
+Sample 7  -  Search on a different drive.
+
+                    pkzfind  resume.doc d:
+
+                    pkzfind  d:  resume.doc
+
+You must always include a colon (:) when specifying a drive.
+
+
+Sample 8  -  Search on a different drive and specifying a directory
+             in which to search.
+
+                    pkzfind  d:\work\jobs  resume.doc
+
+                    pkzfind  resume.doc d:\work\jobs
+
+
+Sample 9  -  Search on a different drive, include directories in your
+             search, and request a continuous listing of files.
+
+                    pkzfind  d:  -cd  resume.doc
+
+                    pkzfind  resume.doc -cd  d:
+
+                    pkzfind  -cd  resume.doc d:
+
+                    pkzfind  -c  -d  resume.doc d:
+
+
+Sample 10  -  Search for files that are larger than or equal to "xxx"
+              bytes but smaller than or equal to "xxx" bytes
+
+                    pkzfind  /+9500-11000  resume.doc
+
+                    pkzfind  /-11000+9500  resume.doc

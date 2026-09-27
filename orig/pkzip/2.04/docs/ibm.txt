@@ -1,0 +1,60 @@
+This version licensed to IBM Corporation
+
+PKZIP
+
+  Error codes printed:
+
+        (Note that these correspond to the actual 'ErrorLevel' values)
+
+         01     Bad file name or file specification.
+         02,03  Error in ZIP file.
+         04-11  Insufficient Memory.
+         12     No files were found to add to the ZIP file,
+                or no files were specified for deletion.
+         13     File not found.  The specified ZIP file
+                or list file was not found.
+         14     Disk full.
+         15     ZIP file is read-only and can not be modified.
+         17     Too many files.
+
+  Warning codes printed:
+
+        (ErrorLevel will be 0 unless otherwise noted)
+
+         01     Can't open PKZIP.CFG configuration file.
+         02     Can't open file to compress. (e.g. it is locked
+                by another program)  (NOTE: in this case the
+                software will exit with ErrorLevel of 18)
+         03     Insufficient memory for Shrinking.
+         04     Can't delete the specified file. (e.g. it is read-only)
+
+
+
+PKUNZIP and PKSFX
+
+  Error codes printed:
+
+        (Note that these correspond to the actual 'ErrorLevel' values)
+
+          02,03  Error in ZIP file.           (PKSFX only)
+          04     Insufficient Memory.
+          05-07  Insufficient Memory.         (PKSFX only)
+          08     Insufficient Memory.
+          09     File not found.  No ZIP files found.
+          11     No files found to extract/view etc.
+          50     Disk Full.
+          51     Unexpected EOF in ZIP file.  (PKSFX only)
+
+  Warning codes printed:
+
+        (ErrorLevel will be 1)
+
+          01-03  File has a bad compression table.
+          04     Error in ZIP file.     (PKUNZIP only)
+          05-07  Insufficient memory.   (PKUNZIP only)
+          08     Can't open ZIP file.   (PKUNZIP only)
+          09     Can't open the printer device.
+          10     Can't create (open for write) the specifed file.
+          11     Unknown compression type.
+          13     File has inconsistent header.
+          15     File fails CRC test.

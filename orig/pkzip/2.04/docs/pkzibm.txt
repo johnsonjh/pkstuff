@@ -1,0 +1,105 @@
+LICENSE INFORMATION
+
+
+  This copy of PKZIP/PKUNZIP/PKSFX is licensed to IBM Corporation and
+  is for use only by IBM employees and employees of IBM subsidiaries,
+  and should not be distributed outside the IBM Corporation.  The IBM
+  licensed version does not contain the encryption feature of the
+  PKWARE product and may therefore be freely distributed to non-US
+  employees.  This is the only version of PKWARE's product that may be
+  legally distributed and used within IBM.
+
+  Product managers interested in including these programs with their
+  products should read the LICENSE.DOC file in this package for
+  important information regarding IBM's distribution license for these
+  programs.
+
+
+FILE COMPRESSION
+
+
+  The term "compression" means to reduce in size.  Computer file
+  compression refers to reducing files in size so that they take up
+  less storage space on disk.  PKZIP will perform this reducing
+  process quickly and easily.  The compressed files are then stored
+  in a special file called a ZIP file.
+
+  ZIP files have three distinct benefits:
+
+    1. They use less disk space than normal files.  Storing files
+       in compressed form increases the life and storage
+       availability of your expensive hard disk.
+
+    2. Many individual files can be compressed into a single ZIP
+       file.  This makes file group identification, copying, and
+       transporting faster and easier.
+
+    3. Compressed files travel faster via modem which reduces
+       telecommunication transmission and reception.  Many BBS
+       (computer bulletin board services) use PKWARE files as their
+       standard.  This enables the BBS to store more files and you
+       to have transfer files faster and easier.
+
+
+TWO RELATED PKWARE PROGRAMS - PKZIP & PKUNZIP
+
+
+  Together, PKZIP and PKUNZIP handle all of your file compression
+  needs.
+
+  PKZIP is the program that compresses files.  This shrinking process
+  is often referred to as data compression.  Terms you will see
+  during the compressing process are Storing, Shrinking, and
+  Imploding.  PKZIP also handles all file maintenance including
+  adding and deleting files, as well as reporting on technical
+  information from within the compressed file.
+
+  PKUNZIP is the program that uncompresses or extracts compressed
+  files.  In addition to extracting a complete ZIP file, it can
+  selectively release individual files, show files on the screen for
+  fast viewing, or print them out on a printer.
+
+
+   NOTE: The ZIP2EXE program will look for a file called
+         PKSFX.PRG. Therefore you will have to rename
+         the PKSFXJR.PRG to PKSFX.PRG when running ZIP2EXE
+         and your intention is to use the smaller JR version.
+
+
+INSTALLATION INSTRUCTIONS
+
+
+  Follow the appropriate procedures for your terminal emulator to
+  download the PKZIBM EXEBIN file to your workstation as a binary
+  file named PKZIBM.EXE.  If you need help with the downloading
+  process, please contact your local I/S help desk or area
+  information center for assistance.  If you cannot find anyone local
+  to help you, we'd be happy to help too, but please try hard to find
+  someone local first since there aren't that many of us here!
+
+  To install the product, simply run the PKZIBM command from whatever
+  drive and directory you want the product files to be copied into.
+  For example, if you have downloaded PKZIBM.EXE into your root
+  directory of your C: drive and want the product files installed in
+  a directory named UTILITY, the following commands should do the
+  trick:
+
+    CD C:\UTILITY
+    C:\PKZIBM.EXE
+
+  PKZIBM.EXE is a self-extracting ZIP file.  Self-extracting ZIP
+  files are useful when you need to transfer compressed files to a
+  person who may not be familiar with file compression and extraction
+  procedures, or who does not have the PKUNZIP program.
+
+
+WHERE TO GO FOR HELP
+
+
+  Please use the PKWARE FORUM on the IBMPC conference disk for any
+  and all discussion about this product, including bug reports.  We
+  will be monitoring the forum and periodically passing along bug
+  reports to PKWARE.
+
+
+

@@ -1,0 +1,6 @@
+The following items are new, changed, or fixed from version 1.12
+of PKLITE in this release of version 1.13 of the PKLITE software.
+
+- Fixed a minor anomoly when run on a POQET computer with power
+  management enabled.
+

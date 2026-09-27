@@ -1,0 +1,49 @@
+The following items are new, changed, or fixed from version 1.13
+of PKLITE in this release of version 1.14 of the PKLITE software.
+
+Shareware version:
+
+- On rare occasions with certain executables the PKLITE 1.13
+  extractor may set the stack to collide with the extractor code.
+  This has been fixed with version 1.14.
+
+- The following file names will not be compressed and must be
+  renamed if you wish to compress them:
+
+     COMMAND.COM
+     SETVER.EXE
+
+- PKLITE will now compress EXE files with up to approximately
+  32,000 relocations.  Earlier versions were limited to about
+  15,000 relocations.
+
+- Occasionally an incorrect 'Read-Only, skipping file' message
+  would occur when the file is not read only.  This has been
+  fixed.
+
+- The output path specified when compressing files to another directory
+  may now have a trailing slash or backslash.
+
+- Added code to prevent a file being compressed from overwriting itself
+  when specifying an output path.
+
+Professional version:
+
+- Same changes as above.
+
+- A minor anamoly in the relocation code for files compressed with
+  the extra compression option has been corrected.
+
+- Changes have been made to make this version more resistant to
+  "disliting".
+
+- The extra compression option now writes the characters 'PK'
+  (50, 4B hex) into the psp at offset 5C hex.  The user program
+  can check for this signature and abort if it isn't found.  This
+  way the user program will not run if the PKLITE compression is
+  removed. This check may look something like the following in
+  Microsoft or Borland C:
+
+  if (*(unsigned int far *)MK_FP(_psp, 0x5C) != 0x4B50)
+     exit(1);
+

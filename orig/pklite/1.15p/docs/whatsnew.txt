@@ -1,0 +1,131 @@
+The following items are new, changed, or fixed from version 1.14
+of PKLITE in this release of version 1.15 of the PKLITE software.
+
+Shareware version:
+
+- Changed method of detecting when executable files are compressed.
+
+Professional version:
+
+- Same changes as above.
+
+- Corrected an anomoly in the extra compression option that would compress
+  files with appended data (overlays) incorrectly.
+
+
+The following items are new, changed, or fixed from version 1.13
+of PKLITE in this release of version 1.14 of the PKLITE software.
+
+Shareware version:
+
+- On rare occasions with certain executables the PKLITE 1.13
+  extractor may set the stack to collide with the extractor code.
+  This has been fixed with version 1.14.
+
+- The following file names will not be compressed and must be
+  renamed if you wish to compress them:
+
+     COMMAND.COM
+     SETVER.EXE
+
+- PKLITE will now compress EXE files with up to approximately
+  32,000 relocations.  Earlier versions were limited to about
+  15,000 relocations.
+
+- Occasionally an incorrect 'Read-Only, skipping file' message
+  would occur when the file is not read only.  This has been
+  fixed.
+
+- The output path specified when compressing files to another directory
+  may now have a trailing slash or backslash.
+
+- Added code to prevent a file being compressed from overwriting itself
+  when specifying an output path.
+
+Professional version:
+
+- Same changes as above.
+
+- A minor anamoly in the relocation code for files compressed with
+  the extra compression option has been corrected.
+
+- Changes have been made to make this version more resistant to
+  "disliting".
+
+- The extra compression option now writes the characters 'PK'
+  (50, 4B hex) into the psp at offset 5C hex.  The user program
+  can check for this signature and abort if it isn't found.  This
+  way the user program will not run if the PKLITE compression is
+  removed. This check may look something like the following in
+  Microsoft or Borland C:
+
+  if (*(unsigned int far *)MK_FP(_psp, 0x5C) != 0x4B50)
+     exit(1);
+
+
+The following items are new, changed, or fixed from version 1.12
+of PKLITE in this release of version 1.13 of the PKLITE software.
+
+- Fixed a minor anomoly when run on a POQET computer with power
+  management enabled.
+
+
+The following items are new, changed, or fixed from version 1.05
+of PKLITE in this release of version 1.12 of the PKLITE software.
+
+- Fixed minor anomolies with some unusual .EXE files.
+
+- Added a relocation item to the .EXE header so that DR-DOS and
+  MS-DOS 5.00 can load PKLITE'd files below 64K.
+
+- Updated CHK4LITE to recognize 1.12 compressed files.
+
+- Added a test for relocation table optimization and automatic header
+  optimization into PKLITE.  PKLITE 1.12 tests the relocation table to
+  see if it can be optimized for better compression and asks if you want
+  to re-arrange the relocation header for better compression.  This
+  performs the same operation as running HDROPT and then PKLITE.  NOTE:
+  if the file is re-exapanded with PKLITE -x, it will not match the
+  original, but rather what the original .EXE file would be after
+  running HDROPT on it.
+
+
+HDROPT
+
+  Files compressed with LZEXE and extracted with UNLZEXE and then
+  compressed with PKLITE sometimes compress bigger than if the original
+  .EXE file was compressed.
+
+  This is because UNLZEXE does not restore the .EXE file exactly as the
+  original file (unlike PKLITE, which does).  Specifically, UNLZEXE
+  writes the .EXE relocation header in an unoptimal, non- canonical
+  form.  The HDROPT program included in this version can be used to
+  normalize the .EXE relocation data and allow PKLITE to compress
+  UNLZEXE'd files much smaller.
+
+  HDROPT optimizes a file's .EXE relocation header storing each header
+  in a normalized canonical from, yielding much better compression with
+  PKLITE.  While most popular compilers/linkers usually write the
+  relocation entries in canonical form when creating .EXE files, HDROPT
+  is useful for files created by UNLZEXE and perhaps other linkers that
+  create un-normalized relocation headers.
+
+  Also, when compressing some .EXE files, especially produced in a
+  development environment with DEBUGGING options enabled, some people
+  have reported that LZEXE compresses smaller than PKLITE.  This is
+  because LZEXE automatically strips any debug data from an executable
+  file when compressing it.  PKLITE only strips this data when the -r
+  option is used.  In almost every single case, PKLITE with the -r
+  option should compress better than LZEXE when debugging data is
+  present in an .EXE file.
+
+
+CHK4LITE
+
+  CHK4LITE can be used to determine if a file has been compressed with
+  PKLITE.  CHK4LITE returns an errorlevel of 0 (zero) if none of the
+  file(s) scanned was compressed with PKLITE, 1 (one) if at least one
+  file was compressed with PKLITE and 2 (two) if at least one file was
+  compressed with the extra option in PKLITE Professional.  If both
+  types of compressed files are scanned, CHK4LITE will return two.
+

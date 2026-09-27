@@ -1,0 +1,1204 @@
+
+                        --------------------------------------------
+                            PKLITE(R) AND PKLITE PROFESSIONAL(R)
+                                   *SHAREWARE USER MANUAL*
+                        --------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** PLEASE NOTE ***
+This is a condensed version of the manual provided with the registered
+version of PKLITE.  Some sections may have been condensed or omitted in
+this shareware version.
+
+
+
+Copyright 1990-1992,1995,1996 PKWARE Inc. All Rights Reserved.
+
+U.S. Patent No. 5,051,745
+
+No part of this publication may be reproduced, transmitted,
+transcribed, stored in a retrieval system, or translated into any other
+language or computer language in whole or in part, in any form or
+by any means, whether it be electronic, mechanical, magnetic,
+optical, manual or otherwise, without prior written consent of PKWARE, Inc.
+
+PKWARE, INC. DISCLAIMS ALL WARRANTIES AS TO THIS SOFTWARE, WHETHER EXPRESS
+OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, FUNCTIONALITY, DATA
+INTEGRITY OR PROTECTION.
+
+
+PKWARE, the PKWARE logo, PKZIP, PKLITE and PKLITE Professional are
+registered trademarks of PKWARE, Inc.
+
+
+Trademarks of other companies mentioned in this documentation appear for
+identification purposes only and are the property of their respective
+companies.
+
+Portions of this software were obtained from BRM Technologies Ltd. and
+are protected by the following copyright: Copyright 1993-1996 BRM
+Technologies Ltd.  All Rights Reserved.  Used with permission.
+
+
+
+CHAPTER ONE: WELCOME TO PKLITE
+
+
+
+PKLITE and PKLITE Professional are easy-to-use file compression
+programs used to compress DOS and Windows executable files. Both
+programs increase valuable disk space by compressing executables by an
+average of 45%. It might also reduce that start-up time of many programs
+because of reduced drive access time.
+
+PKLITE Professional allows you to compress your files even more to make
+your executables smaller yet. It also contains several more options that add
+even more flexibility to your data compression. Perhaps the most valuable
+feature, however, is that PKLITE Professional protects your executables
+against reverse engineering. If you use the extra compression option, you
+can't even expand the file using PKLITE Professional.
+
+PKLITE and PKLITE Professional compress the following executables:
+
+   For Windows: .EXE, .DLL, and .DRV files.
+
+   For DOS: .EXE, .COM, .DRV, and .SYS files.
+
+
+
+OPERATING SYSTEM AND MEMORY REQUIREMENTS
+
+PKLITE runs on any computer that uses DOS Version 2.1 or greater. Running
+a program that has been compressed by PKLITE might require up to 84K of
+extra memory overhead to expand the application in memory.
+
+
+HOW DOES PKLITE COMPRESSION WORK?
+
+PKLITE compresses your files like PKZIP, but it also adds a small amount of
+extraction code at the beginning of each executable file. When you run an
+application that has been compressed by PKLITE, the program automatically
+expands into memory and runs. The compression process does not change
+the operation of the program; it merely reduces the disk space required to
+store the program. PKLITE can also expand your files back to their original
+size (DOS only).
+
+PKLITE contains several options that add flexibility to your compression.
+Refer to the Using PKLITE Options section in the Using PKLITE chapter of
+this manual.
+
+CAUTION:	Do not use PKLITE on original program diskettes. You
+should always make a copy of the original diskettes that are
+supplied with an application. Work only from your copies.
+Keep the original diskettes in a safe place.
+
+
+
+PKLITE AND PKLITE PROFESSIONAL: WHAT'S DIFFERENT?
+
+PKLITE and PKLITE Professional perform the same basic task: compression
+of Windows and DOS executable files. However, PKLITE Professional is
+more powerful in that it features an "extra compression" option that allows you
+to make your executables even smaller. PKLITE Professional also protects
+your files against reverse engineering by making the extra-compressed files
+"unexpandable." PKLITE Professional also allows you to leave
+uncompressed data in a compressed file (for example, internal overlays).
+
+Refer to the Using PKLITE Options section of the Using PKLITE chapter
+for more information on PKLITE and PKLITE Professional options.
+
+
+
+PROGRAMS YOU SHOULD NOT COMPRESS WITH PKLITE
+
+PKLITE can compress most executable files. However, some application
+cannot be compressed, or do not run correctly when compressed. For
+example, some programs require that the overlay data in the executable file
+be located at a specified area in the executable. Such programs will not run
+properly when compressed. Executables that merely append overlay data to
+the end of the file "can" run properly when compressed.
+
+
+
+USING PKWARE TECHNICAL SUPPORT
+
+We hope that using PKLITE is as enjoyable and trouble-free as possible. Our
+goal is to provide you with the best product and documentation possible.
+However, problems and questions might arise. In most cases, you'll be able
+to answer those questions or solve the problems by using this manual. But
+when you need further assistance, you can reach the PKWARE Technical
+Support Department in the following ways:
+
+     *   CompuServe.
+
+     *   PKWARE BBS Bulletin Board Service (BBS).
+
+     *   Internet/Usenet.
+
+     *   Calling/Faxing a Technical Support Representative.
+
+Remember, always refer to this manual before you use one of these options.
+
+
+
+PREPARING TO USE TECHNICAL SUPPORT
+
+The more information you provide, the easier it will be for PKWARE Technical
+Support Representatives to help you. Before you use one of the technical
+support services, please have the following information handy:
+
+     *   The version number of PKLITE.
+
+     *   The "exact" commands you typed into your computer prior to noticing
+         the problem and any error messages that appeared on your screen.
+
+         Note:  Be prepared to FAX a copy of the error messages.
+
+To help you organize this information, use the Customer Support Form at the
+end of this chapter.
+
+
+
+USING SUPPORT CONFERENCES
+
+PKWARE maintains support conferences on several Bulletin Board Service
+(BBS) networks. These include ILink, SmartNet, and Rime. You may leave a
+question in the PKWARE support conference using any of these networks
+and a support representative or fellow PKLITE user will provide an answer.
+Several other BBS networks also offer PKWARE product conferences, but
+those are not necessarily monitored by PKWARE.
+
+
+USING THE PKWARE BBS
+
+PKWARE maintains its own BBS. It is normally available 24 hours a day and
+it supports all baud rates from 1200 to 28.8k.
+
+To use this BBS, set your communications software to the following:
+
+   8 bits
+
+   1 stop bit
+
+   no parity
+
+For your convenience, the PKWARE BBS has multiple phone lines, offers the
+latest in PKWARE shareware, and allows you to download many other files.
+
+You can reach the PKWARE BBS at the following number:
+
+   (414) 354-8670
+
+
+
+USING AMERICA ONLINE
+
+PKWARE has a support service on America Online (AOL). By using the
+PKWARE keyword, you can access frequently-asked questions, download
+related files, and leave questions on our message board.
+
+Our AOL mailing address is:
+
+   pkwaresup@aol.com
+
+
+
+USING COMPUSERVE
+
+PKWARE technical support representatives maintain a discussion forum on
+CompuServe. To reach the forum, type GO PKWARE from any
+CompuServe prompt. The PKWARE discussion forum is located in area 11.
+
+
+
+USING INTERNET/USENET
+
+PKWARE products are frequently discussed in the newsgroup
+comp.compression. Use the Internet/Usenet to electronically mail PKWARE
+Technical Support.
+
+The Internet/Usenet address is:
+
+   support@pkware.com
+
+You can also contact PKWARE Technical Support through our World Wide
+Web site at the following address:
+
+   www.pkware.com
+
+
+
+CALING A PKWARE TECHNICAL SUPPORT REPRESENTATIVE
+
+The most direct way to receive assistance about PKLITE is to call a PKWARE
+Technical Support Representative on the phone. The PKWARE Technical
+Support Department is available Monday through Friday from 9:00a.m. to
+5:00p.m. Central Time.
+
+Before you call, you should FAX the necessary information. This gives the
+technical support representative some time to review your problem and offer
+a solution. Please indicate on the FAX that you will be calling.
+
+The PKWARE FAX number is:
+
+   (414) 354-8559
+
+If you have determined that your problem is serious and needs immediate
+attention, feel free to call the PKWARE Technical Support Department at the
+following number:
+
+   (414) 354-8699
+
+
+
+USING THE PKWARE CUSTOMER SUPPORT FORM
+
+For your convenience, a Customer Support Form has been provided to help
+you record the information you need to accurately report the problem you are
+experiencing. We recommend that you make several copies of this form.
+REMEMBER! Include as much information as possible.
+
+The Customer Support Form appears below:
+
+Customer Support Form
+
+Customer Information
+
+Your Name:
+
+Company Name:
+
+Voice/FAX Phone Numbers:
+
+Address, City, State:
+
+ZIP code and County:
+
+Email ID (any):
+
+System Configuration Information
+
+Software Version:
+
+Computer Model/Make:
+
+DOS Version:
+
+Windows Version:
+
+Drive Model/Vendor:
+
+Information
+
+Command you typed:
+
+Error message displayed:
+
+
+-------------------------------------------------------------------------
+
+
+
+CHAPTER TWO: USING PKLITE
+
+
+
+PKLITE is a command-line program, which means you type everything at a
+DOS command prompt. This gives you flexibility because you can specify
+drives and directory paths, for example, if you want to move a newly-
+compressed executable or rename the executable. The DOS command line
+allows you to do everything in one command.
+
+PKLITE and PKLITE Professional also provide "options" that add further
+flexibility to your compression. For example, you can make PKLITE
+Professional do "extra" compression, saving you more disk space and
+increasing the speed of the executable when you run it.
+
+
+
+USING HELP
+
+To get quick, on-line help on using PKLITE, type the following at your
+command prompt:
+
+     pklite
+
+The help screen appears. Follow the instructions on this screen to use Help.
+
+
+
+
+LEARNING PKLITE
+
+To use PKLITE, you have to type pklite and the name of the executable file
+you want to compress. For example, if you want to compress a file called
+light.exe, you would type the following:
+
+     pklite  light.exe
+
+This is the most basic PKLITE command. Those two items are always
+required when you use PKLITE. You can also include other information in
+your command that adds flexibility to your compression needs. For example,
+you can specify the location of the original file, or a new location for the newly
+compressed file. You can also include options that change the complexion of
+your compression (for example, the -b option creates a backup copy of the
+original executable).
+
+Refer to the next section, The pklite Command, which reviews all of the
+possible items you can type on the command line. The remaining sections
+detail the individual items themselves.
+
+
+
+
+THE pklite COMMAND
+
+The general format for using the pklite command is:
+
+pklite  [option(s)]   [drive:][path]infile  [[drive:][path]outfile]
+
+A description of each item appears below:
+
+This item:                         Represents:
+-----------------------------------------------
+
+pklite                              The PKWARE executable compression program.
+
+option(s)                           One or more options - each one represented by a
+                                    single letter -  you can use to add flexibility to your
+                                    compression (for example, the "e" option allows
+                                    PKLITE Professional to compress your executable
+                                    even smaller than the normal compression).
+                                    Refer to Using PKLITE Options for more
+                                    information.
+
+[drive:] [path]infile               The current location of the executable you are
+                                    compressing, and the name of that executable.
+
+                                    Refer to Specifying Locations and Changing
+                                    Names for more information.
+
+
+[drive:] [path]outfile              The location at which you want the newly-com-
+                                    pressed executable to go, and the new name you
+                                    want to give it.
+
+                                    Refer to Specifying Locations and Changing
+                                    Names for more information.
+
+
+The items in brackets ([ ]) are optional. Only the pklite program name and the
+name of the executable file is required. Therefore, the simplest command you
+can type contains the following format:
+
+     pklite  filename
+
+The filename is the name of the executable file you want to compress. For
+example, if want to compress the file called LIGHT.EXE, you would type the
+following:
+
+     pklite  light.exe
+
+     Note:   If you do not type the filename extension (for example, .EXE, .SYS,
+             .DRV, .COM, .or DLL), PKLITE automatically compresses files with
+             that particular name and that have the appropriate extension.
+
+
+
+
+USING PKLITE OPTIONS
+
+PKLITE contains several options that add flexibility to your compression.
+Each option is represented by a single letter that you type right in your pklite
+command and should be preceded by a dash (-) or a forward slash (/). For
+example, the -e option adds extra compression to the normal amount of
+compression. If you are compressing a file called LIGHT.EXE and you want
+extra compression, you would type the following:
+
+pklite  -e  light.exe
+
+When you use an option, it must be the first item you type after the pklite
+command.
+
+The following table contains a list of available options.
+
+This option:             Does the following:
+---------------------------------------------
+
+-a                       Compresses files with overlays, optimizes
+                         relocations, windows resources, unpack
+                         EXEPACK files, and compress Windows 3.0
+                         files.
+
+-b                       Creates a backup .BAK file of the original.
+
+-c                       Adds checksum for validation load image
+(DOS .EXE's only).
+
+-d                       Skips developer-defined resources when
+                         compressing.
+
+-e                       Performs extra compression and makes the
+                         compressed file unextractable (PKLITE Pro-
+                         fessional only).
+
+-e-  (DOS only)          Performs extra compression without a PSP
+                         signature
+
+-f                       Forces a file to compress, even when the file
+                         size increases.
+
+-g  (DOS only)           Leaves uncompressed data in the executable.
+
+-k                       Compress only Windows resources.
+
+-l                       Displays software license screen.
+
+-n                       Never compresses files with overlays or win-
+                         dows resources, nor optimizes locations. Also
+                         never compresses Windows 3.0 files.
+
+-o                       Overwrites output file, if it exists.
+
+-p  (DOS only)           Doesn't unpack files that were compressed
+                         with EXEPACK before compressing.
+
+-r  (DOS only)           Removes overlay data.
+
+-u                       Updates files time and date to the current time
+                         and date.
+
+-w                       Compress only Windows 3.0 files.
+
+-x  (DOS only)           Expands a compressed file.
+
+-s  followed by a        Use that file as the stub or header for the
+filename                 newly-compressed file.
+
+This option is available
+only for Windows
+executables.
+
+
+Further information on each option appears below.
+
+
+THE -a OPTION - COMPRESS WITH OVERLAYS, RESOURCES, AND WINDOWS 3.0
+FILES
+
+To compress files with overlays, Windows resources, and Windows 3.0 files
+use the -a option.
+
+
+OVERLAYS
+
+Programs that use overlays loaded from .EXE files may not run normally
+when in compressed form. PKLITE detects whether or not a program file
+contains internal overlays.
+
+Note:  PKLITE does not compress overlay data, however, the load image
+       data located before the overlay data is compressed. Some programs
+       require that the overlay data in the .EXE file be located at a specified
+       location in the .EXE file. These programs will not run correctly when
+       compressed with PKLITE. You can use the -x option to return these
+       programs to their original size.
+
+PKLITE also optimizes Windows relocations and unpacks files
+packed using EXEPACK. Examples of Windows resources are
+bitmaps, icons, and dialog boxes.
+
+When you use the -a option to compress executables that contain overlays,
+PKLITE automatically compresses those files.
+
+If you don't use the -a option when you are compressing overlays, PKLITE
+allows you to confirm whether or not you want to compress. For example, if
+the file you want to compress is called LIGHT.EXE you would type the
+following:
+
+     pklite  light.exe
+
+The following prompt appears:
+
+     LIGHT.EXE may contain overlays.  Compress (y/n)?
+
+To compress the file, type Y.
+
+To cancel compression, type N. The file is not compressed and the DOS
+prompt appears.
+
+
+
+WINDOWS 3.0 FILES
+
+When PKLITE compresses Windows 3.0 files, those files automatically
+become Windows 3.1 files. When PKLITE encounters a Windows 3.0 file, it
+reminds you that it is a WIndows 3.0 file and prompts you before it
+compresses. For example, if you compress a Windows 3.0 executable file
+called HEARTS.EXE, PKLITE would display the following prompt:
+
+     File HEARTS.EXE is a Windows 3.0 file. Compress (y/n)?
+
+To compress the file, type y. The file begins to compress. When it is finished,
+that file becomes a Windows 3.1 file.
+
+To "not" compress the file, type n. The file is not compressed.
+
+The -b Option - Creating a Backup of Executable File
+
+To create a backup copy of the executable file you are compressing, use the
+-b option. The backup copy contains a .BAK extension. For example, if the file
+you are compressing is called LIGHT.EXE, you would type the following:
+
+     pklite  -b  light.exe
+
+A backup copy of the file will be created. In this example, the file would be
+called LIGHT.BAK. If the original file was in a directory called GAMES,
+PKLITE would put LIGHT.BAK into the GAMES directory.
+
+Note:   If the current working directory contains a .BAK file with the same
+        name, PKLITE will overwrite that file.
+
+
+
+THE -c OPTION - ADD CHECKSUM FOR VALIDATION LOAD IMAGE
+
+This option is available only with DOS executables.
+
+To add a checksum to the header of the executable file, use the -c option. If
+you modify the executable after you add the checksum, PKLITE displays a
+checksum error.
+
+
+
+THE -d OPTION - DON'T COMPRESS DEVELOPER-DEFINED RESOURCS
+
+If you don't want to compress resources that have been created by individual
+developers, use the -d option.
+
+This option applies only to resources that were created by developers who
+wrote their own Windows resources. These resources can differ greatly from
+resources such as dialog boxes or icons. (Developer-defined resources may
+not use the Windows resource loader.)
+
+
+
+THE -e OPTION - USING EXTRA COMPRESSION
+
+This option is available only for the Professional version of PKLITE.
+
+With the Professional version of PKLITE, you can add extra compression to
+your executables by using the -e option. It also adds Program Segment Prefix
+(PSP). This option allows PKLITE to compress your files even smaller than
+the normal PKLITE compression method. For example, if the file you are
+compressing is called light.exe, you would type the following:
+
+     pklite  -e  light.exe
+
+When you use the -e option on an executable, you "cannot" expand that file
+using the PKLITE -x option. If you want to be able to expand your executable
+to its original size using PKLITE, do not use this extra compression method.
+
+The PSP signature is stored in the first file control block of the PSP, which is
+at offset 5C in the PSP. The executable program can check for this signature
+and abort if it doesn't find the signature. This assures that your executable
+program will not run if the PKLITE Professional compression is removed. The
+check would look something like the following:
+
+     if (* (unsigned short int far  *)MK_FP(_psp, 0x5C)  != )x4B50)
+
+
+
+
+THE -e- OPTION - USE EXTRA COMPRESSION WITHOUT PSP
+
+This option is available only for the Professional version of PKLITE, and can
+be used only with DOS executables.
+
+With the Professional version of PKLITE, you can add extra compression -
+"without" PSP signature -  to your executables by using the -e- option. This
+option works the same as the -e option, except that it does not include the
+PSP signature. Like the -e option, you cannot expand the executable to its
+original size using the PKLITE -x option.
+
+
+
+THE -f OPTION - FORCE FILE TO COMPRESS
+
+This option is available only for the Professional version of PKLITE.
+
+Some executables, especially smaller ones, might not become smaller using
+PKLITE - simply because there isn't much data in them to begin with and the
+overlying PKLITE code that is inserted into them actually adds space. In
+these instances, although you might not achieve the compression you want,
+PKLITE can still compress the data as it normally would. To achieve this
+compression, use the -f option.
+
+
+
+THE -g OPTION - LEAVE UNCOMPRESSED AREA IN FILE
+
+This option is available only for the Professional version of PKLITE, and can
+be used only with DOS executables.
+
+Some data in your executables can be marked by "signatures" that signifies
+that it is not to be compressed. With the -g option, you can have PKLITE
+leave this "uncompressed" data in the otherwise compressed executable.
+PKLITE scans the signature for the following:
+
+   PKLITE\x26\xA3[length byte]
+
+where [length byte] is a length, in bytes, of data to follow that should not be
+compressed. This allows you to designate explicit areas of the program that
+must not be compressed by PKLITE.
+
+
+
+THE -k OPTION - COMPRESS ONLY WINDOWS RESOURCES
+
+To compress only Windows resources, use the -k option.
+
+
+
+THE -l OPTION - DISPLAY SOFTWARE LICENSE SCREEN
+
+The -l option allows you to display the Software License Agreement
+information. Because you are not compressing anything with this option, just
+type the following:
+
+     pklite  -l
+
+
+THE -n OPTION - NEVER COMPRESS FILES WITH OVERLAYS, RESOURCES, OR
+WINDOWS 3.0 FILES
+
+With this option, PKLITE will "not" compress executable files that contain
+internal overlays, Windows resources, nor Windows 3.0 files. To compress
+such files but do not want the overlay data in the newly-compressed
+executable, use the -r option, which is described below.
+
+
+
+THE -o OPTION - OVERWRITE OUPUT FILE
+
+If you are specifying an output file (either by relocating or renaming a file), use
+the -o option if you want PKLITE to overwrite a file that exists in the target
+directory that has the same name. For example, if you are compressing a file
+called light.exe and you want to rename the newly-compressed file to
+LIGHT2.EXE, you would type something similar to the following:
+
+     pklite  -0  light.exe  C:\light2.exe
+
+If a file called light2.exe already exists in the C:\ directory, the new light2.exe
+will overwrite that file.
+
+
+
+THE -p OPTION - DON'T UNPACK FILES WITH EXEPACK
+
+This option is available only with DOS executables.
+
+With this option, PKLITE will not unpack files that were compressed by
+EXEPACK.
+
+
+
+THE -r OPTION - REMOVE OVERLAY DATA
+
+This option is available only with DOS executables.
+
+If your executables contain overlay data that you do not want in the resulting
+compressed file, use the -r option. PKLITE will remove this uncompressed
+data from the file.
+
+
+
+THE -s OPTION - USE SPECIFIED FILENAME AS THE STUB
+
+This option is available only for Windows executables.
+
+When you compress a Windows executable, you might want to include the
+"stub" or "header" of another file in your compressed executable file. For
+example, if you want to insert the message that warns the user about running
+a Windows executable from DOS window, you can grab that message (which
+is part of the stub) from another Windows file.
+
+To use this option, you must specify the Windows file from which you are
+grabbing the stub after the -s option. So if you are compressing a file called
+LIGHT.EXE and you want to use the "stub" from an executable called
+install.exe, you would type the following:
+
+     pklite  -sinstall.exe  light.exe
+
+Do not put a space between the -s and the name of the stub file.
+
+
+
+THE -u OPTION - UPDATING THE TIME AND DATE
+
+To make the time and date of the executable file to be the current time and
+date, use the -u option.
+
+
+
+THE -w OPTION - COMPRESS ONLY WINDOWS 3.0 FILES
+
+To compress only Windows 3.0 files, use the -w option.
+
+
+
+THE -x OPTION - EXPANDING A COMPRESSED FILE
+
+This option is available only for DOS executables.
+
+After you compress an executable with PKLITE, you can expand it back to its
+original size using the -x option. For example, if you compressed the file
+called light.exe and you decide that you don't want it compressed or you want
+to make changes to it, type the following:
+
+     pklite  -x  light.exe
+
+Note:   You cannot use the -x option if you used the extra compression
+        option, -e, to compress the files.
+
+
+
+
+SPECIFYING LOCATIONS AND CHANGING NAMES
+
+When you compress an executable file, you might not be in the location in
+which the file resides, or you might want to put the file in a different location.
+PKLITE allows you to specify that information right in the pklite command.
+With PKLITE, you can:
+
+*   Specify the location - including drive and directory path - of the file if
+    it's not in the current directory. For example:
+
+        pklite  C:\temp\light.exe
+
+    In this example, the file being compressed isn't on your current drive,
+    so the command specifies the drive and full directory path in which
+    the executable resides.
+
+*   Change the name of the file. For example:
+
+        pklite  C:\temp\light.exe  light2.exe
+
+    In this example, the executable file in C:\TEMP is compressed and
+    written to the current directory. The original file still remains in
+    C:\TEMP.
+
+*   Specify a new location, including drive and directory path.
+
+        pklite  C:\temp\light.exe  C:\temp\paper\light2.exe
+
+    In this example, the command puts the compressed executable file
+    in a different location "and" renames it.
+
+    Note:  You cannot use wildcards for output files. For example, you cannot
+           type:
+
+        pklite  C:\temp\light.exe  C:\temp\paper\light2*
+
+    In general, follow the rules for DOS for typing directory names, drive
+    names, and so on.
+
+
+
+
+--------------------------------------------------------------------------
+
+
+
+CHAPTER THREE:  INTERPRETING ERROR AND WARNING MESSAGES
+
+
+
+The following is a list of PKLITE error messages and warning messages,
+along with a description of each.
+
+An error message indicates a condition that makes PKLITE stop completely.
+For example, the error called Data error indicates that the newly-compressed
+file is corrupted and PKLITE cannot continue.
+
+A warning message represents a condition that mostly affects only one or
+more (but not all) files being compressed but usually does not terminate
+PKLITE. For example, if you are compressing three files and PKLITE can't
+compress the second file, PKLITE displays a warning message telling you
+that the second file won't be compressed, however, it will continue to
+compress the third file. Some warnings appear for informational purposes
+and do not affect the compression.
+
+Some errors and warnings apply only to DOS executables, some apply only
+to Windows executables, and some apply to both.
+
+
+
+ERROR MESSAGES FOR DOS ONLY
+
+The following error messages apply only to DOS executables:
+
+This error:                          Indicates the following:
+-------------------------------------------------------------
+
+File: <filename>: Packed             The executable compressed using
+file is corrupt                      EXEPACK is corrupt.
+
+EXE header has too many              The header section of the file contains
+items                                too much information to be compressed.
+                                     To correct this error, try to increase
+                                     the amount of memory available to PKLITE.
+
+No extract error code                You are attempting to expand a file but the
+                                     extract code is corrupted or missing.
+
+Data error                           An error has been detected in the com-
+                                     pressed data. The file is corrupted.
+
+Must use extra compres-              When you use the -g option, you must also
+sion when uncompressed               use the -e option, which allows for extra
+area option is used                  compression.
+                                     To correct, retype the command and include
+                                     the -e option.
+
+
+
+ERROR MESSAGES FOR WINDOWS ONLY
+
+The following error messages apply only to Windows executables:
+
+This error:                   Indicates the following:
+-------------------------------------------------------
+
+Original and expanded are     When PKLITE uncompressed the file and
+different                     compared it against the original file, they
+                              were different. They should be the same.
+
+
+
+ERROR MESSAGES FOR DOS AND WINDOWS
+
+The following errors apply to both DOS and Windows executables:
+
+This error:                        Indicates the following:
+------------------------------------------------------------
+
+Cannot open input file             PKLITE cannot open the executable you
+                                   have attempted to compress. Either a disk
+                                   error occurred, or the file is locked by
+                                   another application. Make sure it is a true
+                                   executable file.
+
+No files found                     PKLITE could not find any executables,
+                                   therefore, could not compress them.
+
+Could not open file                PKLITE could not open the executable file,
+                                   therefore, could not compress it.
+
+Could not open output file         PKLITE could not create the output file.
+                                   Either a disk error occurred, or the file is
+                                   locked by another application. If you have
+                                   specified an output file, make sure it is a
+                                   valid filename and location.
+
+Write error                        PKLITE created the output file, but could not
+                                   write it to diskette. Either a disk error has
+                                   occurred, or the file is locked by another
+                                   application.
+
+Disk full error                    Not enough disk space available on the des-
+                                   tination drive for the file being created.
+                                   PKLITE never deletes the original file until it
+                                   is finished writing the compressed file.
+                                   Therefore, there must be enough free disk
+                                   space for the compressed file and the origi-
+                                   nal file.
+                                   To correct this error, try to free up more disk
+                                   space.
+
+Read error                         PKLITE cannot read a specified file.
+                                   To correct this error, check the file to make
+                                   sure it is not corrupt.
+
+Create error                       PKLITE could not create the named file.
+                                   To correct this error, check the output
+                                   directory; it might be invalid or full.
+
+Memory error                       There is insufficient memory available to
+                                   process the command.
+                                   To correct this error, try to free up more
+                                   memory. PKLITE requires a minimum of
+                                   85K of memory.
+
+Cannot compress file into          The file being compressed and the output
+itself                             file are the same.
+                                   To correct this error, make sure to specify
+                                   an output file that is different than the file
+                                   you are compressing. For example:
+
+                                      pklite  pat.exe  jim.exe
+
+Compressing many files             You are attempting to compress multiple
+into one file error                files into one output file.
+                                   To correct this error, retype the command
+                                   correctly.
+
+Output wildcards error             The output path cannot contain any wildcard
+                                   characters (for example, * or ?).
+                                   To correct this error, retype the command
+                                   correctly.
+
+
+
+WARNING MESSAGES FOR DOS ONLY
+
+The following warning messages apply only to DOS executables:
+
+Note:	The <filename> notation below represents the file for which the error
+      applies.
+
+This warning:                      Indicates the following:
+------------------------------------------------------------
+
+File: <filename>: is com-          You have used the -p option to not unpack
+pressed with EXEPACK               files compressed with EXEPACK before
+                                   compressing with PKLITE.
+compressing packed file            This message appears only if you have
+                                   selected the -p option and serves as a
+                                   reminder that PKLITE will compress the file
+                                   without unpacking it.
+
+File: <filename>: is com-          You have used the -a option to always com-
+pressed with EXEPACK               press files that are packed. PKLITE unpacks
+                                   the file before compressing it.
+unpacking before compression       This message appears only if you have
+                                   selected the -a option.
+
+File: <filename>: is com-          PKLITE has encountered a packed
+pressed with EXEPACK               executable, but you have not specified the
+                                   -a or -p options that tell PKLITE how to han-
+Unpack (Y/N)?                      dle this file.
+                                   To continue, type one of the following at the
+                                   Unpack (Y/N)? prompt:
+
+                                   Y = Unpack the EXEPACK data, then compress
+                                       with PKLITE.
+
+                                   N = Don't unpack the EXEPACK data and
+                                       compress the entire file.
+
+
+File: <filename>: loads into       Data in high memory cannot be compressed.
+high memory and cannot
+be compressed
+
+File: <filename>: may con-         You used the -n option, which tells
+tain overlays, file not            PKLITE not to compress files with overlays.
+compressed                         This message appears only when you use
+                                   the -n option and serves as a reminder that
+                                   you use that option.
+
+File: <filename>: cannot be        You used the -e option to compress this file
+expanded                           originally. Therefore, you cannot expand the
+                                   file using the -x option.
+
+File: <filename>: cannot be        You are using an older version of PKLITE.
+expanded, incorrect version        Make sure to run the current version of PKLITE
+
+
+File: <filename>: Extra            You cannot use the -e option (extra com-
+compression not available          pression) with .SYS files. PKLITE will pro-
+for .SYS files, using normal       ceed with normal compression.
+compression.
+
+File: <filename>: Extra            You cannot use the -e option (extra com-
+compression not available          pression) with .COM files. PKLITE will pro-
+for .COM files, using nor-         ceed with normal compression.
+mal compression.
+
+File: <filename>: Check-           PKLITE does not perform checksums on
+sum option not available           .SYS files. PKLITE will proceed with normal
+for .SYS files, option             compression.
+ignored for this file.
+
+File: <filename>: Check-           PKLITE does not perform checksums on
+sum option not available           .COM files. PKLITE will proceed with normal
+for .COM files, option             compression.
+ignored for this file
+
+File: <filename>: Rear-            This message appears when you use the -a
+ranging relocation data for        option, which allows PKLITE to optimize
+better compression                 relocations.
+
+
+File: <filename>: Unopti-          This message appears when you do not use
+mal relocation data                the -a option, which allows PKLITE to opti-
+detected, rearrange for            mize relocations.
+better compression
+                                   To continue, type one of the following at the
+                                   (y/n)? prompt:
+
+                                   Y = Rearrange unoptimal relocation data for
+                                       better compression.
+
+                                   N = Don't rearrange unoptimal relocation
+                                       data for better compression.
+
+
+File: <filename>: is not           You used the -x option, which expands the
+compressed                         file. PKLITE does not compress the file with
+                                   the -x option.
+
+File: <filename>: could not        The file you specified is too small to
+                                   compress (less than 400 bytes), or too large
+                                   be compressed
+
+
+
+
+
+
+WARNING MESSAGES FOR WINDOWS ONLY
+
+The following warning messages apply only to Windows executables:
+
+This warning:                                Indicates the following:
+----------------------------------------------------------------------
+
+File: <filename>: Unpack option not          You are using the -p option,
+available for Windows files, option          which is not available for
+ignored                                      Windows executables.
+
+File: <filename>: is a Windows file          Windows files cannot be
+                                             expanded (uncompressed)
+                                             and cannot be expanded
+
+File: <filename>: Removing overlays          You are using the -r option, which
+option not available for Windows files,      is not available for Windows exe-
+option ignored                               cutables.
+
+File: <filename>: extra compression          You cannot use the -e- option
+option without PSP signature not             (extra compression without PSP
+available, using extra compress              signature) with Windows
+                                             executables. PKLITE will proceed
+                                             with extra compression.
+
+File: <filename>: original and               The segments for the original and
+expanded are different                       expanded executable files are
+                                             different.
+                                             After compressing the executable
+                                             segments, PKLITE verifies that
+                                             the segments were compressed
+                                             correctly.
+
+File: <filename>: too small to com-          The file you want to compress is
+press                                        too small.
+
+File: <filename>: is not a valid Win-        The file is not a valid Windows
+dows file                                    executable file.
+
+
+File: <filename>: does not have a            The old-style header in the exe-
+valid Windows EXE header                     cutable file being compressed is
+                                             not valid. The header might be
+                                             corrupted.
+
+File: <filename>: has a bad NEW              The new-style header in the exe-
+EXE file header                              cutable file is not valid. The
+                                             header might be corrupted.
+
+File: <filename>: does not contain           The executable file you are trying
+segments                                     to compress does not contain any
+                                             segments.
+
+File: <filename>: contains too many          The executable file you are trying
+segments                                     to compress contains too many
+                                             segments.
+
+File: <filename>: has lost an imported       PKLITE could not find an
+file name                                    imported filename.
+
+
+File: <filename>: does not use               The executable file being com-
+KERNEL                                       pressed does not use the
+                                             Windows kernel.
+
+File: <filename>: new segment could          A segment of the executable file
+not be aligned                               could not be aligned properly by
+                                             PKLITE.
+
+File: <filename>: bad or unknown             PKLITE cannot find or does not
+STUB file being given                        recognize the stub or header file
+                                             that you specified on the com-
+                                             mand line.
+
+File: <filename>: STUB file is not an        The stub or header file you speci-
+EXE file                                     fied is not part of an EXE file. The
+                                             file you specify on the command
+                                             line must be an executable file.
+
+File: <filename>: bad format for win-        The format for the stub or header
+dows STUB file                               file information is invalid.
+
+
+File: <filename>: too many reloca-           One of the segments of the exe-
+tions for only one segment                   cutable file contains too many
+                                             relocations.
+
+File: <filename>: resources could not        Some of the resources in the exe-
+be aligned                                   cutable file could not be aligned.
+
+
+
+
+WARNING MESSAGES FOR DOS AND WINDOWS
+
+The following warning messages apply only to DOS executables:
+
+This warning:                                Indicates the following:
+----------------------------------------------------------------------
+
+File grew in size and could not be           The file being compressed got
+compressed.                                  bigger and was not compressed.
+                                             To compress files that get
+                                             bigger during compression, use
+                                             the -f option.
+
+File: <filename>: is a restricted file       Some executables cannot be
+name that cannot be compressed               compressed by PKLITE. When-
+                                             ever PKLITE encounters one of
+                                             these files, it will only display this
+                                             warning message.
+
+
+File: <filename>: is already compressed      The executable file you want to
+                                             compress has already been compressed.
+
+File does not have a valid extension:        PKLITE does not recognize the
+<filename>                                   extension on this file and cannot
+                                             compress the file.
+
+
+File: <filename> is read-only,               Read-only files cannot be com-
+skipping, must specify an output file        pressed into the executable. You
+                                             must direct it to an output file.
+                                             To do so, follow the name of the
+                                             executable file in your command
+                                             with the name of an output file.
+
+File: <filename> is a Win32 program          PKLITE cannot compress Win32 files.
+and cannot be compressed.
+
+
+

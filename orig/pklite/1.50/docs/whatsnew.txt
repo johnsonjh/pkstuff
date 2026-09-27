@@ -1,0 +1,40 @@
+**************************************************************************
+*** Important information for use with PKLITE (R)                      ***
+*** Copyright 1990,1991,1992,1995, by PKWARE Inc. All Rights Reserved. ***
+*** PKLITE Reg. U.S. Pat. and Tm. Off.                                 ***
+**************************************************************************
+
+The following changes are included in version 1.50 of PKLITE. Some features
+are new, and some are changes to existing features.
+
+- Added the ability to compress DOS device drivers  (.SYS and .DRV).
+
+- Added the ability to uncompress files compressed with EXEPACK - before the
+  file is compressed by PKLITE.  This feature increases the compressibility
+  of the file and improves the load speed.
+
+- Added code to the extractor for passing original value of AX register
+  to the program.
+
+- Changed "Not enough memory" exit from a compressed executable to
+  set Errorlevel to 1 upon exit.
+
+- Corrected bug with not identifying Windows and OS/2 programs correctly
+  in version 1.15.
+
+- Changed routine used to check for compressed files in CHK4LITE and PKLITE
+  for compatibility with changes in extraction code.
+
+- The program will now automatically identify non-optimal relocation data in
+  the executable file and prompt the user to optimize.  Therefore, the HDROPT
+  program is no longer included.
+
+- Added the -P option which will never unpack files compressed with
+  EXEPACK.  This option overrides the new ability of PKLITE to automatically
+  uncompress files compressed with EXEPACK - before the file is compressed.
+
+
+Chk4Lite:
+
+- Changes were made to properly identify all versions of PKLITE
+  compressed executables.
