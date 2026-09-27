@@ -81,7 +81,7 @@ We have the DOS PKZIP 2.50 release available as original binaries, as well as
 ## PKZIP utilities
 
 The for *first time*, updated versions of my classic PKZIP utilities are
-available here and distributed under the open source MIT license.
+being made available and distributed under the open source MIT license.
 
 ### Authenticity Verification
 
