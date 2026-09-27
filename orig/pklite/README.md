@@ -66,20 +66,19 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 * After examining ***hundreds*** of PKLITE "1.20 Professional" versions,
   *every* *single* *one* was the same (***fake***) hack of PKLITE 1.12
-  Professional.  (You can use Jason Summers'
+  Professional.  You can use Jason Summers'
   [`pkla.py`](https://github.com/jsummers/pkla) utility to easily identify
-  fake PKLITE 1.20 Professional versions by their `-e` output.)
+  fake PKLITE 1.20 Professional versions by their `-e` output.
 
 * I **will not** be distributing the fake "1.20 Professional" releases here
   (because it is not just misleading but *useless*, as it is essentially
-  identical to the *legitimate* PKLITE 1.12 Professional release).
-
-* **It is most likely the real PKLITE "1.20 Professional" was an internal
-  PKWARE tool and was never made available as a public release.**
+  identical to the *legitimate* PKLITE 1.12 Professional release). **It is
+  most likely the real PKLITE "1.20 Professional" was an internal PKWARE tool
+  and was never made available as a public release.**
 
 ### Other PKLITE versions
 
-* I am not currently interested in collecting, analyzing, or unpacking
+* I am currently *not interested* in collecting, analyzing, or unpacking
   and patching PKLITE releases *older* than 1.11 (unless it's something
   *very* special).  I am actively seeking legitimate releases of PKLITE
   **1.50 Professional** and PKLITE **2.01 Professional**.  If you have a
