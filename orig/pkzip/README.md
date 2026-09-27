@@ -3,7 +3,7 @@
 <!-- toc -->
 
 - [PKZIP 2.05/2.06](#pkzip-205206)
-  * [IBM PKZIP 2.06](#ibm-pkzip-206)
+- [IBM PKZIP 2.06](#ibm-pkzip-206)
 - [PKZIP 2.50](#pkzip-250)
 - [PKZIP utilities](#pkzip-utilities)
   * [Authenticity Verification](#authenticity-verification)
@@ -45,7 +45,7 @@ The above directories are meant to be *additive* (*or cumulative*):
 > **IBM Licensed** 2.06 release, but you should read the following section
 > for more details first.
 
-### IBM PKZIP 2.06
+## IBM PKZIP 2.06
 
 > [!NOTE]
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
