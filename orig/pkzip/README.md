@@ -85,15 +85,15 @@ available here and distributed under the open source MIT license.
 
 ### Authenticity Verification
 
-Since PKAV (Authenticity Verification) feature of earlier PKZIP 1.x was
+Since the Authenticity Verification (PKAV) feature of the older PKZIP 1.x was
 trivially compromised (see
 [40Hex, Number 8, Volume 2, Issue 4, File 3: FindAV v1.5 (July 27 1992)](https://newtotse.com/oldtotse/en/zines/chaos/chaos166.html),
 a completely new PKAV system was introduced with PKZIP 2.x.   The new scheme
-was also quickly compromised, with PKAV 2.x keygens appearing in 1993.  PKAV
+was also quickly compromised with PKAV 2.x keygens appearing in 1993.  PKAV
 began to be phased out of PKZIP in version 4.0 (which introduced modern
-cryptography), with support removed in PKZIP 7.0.  PKAV still a fun feature of
-classic DOS PKZIP, but no source code was ever released showing how it works,
-*until now*.
+cryptography), and support was removed in PKZIP 7.0.  PKAV still a fun feature
+of the classic DOS PKZIP, but no source code was ever released showing how it
+works, *until now*.
 
 #### `MAKEAV`
 
