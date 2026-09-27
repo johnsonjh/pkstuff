@@ -60,7 +60,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   is able to decrypt and unpack this `TEDSUO II [TED/UCF]` file, without
   executing any of its code directly.  It is currently specific to this file,
   but if other files are found that use the same packer, it would possible to
-  create a generic of the unpacking tool.
+  create a generic version of the unpacking tool.
 
 ### Fake PKLITE Professinal 1.20
 
