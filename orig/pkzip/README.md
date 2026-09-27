@@ -57,7 +57,7 @@ archives).
 
 ## External links
 
-* For more detailed information about PKZIP see the
-  [Common ZIP specificatin](https://commonzip.org/), the
-  [PCjs PKZIP History article](https://www.pcjs.org/blog/2025/04/05/), and the
-  [Just Solve PKZIP article](http://justsolve.archiveteam.org/wiki/PKZIP).
+* For more detailed information about PKZIP see:
+  * [Common ZIP specificatin](https://commonzip.org/)
+  * [PCjs PKZIP History article](https://www.pcjs.org/blog/2025/04/05/)
+  * [Just Solve PKZIP article](http://justsolve.archiveteam.org/wiki/PKZIP)

@@ -23,11 +23,12 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 * The ***UCF Fake*** **1.50** version is a hacked release, *very similar* to
   the very widely distributed (but ***equally fake***) so-called
-  "*1.20 Professional*" version, we describe in the next section.
+  "*1.20 Professional*" version, which will be described in the
+  following section.
 * The UCF release *does* enable the `-e` option, and it does change the
-  output just enough to confuse the `-x` decompression option, but it does
-  **not** actually create a "scrambled" decompression stub or do any of the
-  other things that the real Professional version do.
+  output *just enough* to confuse the official PKLITE `-x` decompression
+  option, but it does **not** actually create a "scrambled" decompression stub
+  or do any of the other things that the real Professional version do.
 * The fake UCF 1.50 release was encrypted and compressed using a *warez scene*
   (`TEDSUO II [TED/UCF] PaCKeD`) polymorphic executable packer (which I was
   able to reverse engineer without *too* much hassle).  I have included a
@@ -55,7 +56,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 ## External links
 
-* For more detailed information about PKLITE see
-  [Jason Summers' PKLITE articles](https://entropymine.wordpress.com/tag/pklite/),
-  the [ModdingWiki PKLITE article](https://moddingwiki.shikadi.net/wiki/PKLite),
-  and the [Just Solve PKLITE article](http://justsolve.archiveteam.org/wiki/PKLITE).
+* For more detailed information about PKLITE see:
+  * [Jason Summers' PKLITE articles](https://entropymine.wordpress.com/tag/pklite/)
+  * [ModdingWiki PKLITE article](https://moddingwiki.shikadi.net/wiki/PKLite)
+  * [Just Solve PKLITE article](http://justsolve.archiveteam.org/wiki/PKLITE)
