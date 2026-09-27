@@ -13,6 +13,8 @@
 
 <!-- tocstop -->
 
+---
+
 ## PKZIP 2.04
 
 The latest DOS PKZIP 2.04 releases are archived here, both in their

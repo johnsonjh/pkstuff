@@ -2,16 +2,18 @@
 
 <!-- toc -->
 
-  * [`zip2exe_unpack.py`](#zip2exe_unpackpy)
-  * [`pksfx_text_tool.py`](#pksfx_text_toolpy)
-    + [Disable `PKSFX` herald](#disable-pksfx-herald)
-  * [`pksfx_resource_tool.py`](#pksfx_resource_toolpy)
-    + [Resource inspection](#resource-inspection)
-    + [Resource dump](#resource-dump)
-    + [Resource patching](#resource-patching)
+- [`zip2exe_unpack.py`](#zip2exe_unpackpy)
+- [`pksfx_text_tool.py`](#pksfx_text_toolpy)
+  * [Disable `PKSFX` herald](#disable-pksfx-herald)
+- [`pksfx_resource_tool.py`](#pksfx_resource_toolpy)
+  * [Resource inspection](#resource-inspection)
+  * [Resource dump](#resource-dump)
+  * [Resource patching](#resource-patching)
 - [External links](#external-links)
 
 <!-- tocstop -->
+
+---
 
 ## `zip2exe_unpack.py`
 
@@ -175,7 +177,7 @@ wrote: new_pksfx.exe
 sha256: 110400674b0e4f921ff351241b2e7ef1d7350164f11fc0d3d117e0aaab23e2c9
 ```
 
-# External links
+## External links
 
 * [Jason Summers'](https://github.com/jsummers/pkla) utilities:
   * [`deark`](https://github.com/jsummers/deark)
