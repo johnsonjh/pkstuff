@@ -71,11 +71,12 @@ We have the DOS PKZIP 2.50 release available as original binaries, as well as
 | [`2.50/registered`](2.50/registered)          | PKZIP 2.50 Registered     | 03-01-99 |
 
 > [!WARNING]
-> The later (and last) DOS PKZIP **2.50** release is unfortunately **NOT**
-> **recommended for usage**.  It has **known bugs** and subtle issues when
-> used on vintage machines that have caused much user frustration.  You
-> *really* should be using the classic **2.04g** (or **2.06**) releases unless
-> you have a **very** **specific** reason not to.
+> This is the newest (and last) PKZIP release, **2.50**, but unfortunately
+> is is **NOT** **recommended for most users**.  It has **known bugs** (and
+> subtle issues) when used on vintage machines that have caused much user
+> frustration.  You *really* should be using the classic **2.04g**
+> (or **2.06**) releases unless you have a **very** **specific** reason
+> not to.
 
 ## PKZIP utilities
 
