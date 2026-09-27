@@ -56,7 +56,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 ## External links
 
-* For more detailed information about PKLITE see:
-  * [Jason Summers' PKLITE articles](https://entropymine.wordpress.com/tag/pklite/)
-  * [ModdingWiki PKLITE article](https://moddingwiki.shikadi.net/wiki/PKLite)
-  * [Just Solve PKLITE article](http://justsolve.archiveteam.org/wiki/PKLITE)
+For more detailed information about PKLITE see:
+* [Jason Summers' PKLITE articles](https://entropymine.wordpress.com/tag/pklite/)
+* [ModdingWiki PKLITE article](https://moddingwiki.shikadi.net/wiki/PKLite)
+* [Just Solve PKLITE article](http://justsolve.archiveteam.org/wiki/PKLITE)

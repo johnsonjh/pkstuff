@@ -8,18 +8,14 @@ as binaries that have been ***properly*** unpacked, decrypted, and
 *PSP patched* when necessary.  The unpacked versions are useful for further
 reverse engineering and analysis and also load faster on slow machines
 (like 8086/8088 systems).
-[]()
 
-[]()
-|                            Directory | Description               | Date        |
-|-------------------------------------:|:--------------------------|:------------|
-| [`2.04/docs`](2.04/docs)             | PKZIP 2.04 Documentation  | 1993-1994   |
-| [`2.00/shareware`](2.04/shareware)   | PKZIP 2.04g Shareware     | 02-01-1993  |
-| [`2.04/registered`](2.04/registered) | PKZIP 2.04g Registered    | 02-01-1993  |
-| [`2.04/ibm`](2.04/ibm)               | PKZIP 2.06 (IBM Licensed) | 01-24-1994  |
-[]()
+|                            Directory | Description                   | Date        |
+|-------------------------------------:|:------------------------------|:------------|
+| [`2.04/docs`](2.04/docs)             | PKZIP 2.04 Documentation      | 1993-1994   |
+| [`2.04/shareware`](2.04/shareware)   | PKZIP 2.04g Shareware         | 02-01-1993  |
+| [`2.04/registered`](2.04/registered) | PKZIP 2.04g Registered        | 02-01-1993  |
+| [`2.04/ibm`](2.04/ibm)               | PKZIP **2.06** (IBM Licensed) | 01-24-1994  |
 
-[]()
 The above directories are meant to be *additive* (*or cumulative*):
 * The files in the **Documentation** directory apply to PKZIP versions.
 * The files in the **Shareware** directory represent the complete PKZIP
@@ -64,7 +60,7 @@ The above directories are meant to be *additive* (*or cumulative*):
 
 ## External links
 
-* For more detailed information about PKZIP see:
-  * [Common ZIP specificatin](https://commonzip.org/)
-  * [PCjs PKZIP History article](https://www.pcjs.org/blog/2025/04/05/)
-  * [Just Solve PKZIP article](http://justsolve.archiveteam.org/wiki/PKZIP)
+For more detailed information about PKZIP see:
+* [Common ZIP specificatin](https://commonzip.org/)
+* [PCjs PKZIP History article](https://www.pcjs.org/blog/2025/04/05/)
+* [Just Solve PKZIP article](http://justsolve.archiveteam.org/wiki/PKZIP)
