@@ -65,9 +65,10 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 ### Fake PKLITE Professional 1.20
 
 * After examining ***hundreds*** of PKLITE "1.20 Professional" versions,
-  and *every* *single* *one* is the same (fake) 1.12 Professional hack.  You
-  can use Jason Summers' [pkla](https://github.com/jsummers/pkla) utility to
-  easily identify the fake Professional 1.20 versions by their `-e` output.
+  *every* *single* *one* was the same (**fake**) hack of PKLITE 1.12
+  Professional.  (You can use Jason Summers'
+  [pkla](https://github.com/jsummers/pkla) utility to easily identify the
+  fake Professional 1.20 versions by their `-e` output.)
 
 * I **will not** be distributing any fake "1.20 Pro" releases here (because
   they are not only misleading but *useless*, because they are essentially
