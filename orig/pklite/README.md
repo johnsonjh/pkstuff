@@ -28,12 +28,12 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   output just enough to confuse the `-x` decompression option, but it does
   **not** actually create a "scrambled" decompression stub or do any of the
   other things that the real Professional version do.
-* The fake UCF 1.50 release was encrypted and compressed using a warez scene
-  (`[TED/UCF]`) polymorphic executable packer (which I was able to reverse
-  engineer without too much hassle).  I have included a Python-based
-  [`unpacker`](1.50f/unpacked/ted_unpack.py), which is specific to this file.
-  * If other files are found that use this same packer, it should be possible
-    to create a generic version of this unpacking tool.
+* The fake UCF 1.50 release was encrypted and compressed using a *warez scene*
+  (`TEDSUO II [TED/UCF] PaCKeD`) polymorphic executable packer (which I was
+  able to reverse engineer without *too* much hassle).  I have included a
+  Python-based [`unpacker`](1.50f/unpacked/ted_unpack.py), which is specific
+  to this file.  If other files are found that use this same packer, it should
+  be possible to create a generic version of this unpacking tool.
 
 ### Fake PKLITE Pro 1.20
 
@@ -41,9 +41,9 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   and *every* *single* *one* is the same (fake) 1.12 Pro hack.  You can use
   Jason Summers' [pkla](https://github.com/jsummers/pkla) utility to easily
   identify the fake Pro versions by their `-e` output.
-* I **will not** be distributing fake 1.20 Pro releases here (because they
-  are misleading and also useless, because they are essentially identical to
-  the legitimate 1.12 Pro).
+* I **will not** be distributing any fake 1.20 Pro releases here (because they
+  are misleading and also *useless*, because they are essentially identical
+  to the legitimate 1.12 Pro).
 
 ## Latest versions
 
