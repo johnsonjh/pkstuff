@@ -41,20 +41,24 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 * The ***UCF Fake*** **1.50** version is a ***hacked release***,
   *very similar* to the very widely distributed (but ***equally fake***)
-  so-called "1.20 Professional" version, which will be described in the
-  following section.
+  so-called "1.20 Professional" described below.
 
-* The UCF release *does* enable the `-e` option, and it does change the
-  output *just enough* to confuse the official PKLITE `-x` decompression
-  option, but it does **not** actually create a "scrambled" decompression stub
+* The UCF release *does* enable the `-e` option, which *does* change the
+  output *just enough* to confuse the official PKLITE `-x` decompressor,
+  but it does **not** actually create a "scrambled" decompression stub
   or do any of the other things that the real Professional version would do.
 
-* The fake UCF 1.50 release was encrypted and compressed using a *warez scene*
-  (**`TEDSUO II [TED/UCF] PaCKeD`**) polymorphic executable packer (which
-  I was able to reverse engineer without *too* much hassle).  I have included
-  a Python-based [`unpacker`](1.50f/unpacked/ted_unpack.py), which is specific
-  to this file.  If other files are found that use this same packer, it should
-  be possible to create a generic version of this unpacking tool.
+* The fake UCF 1.50 release was encrypted and compressed using a "*warez*"
+  *scene*" (**`TEDSUO II [TED/UCF] PaCKeD`**) polymorphic executable packer,
+  which I was able to reverse engineer without too much hassle.
+
+#### `TEDSUO II [TED/UCF]` unpacker
+
+* I have included a Python-based [`unpacker`](1.50f/unpacked/ted_unpack.py)
+  for it, which is able to decrypt and unpack this `TEDSUO II [TED/UCF]` file
+  (and without running any of its code directly).  It is currently specific to
+  this file, but if other files are found that use the packer, it would
+  possible to create a generic of the unpacking tool.
 
 ### Fake PKLITE Professinal 1.20
 
