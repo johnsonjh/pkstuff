@@ -80,7 +80,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 * I am currently *not interested* in collecting, analyzing, or unpacking
   and patching PKLITE releases *older* than 1.11 (unless it's something
-  *very* special).  I am actively seeking legitimate releases of PKLITE
+  *very* special).  I am **actively seeking** legitimate releases of PKLITE
   **1.50 Professional** and PKLITE **2.01 Professional**.  If you have a
   copy, please open a
   [GitHub Issue](https://github.com/johnsonjh/pkstuff/issues/new).
