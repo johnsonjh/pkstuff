@@ -3,9 +3,15 @@
 
 set -e
 
+# Set `WATCOM` in your environment to the root of where you have Open
+# Watcom V2 installed. We look for it in `/opt/watcom` by default.
+# If it is not available DOS compilation will be skipped.
+
 test -z "${WATCOM:-}" && export WATCOM="/opt/watcom"
 export INCLUDE="${WATCOM:?}/h"
 export PATH="${WATCOM:?}/binl64:${PATH:-}"
+
+# Cleanup
 
 test -x ./clean.sh || {
   printf '%s\n' "No executable ./clean.sh, aborting."
@@ -13,6 +19,8 @@ test -x ./clean.sh || {
 }
 
 ./clean.sh || :
+
+# Open Watcom V2 DOS build
 
 OWCC="$(command -v owcc)" || :
 
@@ -44,6 +52,8 @@ test -d "${WATCOM:-}" && {
   }
 }
 
+# Native build
+
 command -v "${CC:?}" > /dev/null 2>&1 && {
   CFLAGS="-std=c89 -Os -s"
 
@@ -58,5 +68,7 @@ command -v "${CC:?}" > /dev/null 2>&1 && {
 
   printf '%s\n' ""
 }
+
+# Done
 
 exit 0
