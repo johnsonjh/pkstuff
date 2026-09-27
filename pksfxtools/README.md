@@ -1,11 +1,24 @@
 # PKSFX Tools
 
+<!-- toc -->
+
+  * [`zip2exe_unpack.py`](#zip2exe_unpackpy)
+  * [`pksfx_text_tool.py`](#pksfx_text_toolpy)
+    + [Disable `PKSFX` herald](#disable-pksfx-herald)
+  * [`pksfx_resource_tool.py`](#pksfx_resource_toolpy)
+    + [Resource inspection](#resource-inspection)
+    + [Resource dump](#resource-dump)
+    + [Resource patching](#resource-patching)
+- [External links](#external-links)
+
+<!-- tocstop -->
+
 ## `zip2exe_unpack.py`
 
 The `zip2exe_unpack` utility extracts the decompression stubs from the
 (de-PKLITE'd) Registered or Shareware version of `ZIP2EXE.EXE`.
 
-```sh
+```
 usage: zip2exe_unpack.py [-h] [-o OUTPUT_DIR] [--deark [DEARK]] [--force] [--list-candidates] input
 
 positional arguments:
@@ -29,7 +42,11 @@ them *in-place* (in the `PKSFX` binary itself) and also disables de-obfuscation
 engine, so the output binary can be easily modified further, with the
 now de-obfuscated text in place.
 
-```sh
+> [!NOTE]
+> Jason Summers' `pkstrings.py` tool calls the main messages block `strings_1`
+> and the error message block `strings_2`.
+
+```
 usage: pksfx_text_tool.py [-h] [-d DIR] [-p FILE] input
 
 positional arguments:
@@ -45,10 +62,6 @@ The `pksfx_text_tool.py` supports working with stubs that have been
 reconstructed with the `pksfx_resource_tool.py` utility, further described
 in the next section.
 
-> [!NOTE]
-> Jason Summers' `pkstrings.py` tool calls the main messages block `strings_1`
-> and the error message block `strings_2`.
-
 > [!IMPORTANT]
 > The `pksfx_text_tool.py` tool does not yet support de-obfuscating the
 > herald (which Jason Summers' `pkstrings.py` refers to as the `intro`).
@@ -57,7 +70,7 @@ in the next section.
 
 Don't like the `PKSFX` herald?
 
-```sh
+```
 PKSFX (R)   FAST!   Self Extract Utility   Version 2.04g   02-01-93
 Copr. 1989-1993 PKWARE Inc. All Rights Reserved. Registered version
 PKSFX Reg. U.S. Pat. and Tm. Off.
@@ -66,7 +79,7 @@ PKSFX Reg. U.S. Pat. and Tm. Off.
 It can be disabled.  In the either of the v2.04g (de-PKLTED'd)
 Registered or Shareware stubs:
 
-```sh
+```
 12DF: FF -> 90
 12E0: D0 -> 90
 ```
@@ -83,7 +96,7 @@ of the obfuscated text resources in the full (de-PKLITE'd) *Registered 2.04g*
 
 ### Resource inspection
 
-```sh
+```
 $ pksfx_resource_tool.py -h
 usage: pksfx_resource_tool.py [-h] {info,dump,patch} ...
 
@@ -112,7 +125,7 @@ help              0x003F62      638      630      629        8  03B7:0372
 
 ### Resource dump
 
-```sh
+```
 $ pksfx_resource_tool.py dump -h
 usage: pksfx_resource_tool.py dump [-h] input output
 
@@ -138,7 +151,7 @@ drwxr-xr-x 5 user user 4096 Sep 27 11:56 ..
 
 ### Resource patching
 
-```sh
+```
 $ ./pksfx_resource_tool.py patch --help
 usage: pksfx_resource_tool.py patch [-h] --registered REGISTERED
        --license LICENSE --help-text HELP -o OUTPUT input
