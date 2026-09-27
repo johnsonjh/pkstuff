@@ -1,7 +1,7 @@
 /*****************************************************************************/
 
 /*
- * MAKEAV: PKZIP 2.04/2.06 Authenticity Verification Generator
+ * MAKEAV: PKZIP 2.04/2.06/2.50 Authenticity Verification Generator
  * Copyright (c) 1994-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
  * SPDX-License-Identifer: MIT
  * scspell-id: cc8880ec-b88c-11f1-919c-80ee73e9b8e7
@@ -609,7 +609,7 @@ main (void)
     }
 
   (void)printf ("\nMAKEAV:");
-  (void)printf (" PKZIP 2.04/2.06 Authenticity Verification Generator\n");
+  (void)printf (" PKZIP 2.04/2.06/2.50 Authenticity Verification Generator\n");
   (void)printf ("Copyright (c) 1994-2026");
   (void)printf (" Jeffrey H. Johnson <johnsonjh.dev@gmail.com>\n");
   (void)printf ("Source available: https://github.com/johnsonjh/pkstuff/\n\n");
