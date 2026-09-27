@@ -92,7 +92,7 @@ being released under available under the open source MIT license.
 
 ### `PKLAXFIX`
 
-* The [`PKLAXFIX`](../../pklaxfix.c) "PKLITE Executable Postprocessor (AX
+* The [`PKLAXFIX`](../pklaxfix.c) "PKLITE Executable Postprocessor (AX
   restoration fix)" utility fixes a bug present in the generated compressed
   executables of **all** versions of PKLITE before 1.50, where the `AX`
   register was not properly restored after decompression.  Some DOS programs
@@ -102,7 +102,7 @@ being released under available under the open source MIT license.
 
 ### `PKPSPFIX`
 
-* The [`PKPSPFIX`](../../pkpspfix.c) "PKLITE Executable Postprocessor
+* The [`PKPSPFIX`](../pkpspfix.c) "PKLITE Executable Postprocessor
   (add PSP protection code)" is an open source utility used to patch
   *decompressed* executables (previously compressed with PKLITE) that look for
   a [PSP signature](http://justsolve.archiveteam.org/wiki/PKLITE#PSP_signature)
@@ -123,7 +123,7 @@ being released under available under the open source MIT license.
 > PKLITE 2.01 compressed with are **not compatible** with systems using
 > 8086/8088 processors with patching!
 
-* The [`PKL2FIX`](../../pkl2fix.c) "PKLITE 2.01 Executable Postprocessor" is an
+* The [`PKL2FIX`](../pkl2fix.c) "PKLITE 2.01 Executable Postprocessor" is an
   open source utility that patches PKLITE 2.01 generated compressed
   executables to make them compatible with systems using 8086/8088 CPUs.
 

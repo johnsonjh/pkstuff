@@ -97,14 +97,14 @@ works, *until now*.
 
 #### `MAKEAV`
 
-* The [`MAKEAV`](../../makeav.c) "PKZIP 2.04/2.06/2.50 Authenticity
+* The [`MAKEAV`](../makeav.c) "PKZIP 2.04/2.06/2.50 Authenticity
   Verification Generator" utility is an open source keygen tool that
   generates the two serial numbers needed to enable PKAV for any given
   company name.
 
 #### `PUTAV`
 
-* The [`PUTAV`](../../putav.c) "PKZIP 2.04/2.06/2.50 Put Authenticity
+* The [`PUTAV`](../putav.c) "PKZIP 2.04/2.06/2.50 Put Authenticity
   Verification" utility is an open source clone of the PKWARE `PUTAV` utility
   distributed with registered PKZIP releases.  It embeds the PKAV code
   directly into (registered) `PKZIP.EXE` 2.04/2.06/2.50 executables, enabling
