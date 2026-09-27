@@ -5,7 +5,7 @@
 The `zip2exe_unpack` utility extracts the decompression stubs from the
 (de-PKLITE'd) Registered or Shareware version of `ZIP2EXE.EXE`.
 
-```
+```sh
 usage: zip2exe_unpack.py [-h] [-o OUTPUT_DIR] [--deark [DEARK]] [--force] [--list-candidates] input
 
 positional arguments:
@@ -29,7 +29,7 @@ them *in-place* (in the `PKSFX` binary itself) and also disables de-obfuscation
 engine, so the output binary can be easily modified further, with the
 now de-obfuscated text in place.
 
-```
+```sh
 usage: pksfx_text_tool.py [-h] [-d DIR] [-p FILE] input
 
 positional arguments:
@@ -57,7 +57,7 @@ in the next section.
 
 Don't like the `PKSFX` herald?
 
-```
+```sh
 PKSFX (R)   FAST!   Self Extract Utility   Version 2.04g   02-01-93
 Copr. 1989-1993 PKWARE Inc. All Rights Reserved. Registered version
 PKSFX Reg. U.S. Pat. and Tm. Off.
@@ -66,7 +66,7 @@ PKSFX Reg. U.S. Pat. and Tm. Off.
 It can be disabled.  In the either of the v2.04g (de-PKLTED'd)
 Registered or Shareware stubs:
 
-```
+```sh
 12DF: FF -> 90
 12E0: D0 -> 90
 ```
@@ -83,7 +83,7 @@ of the obfuscated text resources in the full (de-PKLITE'd) *Registered 2.04g*
 
 ### Resource inspection
 
-```
+```sh
 $ pksfx_resource_tool.py -h
 usage: pksfx_resource_tool.py [-h] {info,dump,patch} ...
 
@@ -112,7 +112,7 @@ help              0x003F62      638      630      629        8  03B7:0372
 
 ### Resource dump
 
-```
+```sh
 $ pksfx_resource_tool.py dump -h
 usage: pksfx_resource_tool.py dump [-h] input output
 
@@ -138,7 +138,7 @@ drwxr-xr-x 5 user user 4096 Sep 27 11:56 ..
 
 ### Resource patching
 
-```
+```sh
 $ ./pksfx_resource_tool.py patch --help
 usage: pksfx_resource_tool.py patch [-h] --registered REGISTERED
        --license LICENSE --help-text HELP -o OUTPUT input
@@ -164,6 +164,7 @@ sha256: 110400674b0e4f921ff351241b2e7ef1d7350164f11fc0d3d117e0aaab23e2c9
 
 # External links
 
-* [`pkla.py`](https://github.com/jsummers/pkla)
-* [`pkstrip.py`](https://github.com/jsummers/pkla/tree/master/pkstrings)
-* [`deark`](https://github.com/jsummers/deark)
+* [Jason Summers'](https://github.com/jsummers/pkla) utilities:
+  * [`deark`](https://github.com/jsummers/deark)
+  * [`pkla.py`](https://github.com/jsummers/pkla)
+  * [`pkstrings.py`](https://github.com/jsummers/pkla/tree/master/pkstrings)
