@@ -5,6 +5,7 @@
 - [PKLITE 1.x/2.x](#pklite-1x2x)
 - [PKLITE notes](#pklite-notes)
   * [Fake PKLite 1.50 (`-e` enabled)](#fake-pklite-150--e-enabled)
+    + [`TEDSUO II [TED/UCF]` unpacker](#tedsuo-ii-teducf-unpacker)
   * [Fake PKLITE Professinal 1.20](#fake-pklite-professinal-120)
   * [Other PKLITE versions](#other-pklite-versions)
 - [PKLITE utilities](#pklite-utilities)

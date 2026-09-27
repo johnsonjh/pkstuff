@@ -7,8 +7,8 @@
 - [PKZIP 2.50](#pkzip-250)
 - [PKZIP utilities](#pkzip-utilities)
   * [Authenticity Verification](#authenticity-verification)
-    + [MAKEAV](#makeav)
-    + [PUTAV](#putav)
+    + [`MAKEAV`](#makeav)
+    + [`PUTAV`](#putav)
 - [External links](#external-links)
 
 <!-- tocstop -->
