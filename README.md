@@ -60,7 +60,7 @@ The files in these directories are meant to be *additive* (*or cumulative*):
   **2.04g** **Registered** files.
 
 > [!TIP]
-> To make a complete PKZIP binary distribution, first create a directory
+> To make a complete DOS PKZIP distribution, first create a directory
 > containing all the **Shareware** files, then copy the **Registered** files
 > into this same directory.  Make sure that you *overwrite* any files with
 > the same name.  If you desire, you can do the same to "upgrade" to the
@@ -77,13 +77,13 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
 > PKZIP 2.04g, except **it does not contain the encryption features of**
 > **2.04g** (so it could be exported and distributed to international IBM
-> employees).  We don't know any other differences (at this time), so you
+> employees).  There are no other differences known (at this time), so you
 > might want to stick with the 2.04g release (certainly if you might ever
 > want to create encrypted ZIP archives).
 
 ### PKZIP 2.50
 
-We have the DOS PKZIP 2.50 release available as original binaries, as well as
+The last DOS PKZIP 2.50 release available in original binary form, as well as
 ***properly*** unpacked, decrypted, and *PSP patched* unpacked executables.
 
 |                                     Directory | Description               | Date     |
@@ -93,7 +93,7 @@ We have the DOS PKZIP 2.50 release available as original binaries, as well as
 | [`2.50/registered`](2.50/registered)          | PKZIP 2.50 Registered     | 03-01-99 |
 
 > [!WARNING]
-> This is the newest (and last) PKZIP DOS release, **2.50**, but unfortunately
+> This is the newest (and last) DOS PKZIP release, **2.50**, but unfortunately
 > is is **NOT** **recommended for most users**.  It has **known bugs** (and
 > subtle issues) when used on vintage machines that have caused much user
 > frustration.  You *really* should be using the classic **2.04g**
