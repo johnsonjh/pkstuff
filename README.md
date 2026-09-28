@@ -1,4 +1,4 @@
-
+# PKZIP/PKUNZIP/PKSFX/PKLITE hacking utilities
 
 <!-- toc -->
 
@@ -10,6 +10,7 @@
     + [Authenticity Verification](#authenticity-verification)
       - [`MAKEAV`](#makeav)
       - [`PUTAV`](#putav)
+      - [`pkav_verify.py`](#pkav_verifypy)
     + [PKSFX (self-extractor) tools](#pksfx-self-extractor-tools)
       - [`zip2exe_unpack.py`](#zip2exe_unpackpy)
       - [`pksfx_text_tool.py`](#pksfx_text_toolpy)
@@ -43,11 +44,11 @@ well as binaries that have been ***properly*** unpacked, decrypted, and
 reverse engineering and analysis and also load faster on slow machines
 (like 8086/8088 systems).
 
-|                                          Directory | Description              | Date        |
-|---------------------------------------------------:|:-------------------------|:------------|
-| [`pkzip/2.04g/docs`](pkzip/2.04g/docs)             | PKZIP 2.04 Documentation | 1993-1994   |
-| [`pkzip/2.04g/shareware`](pkzip/2.04g/shareware)   | PKZIP 2.04g Shareware    | 02-01-1993  |
-| [`pkzip/2.04g/registered`](pkzip/2.04g/registered) | PKZIP 2.04g Registered   | 02-01-1993  |
+|                                          Directory | Description              | Date                  |
+|---------------------------------------------------:|:-------------------------|:----------------------|
+| [`pkzip/2.04g/docs`](pkzip/2.04g/docs)             | PKZIP 2.04 Documentation | 1993&nbsp;‑&nbsp;1994 |
+| [`pkzip/2.04g/shareware`](pkzip/2.04g/shareware)   | PKZIP 2.04g Shareware    | 02‑01‑1993            |
+| [`pkzip/2.04g/registered`](pkzip/2.04g/registered) | PKZIP 2.04g Registered   | 02‑01‑1993            |
 
 The files in these directories are meant to be *additive* (*or cumulative*):
 * The files in the **Documentation** directory apply to
@@ -71,7 +72,7 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 
 |                          Directory | Description                   | Date       |
 |-----------------------------------:|:------------------------------|:-----------|
-| [`pkzip/2.06/ibm`](pkzip/2.06/ibm) | PKZIP **2.06** (IBM Licensed) | 01-24-1994 |
+| [`pkzip/2.06/ibm`](pkzip/2.06/ibm) | PKZIP **2.06** (IBM Licensed) | 01‑24‑1994 |
 
 > [!NOTE]
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
@@ -86,11 +87,11 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 The last DOS PKZIP 2.50 release available in original binary form, as well as
 ***properly*** unpacked, decrypted, and *PSP patched* unpacked executables.
 
-|                                        Directory | Description              | Date     |
-|-------------------------------------------------:|:-------------------------|:---------|
-| [`pkzip/2.50/docs`](pkzip/2.50/docs)             | PKZIP 2.50 Documentation | 1999     |
-| [`pkzip/2.50/shareware`](pkzip/2.50/shareware)   | PKZIP 2.50 Shareware     | 03-01-99 |
-| [`pkzip/2.50/registered`](pkzip/2.50/registered) | PKZIP 2.50 Registered    | 03-01-99 |
+|                                        Directory | Description              | Date       |
+|-------------------------------------------------:|:-------------------------|:-----------|
+| [`pkzip/2.50/docs`](pkzip/2.50/docs)             | PKZIP 2.50 Documentation | 03‑01‑1999 |
+| [`pkzip/2.50/shareware`](pkzip/2.50/shareware)   | PKZIP 2.50 Shareware     | 03‑01‑1999 |
+| [`pkzip/2.50/registered`](pkzip/2.50/registered) | PKZIP 2.50 Registered    | 03‑01‑1999 |
 
 > [!WARNING]
 > This is the newest (and last) DOS PKZIP release, **2.50**, but unfortunately
@@ -113,7 +114,7 @@ trivially compromised (see
 a completely new PKAV system was introduced for PKZIP 2.x.
 
 The new PKAV system was also quickly compromised, with PKAV 2 keygens
-appearing in mid-1993.  PKAV 2 began to be phased out of PKZIP in version 4.0
+appearing in mid‑1993.  PKAV 2 began to be phased out of PKZIP in version 4.0
 (which introduced modern cryptography), and support was removed in PKZIP 7.0.
 
 PKAV still a fun feature of the classic DOS PKZIP, but no source code was ever
@@ -132,7 +133,13 @@ released showing how it works, *until now*.
   Verification" utility is an open source clone of the PKWARE `PUTAV` utility
   distributed with registered PKZIP releases.  It embeds the PKAV code
   directly into (registered) `PKZIP.EXE` 2.04g/2.06/2.50 executables, enabling
-  the use of the `-!` option.
+  the use of the `‑!` option.
+
+##### `pkav_verify.py`
+
+* The [`pkav_verify.py`](pkav_verify.py) utility is an open source
+  implementation of the PKAV 2.x verification algorithm.  It can verify
+  PKAV information in both ZIP files and PKSFX self‑extracting executables.
 
 #### PKSFX (self-extractor) tools
 
@@ -140,22 +147,22 @@ These utilities help advanced users extract, analyze, and customize the
 PKSFX decompression stub.
 
 These tools have a long history, starting out as Pascal programs before
-conversion to Python and gaining some features from
+conversion to Python 3 and gaining some features from
 [`pkstrings.py`](https://github.com/jsummers/pkla/tree/master/pkstrings).
 
 ##### `zip2exe_unpack.py`
 
 The [`zip2exe_unpack.py`](zip2exe_unpack.py) utility extracts the
-decompression stub from the (de-PKLITE'd) Registered or Shareware versions
+decompression stub from the (de‑PKLITE'd) Registered or Shareware versions
 of `ZIP2EXE.EXE`.
 
 ##### `pksfx_text_tool.py`
 
-The [`pksfx_text_tool.py`](pksfx_text_tool.py) utility can de-obfuscate
-message blocks in the full (de-PKLITE'd) PKSFX stub.  You can dump these
-blocks out to disk files for analysis, or de-obfuscate them *in-place*
-(in the PKSFX binary itself).  It also disables the de-obfuscation engine,
-so the patched executable can be easily modified with the de-obfuscated text
+The [`pksfx_text_tool.py`](pksfx_text_tool.py) utility can de‑obfuscate
+message blocks in the full (de‑PKLITE'd) PKSFX stub.  You can dump these
+blocks out to disk files for analysis, or de‑obfuscate them *in‑place*
+(in the PKSFX binary itself).  It also disables the de‑obfuscation engine,
+so the patched executable can be easily modified with the de‑obfuscated text
 in place.  This tool supports working with stub that have been reconstructed
 with `pksfx_resource_tool.py`.
 
@@ -163,7 +170,7 @@ with `pksfx_resource_tool.py`.
 
 The [`pksfx_resource_tool.py`](pksfx_resource_tool.py) utility allows
 analyzing, dumping, and patching of the obfuscated text resources (herald,
-usage, license terms, and registration information) in the full (de-PKLITE'd)
+usage, license terms, and registration information) in the full (de‑PKLITE'd)
 PKSFX stub.
 
 ## Classic DOS PKLITE
@@ -176,16 +183,16 @@ that have been ***properly*** unpacked, decrypted, and *PSP patched* when
 necessary.  The unpacked versions are useful for further reverse engineering
 and analysis and also load faster on slow machines (like 8086/8088 systems).
 
-|                      Directory | Description           | Version | Date    |
-|-------------------------------:|:----------------------|:--------|:--------|
-| [`pklite/1.11p`](pklite/1.11p) | PKLITE Professional   | 1.11    | 5-15-91 |
-| [`pklite/1.12p`](pklite/1.12p) | PKLITE Professional   | 1.12    | 6-15-91 |
-| [`pklite/1.13p`](pklite/1.13p) | PKLITE Professional   | 1.13    | 8-01-91 |
-| [`pklite/1.14`](pklite/1.14)   | PKLITE Standard       | 1.14    | 6-01-92 |
-| [`pklite/1.15p`](pklite/1.15p) | PKLITE Professional   | 1.15    | 7-30-92 |
-| [`pklite/1.50`](pklite/1.50)   | PKLITE Standard       | 1.50    | 4-10-95 |
-| [`pklite/1.50f`](pklite/1.50f) | PKLITE (**UCF Fake**) | 1.50    | 4-10-95 |
-| [`pklite/2.01`](pklite/2.01)   | PKLITE Standard       | 2.01    | 3-15-96 |
+|                      Directory | Description           | Version | Date       |
+|-------------------------------:|:----------------------|:--------|:-----------|
+| [`pklite/1.11p`](pklite/1.11p) | PKLITE Professional   | 1.11    | 05‑15‑1991 |
+| [`pklite/1.12p`](pklite/1.12p) | PKLITE Professional   | 1.12    | 06‑15‑1991 |
+| [`pklite/1.13p`](pklite/1.13p) | PKLITE Professional   | 1.13    | 08‑01‑1991 |
+| [`pklite/1.14`](pklite/1.14)   | PKLITE Standard       | 1.14    | 06‑01‑1992 |
+| [`pklite/1.15p`](pklite/1.15p) | PKLITE Professional   | 1.15    | 07‑30‑1992 |
+| [`pklite/1.50`](pklite/1.50)   | PKLITE Standard       | 1.50    | 04‑10‑1995 |
+| [`pklite/1.50f`](pklite/1.50f) | PKLITE (**UCF Fake**) | 1.50    | 04‑10‑1995 |
+| [`pklite/2.01`](pklite/2.01)   | PKLITE Standard       | 2.01    | 03‑15‑1996 |
 
 ### PKLITE notes
 
@@ -193,10 +200,10 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 * The ***UCF Fake*** **1.50** version is a ***hacked release***,
   *very similar* to the very widely distributed (but ***equally fake***)
-  so-called "1.20 Professional" described below.
+  so‑called "1.20 Professional" described below.
 
-* The UCF release *does* enable the `-e` option, which *does* change the
-  output *just enough* to confuse the official PKLITE `-x` decompressor,
+* The UCF release *does* enable the `‑e` option, which *does* change the
+  output *just enough* to confuse the official PKLITE `‑x` decompressor,
   but it does **not** actually create a "scrambled" decompression stub
   or do any of the other things that the real Professional version would do.
 
@@ -207,7 +214,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 ##### `TEDSUO II [TED/UCF]` unpacker
 
-* The included a Python-based [`unpacker`](pklite/1.50f/unpacked/ted_unpack.py)
+* The included a Python‑based [`unpacker`](pklite/1.50f/unpacked/ted_unpack.py)
   is able to decrypt and unpack this `TEDSUO II [TED/UCF]` file, without
   executing any of its code directly.  It is currently specific to this file,
   but if other files are found that use the same packer, it would possible to
@@ -219,7 +226,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   *every* *single* *one* was the same (***fake***) hack of PKLITE 1.12
   Professional.  You can use Jason Summers'
   [`pkla.py`](https://github.com/jsummers/pkla) utility to easily identify
-  fake PKLITE 1.20 Professional versions by their `-e` output.
+  fake PKLITE 1.20 Professional versions by their `‑e` output.
 
 * I **will not** be distributing the fake "1.20 Professional" releases here
   (because it is not just misleading but *useless*, as it is essentially
@@ -248,7 +255,7 @@ being released under available under the open source MIT license.
   executables of **all** versions of PKLITE before 1.50, where the `AX`
   register was not properly restored after decompression.  Some DOS programs
   depend on the correct AX register status to work correctly.  The current
-  `PKLAXFIX` tool has been updated to support fixing "scrambled" and `-e`
+  `PKLAXFIX` tool has been updated to support fixing "scrambled" and `‑e`
   (extra compression) executables.
 
 #### `PKPSPFIX`
