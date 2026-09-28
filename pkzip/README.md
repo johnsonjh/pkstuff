@@ -2,7 +2,7 @@
 
 <!-- toc -->
 
-- [PKZIP 2.04](#pkzip-204)
+- [PKZIP 2.04g](#pkzip-204g)
 - [PKZIP 2.06 (IBM)](#pkzip-206-ibm)
 - [PKZIP 2.50](#pkzip-250)
 - [PKZIP utilities](#pkzip-utilities)
@@ -15,26 +15,26 @@
 
 ---
 
-## PKZIP 2.04
+## PKZIP 2.04g
 
-The latest DOS PKZIP 2.04 releases are archived here, both in their
+The latest DOS PKZIP 2.04g releases are archived here, both in their
 original forms including documentation and utilities where available, as
 well as binaries that have been ***properly*** unpacked, decrypted, and
 *PSP patched* when necessary.  The unpacked versions are useful for further
 reverse engineering and analysis and also load faster on slow machines
 (like 8086/8088 systems).
 
-|                            Directory | Description                   | Date        |
-|-------------------------------------:|:------------------------------|:------------|
-| [`2.04/docs`](2.04/docs)             | PKZIP 2.04 Documentation      | 1993-1994   |
-| [`2.04/shareware`](2.04/shareware)   | PKZIP 2.04g Shareware         | 02-01-1993  |
-| [`2.04/registered`](2.04/registered) | PKZIP 2.04g Registered        | 02-01-1993  |
+|                              Directory | Description                   | Date        |
+|---------------------------------------:|:------------------------------|:------------|
+| [`2.04g/docs`](2.04g/docs)             | PKZIP 2.04 Documentation      | 1993-1994   |
+| [`2.04g/shareware`](2.04g/shareware)   | PKZIP 2.04g Shareware         | 02-01-1993  |
+| [`2.04g/registered`](2.04g/registered) | PKZIP 2.04g Registered        | 02-01-1993  |
 
 The above directories are meant to be *additive* (*or cumulative*):
 * The files in the **Documentation** directory apply to
-  all PKZIP 2.04/2.06 versions.
+  all PKZIP 2.04g/2.06 versions.
 * The files in the **Shareware** directory represent the complete PKZIP
-  **2.04g** shareware release.
+  **2.04g** **Shareware** release.
 * The files in the **Registered** directory *replace* the **2.04g**
   **Shareware** files.
 * The files in the **IBM Licensed** directory (*see below*) *replace* the
@@ -69,7 +69,8 @@ We have the DOS PKZIP 2.50 release available as original binaries, as well as
 
 |                                     Directory | Description               | Date     |
 |----------------------------------------------:|:--------------------------|:---------|
-| [`2.50/registered/doc`](2.50/registered/docs) | PKZIP 2.50 Documentation  | 1999     |
+| [`2.50/docs`](2.50/docs)                      | PKZIP 2.50 Documentation  | 1999     |
+| [`2.50/shareware`](2.50/shareware)            | PKZIP 2.50 Shareware      | 03-01-99 |
 | [`2.50/registered`](2.50/registered)          | PKZIP 2.50 Registered     | 03-01-99 |
 
 > [!WARNING]
@@ -99,17 +100,17 @@ works, *until now*.
 
 #### `MAKEAV`
 
-* The [`MAKEAV`](../makeav.c) "PKZIP 2.04/2.06/2.50 Authenticity
+* The [`MAKEAV`](../makeav.c) "PKZIP 2.04g/2.06/2.50 Authenticity
   Verification Generator" utility is an open source keygen tool that
   generates the two serial numbers needed to enable PKAV for any given
   company name.
 
 #### `PUTAV`
 
-* The [`PUTAV`](../putav.c) "PKZIP 2.04/2.06/2.50 Put Authenticity
+* The [`PUTAV`](../putav.c) "PKZIP 2.04g/2.06/2.50 Put Authenticity
   Verification" utility is an open source clone of the PKWARE `PUTAV` utility
   distributed with registered PKZIP releases.  It embeds the PKAV code
-  directly into (registered) `PKZIP.EXE` 2.04/2.06/2.50 executables, enabling
+  directly into (registered) `PKZIP.EXE` 2.04g/2.06/2.50 executables, enabling
   the use of the `-!` option.
 
 ## External links
