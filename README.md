@@ -69,6 +69,7 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 > for more details first.
 
 <br>
+
 ### PKZIP 2.06 (IBM)
 
 |                          Directory | Description                   | Date       |
@@ -84,6 +85,7 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 > want to create encrypted ZIP archives).
 
 <br>
+
 ### PKZIP 2.50
 
 The last DOS PKZIP 2.50 release available in original binary form, as well as
@@ -104,6 +106,7 @@ The last DOS PKZIP 2.50 release available in original binary form, as well as
 > not to.
 
 <br>
+
 ### PKZIP utilities
 
 The for *first time*, updated versions of my classic PKZIP utilities are
@@ -198,6 +201,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 | [`pklite/2.01`](pklite/2.01)   | PKLITE Standard       | 2.01    | 03‑15‑1996 |
 
 <br>
+
 ### PKLITE notes
 
 #### Fake PKLite 1.50 (`-e` enabled)
@@ -248,6 +252,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   [GitHub Issue](https://github.com/johnsonjh/pkstuff/issues/new).
 
 <br>
+
 ### PKLITE utilities
 
 The for *first time*, updated versions of my classic PKLITE utilities are
@@ -287,6 +292,7 @@ being released under available under the open source MIT license.
   executables to make them compatible with systems using 8086/8088 CPUs.
 
 <br>
+
 ### Latest known PKLITE versions
 
 * The latest known **1.x Professional** version is
