@@ -10,6 +10,10 @@
     + [Authenticity Verification](#authenticity-verification)
       - [`MAKEAV`](#makeav)
       - [`PUTAV`](#putav)
+    + [PKSFX (self-extractor) tools](#pksfx-self-extractor-tools)
+      - [`zip2exe_unpack.py`](#zip2exe_unpackpy)
+      - [`pksfx_text_tool.py`](#pksfx_text_toolpy)
+      - [`pksfx_resource_tool.py`](#pksfx_resource_toolpy)
 - [Classic DOS PKLITE](#classic-dos-pklite)
   * [PKLITE 1.x/2.x](#pklite-1x2x)
   * [PKLITE notes](#pklite-notes)
@@ -22,10 +26,6 @@
     + [`PKPSPFIX`](#pkpspfix)
     + [`PKL2FIX`](#pkl2fix)
   * [Latest known PKLITE versions](#latest-known-pklite-versions)
-- [PKSFX Tools](#pksfx-tools)
-  * [`zip2exe_unpack.py`](#zip2exe_unpackpy)
-  * [`pksfx_text_tool.py`](#pksfx_text_toolpy)
-  * [`pksfx_resource_tool.py`](#pksfx_resource_toolpy)
 - [External links](#external-links)
 
 <!-- tocstop -->
@@ -131,6 +131,38 @@ works, *until now*.
   distributed with registered PKZIP releases.  It embeds the PKAV code
   directly into (registered) `PKZIP.EXE` 2.04g/2.06/2.50 executables, enabling
   the use of the `-!` option.
+
+#### PKSFX (self-extractor) tools
+
+These utilities help advanced users extract, analyze, and customize the
+PKSFX decompression stub.
+
+These tools have a long history, starting out as Pascal programs before
+conversion to Python and gaining some features from
+[`pkstrings.py`](https://github.com/jsummers/pkla/tree/master/pkstrings).
+
+##### `zip2exe_unpack.py`
+
+The [`zip2exe_unpack.py`](zip2exe_unpack.py) utility extracts the
+decompression stub from the (de-PKLITE'd) Registered or Shareware versions
+of `ZIP2EXE.EXE`.
+
+##### `pksfx_text_tool.py`
+
+The [`pksfx_text_tool.py`](pksfx_text_tool.py) utility can de-obfuscate
+message blocks in the full (de-PKLITE'd) PKSFX stub.  You can dump these
+blocks out to disk files for analysis, or de-obfuscate them *in-place*
+(in the PKSFX binary itself).  It also disables the de-obfuscation engine,
+so the patched executable can be easily modified with the de-obfuscated text
+in place.  This tool supports working with stub that have been reconstructed
+with `pksfx_resource_tool.py`.
+
+##### `pksfx_resource_tool.py`
+
+The [`pksfx_resource_tool.py`](pksfx_resource_tool.py) utility allows
+analyzing, dumping, and patching of the obfuscated text resources (herald,
+usage, license terms, and registration information) in the full (de-PKLITE'd)
+PKSFX stub.
 
 ## Classic DOS PKLITE
 
@@ -252,38 +284,6 @@ being released under available under the open source MIT license.
   [PKLITE Standard 1.50](1.50).
 * The latest known **2.x Standard** version is
   [PKLITE Standard 2.01](2.01).
-
-## PKSFX Tools
-
-These utilities help advanced users extract, analyze, and customize the
-`PKSFX` decompression stub.
-
-These tools have a long history, starting out as Pascal programs before
-conversion to Python and gaining some features from
-[`pkstrings.py`](https://github.com/jsummers/pkla/tree/master/pkstrings).
-
-### `zip2exe_unpack.py`
-
-The [`zip2exe_unpack.py`](zip2exe_unpack.py) utility extracts the
-decompression stub from the (de-PKLITE'd) Registered or Shareware versions
-of `ZIP2EXE.EXE`.
-
-### `pksfx_text_tool.py`
-
-The [`pksfx_text_tool.py`](pksfx_text_tool.py) utility can de-obfuscate
-message blocks in the full (de-PKLITE'd) `PKSFX` stub.  You can dump these
-blocks out to disk files for analysis, or de-obfuscate them *in-place*
-(in the `PKSFX` binary itself).  It also disables the de-obfuscation engine,
-so the patched executable can be easily modified with the de-obfuscated text
-in place.  This tool supports working with stub that have been reconstructed
-with `pksfx_resource_tool.py`.
-
-### `pksfx_resource_tool.py`
-
-The [`pksfx_resource_tool.py`](`pksfx_resource_tool.py`) utility allows
-analyzing, dumping, and patching of the obfuscated text resources (herald,
-usage, license terms, and registration information) in the full (de-PKLITE'd)
-`PKSFX` stub.
 
 ## External links
 
