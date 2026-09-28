@@ -69,9 +69,9 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 
 ### PKZIP 2.06 (IBM)
 
-|              Directory | Description                   | Date       |
-|-----------------------:|:------------------------------|:-----------|
-| [`2.06/ibm`](2.06/ibm) | PKZIP **2.06** (IBM Licensed) | 01-24-1994 |
+|                          Directory | Description                   | Date       |
+|-----------------------------------:|:------------------------------|:-----------|
+| [`pkzip/2.06/ibm`](pkzip/2.06/ibm) | PKZIP **2.06** (IBM Licensed) | 01-24-1994 |
 
 > [!NOTE]
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
