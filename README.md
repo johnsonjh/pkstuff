@@ -58,7 +58,7 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 * The files in the **Registered** directory *replace* the **2.04g**
   **Shareware** files.
 * The files in the **IBM Licensed** directory (*see below*) *replace* the
-  **2.04g** **Registered** files.
+  **2.04g** **Registered** files.<br>
 
 > [!TIP]
 > To make a complete DOS PKZIP distribution, first create a directory
@@ -68,6 +68,7 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 > **IBM Licensed** 2.06 release, but you should read the following section
 > for more details first.
 
+<br>
 ### PKZIP 2.06 (IBM)
 
 |                          Directory | Description                   | Date       |
@@ -82,6 +83,7 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 > might want to stick with the 2.04g release (certainly if you might ever
 > want to create encrypted ZIP archives).
 
+<br>
 ### PKZIP 2.50
 
 The last DOS PKZIP 2.50 release available in original binary form, as well as
@@ -101,6 +103,7 @@ The last DOS PKZIP 2.50 release available in original binary form, as well as
 > (or **2.06**) releases unless you have a **very** **specific** reason
 > not to.
 
+<br>
 ### PKZIP utilities
 
 The for *first time*, updated versions of my classic PKZIP utilities are
@@ -194,6 +197,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 | [`pklite/1.50f`](pklite/1.50f) | PKLITE (**UCF Fake**) | 1.50    | 04‑10‑1995 |
 | [`pklite/2.01`](pklite/2.01)   | PKLITE Standard       | 2.01    | 03‑15‑1996 |
 
+<br>
 ### PKLITE notes
 
 #### Fake PKLite 1.50 (`-e` enabled)
@@ -243,6 +247,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
   copy, please open a
   [GitHub Issue](https://github.com/johnsonjh/pkstuff/issues/new).
 
+<br>
 ### PKLITE utilities
 
 The for *first time*, updated versions of my classic PKLITE utilities are
@@ -281,6 +286,7 @@ being released under available under the open source MIT license.
   open source utility that patches PKLITE 2.01 generated compressed
   executables to make them compatible with systems using 8086/8088 CPUs.
 
+<br>
 ### Latest known PKLITE versions
 
 * The latest known **1.x Professional** version is
