@@ -376,6 +376,7 @@ def cmd_dump(args: argparse.Namespace) -> int:
         )
     return 0
 
+
 def collect_replacements(args: argparse.Namespace) -> dict[str, Path]:
     repl: dict[str, Path] = {}
     for name, path in args.replace or []:
