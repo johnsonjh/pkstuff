@@ -107,15 +107,17 @@ being made available and distributed under the open source MIT license.
 
 #### Authenticity Verification
 
-Since the Authenticity Verification (PKAV) feature of the older PKZIP 1.x was
+After the Authenticity Verification (PKAV) feature of the old PKZIP 1.x was
 trivially compromised (see
 [40Hex, Number 8, Volume 2, Issue 4, File 3: FindAV v1.5 (July 27 1992)](https://newtotse.com/oldtotse/en/zines/chaos/chaos166.html),
-a completely new PKAV system was introduced with PKZIP 2.x.   The new scheme
-was also quickly compromised with PKAV 2.x keygens appearing in 1993.  PKAV
-began to be phased out of PKZIP in version 4.0 (which introduced modern
-cryptography), and support was removed in PKZIP 7.0.  PKAV still a fun feature
-of the classic DOS PKZIP, but no source code was ever released showing how it
-works, *until now*.
+a completely new PKAV system was introduced for PKZIP 2.x.
+
+The new PKAV system was also quickly compromised, with PKAV 2 keygens
+appearing in mid-1993.  PKAV 2 began to be phased out of PKZIP in version 4.0
+(which introduced modern cryptography), and support was removed in PKZIP 7.0.
+
+PKAV still a fun feature of the classic DOS PKZIP, but no source code was ever
+released showing how it works, *until now*.
 
 ##### `MAKEAV`
 
@@ -245,9 +247,9 @@ being released under available under the open source MIT license.
   restoration fix)" utility fixes a bug present in the generated compressed
   executables of **all** versions of PKLITE before 1.50, where the `AX`
   register was not properly restored after decompression.  Some DOS programs
-  depend on the correct behavior to work right.  The current `PKLAXFIX` tool
-  has been updated to support fixing "scrambled" and `-e` (extra compression)
-  executables.
+  depend on the correct AX register status to work correctly.  The current
+  `PKLAXFIX` tool has been updated to support fixing "scrambled" and `-e`
+  (extra compression) executables.
 
 #### `PKPSPFIX`
 
