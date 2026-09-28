@@ -50,11 +50,11 @@ well as binaries that have been ***properly*** unpacked, decrypted, and
 reverse engineering and analysis and also load faster on slow machines
 (like 8086/8088 systems).
 
-|                                          Directory | Description              | Date                  |
-|---------------------------------------------------:|:-------------------------|:----------------------|
-| [`pkzip/2.04g/docs`](pkzip/2.04g/docs)             | PKZIP 2.04 Documentation | 1993&nbsp;‑&nbsp;1994 |
-| [`pkzip/2.04g/shareware`](pkzip/2.04g/shareware)   | PKZIP 2.04g Shareware    | 02‑01‑1993            |
-| [`pkzip/2.04g/registered`](pkzip/2.04g/registered) | PKZIP 2.04g Registered   | 02‑01‑1993            |
+|                                          Directory | Description              | Date       |
+|---------------------------------------------------:|:-------------------------|:-----------|
+| [`pkzip/2.04g/docs`](pkzip/2.04g/docs)             | PKZIP 2.04 Documentation | 02‑01‑1993 |
+| [`pkzip/2.04g/shareware`](pkzip/2.04g/shareware)   | PKZIP 2.04g Shareware    | 02‑01‑1993 |
+| [`pkzip/2.04g/registered`](pkzip/2.04g/registered) | PKZIP 2.04g Registered   | 02‑01‑1993 |
 
 The files in these directories are meant to be *additive* (*or cumulative*):
 * The files in the **Documentation** directory apply to
@@ -76,10 +76,10 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 
 ### PKZIP 2.06 (IBM)
 
-|                                    Directory | Description                       | Date       |
-|---------------------------------------------:|:----------------------------------|:-----------|
-| [`pkzip/2.06/ibm/docs`](pkzip/2.06/ibm/docs) | PKZIP **2.06** Documentation      | 01‑24‑1994 |
-| [`pkzip/2.06/ibm`](pkzip/2.06/ibm)           | PKZIP **2.06** (**IBM Licensed**) | 01‑24‑1994 |
+|                            Directory | Description                       | Date       |
+|-------------------------------------:|:----------------------------------|:-----------|
+| [`pkzip/2.06/docs`](pkzip/2.06/docs) | PKZIP **2.06** Documentation      | 01‑24‑1994 |
+| [`pkzip/2.06/ibm`](pkzip/2.06/ibm)   | PKZIP **2.06** (**IBM Licensed**) | 01‑24‑1994 |
 
 > [!NOTE]
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
