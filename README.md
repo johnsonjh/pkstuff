@@ -1,4 +1,4 @@
-# PKZIP/PKUNZIP/PKSFX/PKLITE hacking utilities
+# PKZIP/PKUNZIP/PKSFX/PKLITE utilities
 
 <!-- toc -->
 
