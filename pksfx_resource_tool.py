@@ -376,16 +376,6 @@ def cmd_dump(args: argparse.Namespace) -> int:
         )
     return 0
 
-
-def parse_replace_arg(s: str) -> tuple[str, Path]:
-    if "=" not in s:
-        raise argparse.ArgumentTypeError("replacement must be NAME=FILE")
-    name, filename = s.split("=", 1)
-    if not name or not filename:
-        raise argparse.ArgumentTypeError("replacement must be NAME=FILE")
-    return name, Path(filename)
-
-
 def collect_replacements(args: argparse.Namespace) -> dict[str, Path]:
     repl: dict[str, Path] = {}
     for name, path in args.replace or []:
@@ -455,13 +445,6 @@ def main() -> int:
         "patch", help="replace one or more resources and write a new EXE"
     )
     pp.add_argument("input", type=Path)
-    pp.add_argument(
-        "--replace",
-        action="append",
-        type=parse_replace_arg,
-        metavar="NAME=FILE",
-        help="replace an arbitrary resource by pkstrings name; may be repeated",
-    )
     pp.add_argument(
         "--reg-info",
         dest="reg_info",
