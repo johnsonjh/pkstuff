@@ -1,3 +1,7 @@
+<!-- README.md -->
+<!-- Copyright (c) 2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com> -->
+<!-- SPDX-License-Identifier: MIT -->
+<!-- scspell-id: cb21d744-bb70-11f1-b7f4-80ee73e9b8e7 -->
 # PKZIP/PKUNZIP/PKSFX/PKLITE utilities
 
 <!-- toc -->
@@ -23,10 +27,12 @@
     + [Fake PKLITE Professional 1.20](#fake-pklite-professional-120)
     + [Other PKLITE versions](#other-pklite-versions)
   * [PKLITE utilities](#pklite-utilities)
-    + [`PKLAXFIX`](#pklaxfix)
     + [`PKPSPFIX`](#pkpspfix)
+    + [`PKLAXFIX`](#pklaxfix)
     + [`PKL2FIX`](#pkl2fix)
   * [Latest known PKLITE versions](#latest-known-pklite-versions)
+- [License](#license)
+- [Availability](#availability)
 - [External links](#external-links)
 
 <!-- tocstop -->
@@ -70,9 +76,10 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 
 ### PKZIP 2.06 (IBM)
 
-|                          Directory | Description                   | Date       |
-|-----------------------------------:|:------------------------------|:-----------|
-| [`pkzip/2.06/ibm`](pkzip/2.06/ibm) | PKZIP **2.06** (IBM Licensed) | 01‑24‑1994 |
+|                                    Directory | Description                       | Date       |
+|---------------------------------------------:|:----------------------------------|:-----------|
+| [`pkzip/2.06/ibm/docs`](pkzip/2.06/ibm/docs) | PKZIP **2.06** Documentation      | 01‑24‑1994 |
+| [`pkzip/2.06/ibm`](pkzip/2.06/ibm)           | PKZIP **2.06** (**IBM Licensed**) | 01‑24‑1994 |
 
 > [!NOTE]
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
@@ -270,12 +277,11 @@ being released under available under the open source MIT license.
 
 * The [`PKLAXFIX`](pklaxfix.c) "PKLITE Executable Postprocessor (AX
   restoration fix)" utility fixes a bug present in the generated *compressed*
-  executables of **all** versions of PKLITE before 1.50, where the `AX`
+  executables of **all** versions of PKLITE *before 1.50*, where the `AX`
   register was not properly restored after decompression.  Some DOS programs
   depend on the correct AX register status to work correctly.  The current
   `PKLAXFIX` tool has been updated to support fixing "scrambled" and `‑e`
   (extra compression) executables.
-
 
 #### `PKL2FIX`
 
@@ -291,6 +297,19 @@ being released under available under the open source MIT license.
   [PKLITE Standard 1.50](1.50).
 * The latest known **2.x Standard** version is
   [PKLITE Standard 2.01](2.01).
+
+## License
+
+* All original programs and source code in this repository are distributed
+  under the terms of the [MIT License](LICENSE).
+* All programs by other authors are included strictly for the convenience
+  of historical researchers.  We make no copyright claims on them and they
+  remain the property of their respective owners.
+
+## Availability
+
+* [https://github.com/johnsonjh/pkstuff](https://github.com/johnsonjh/pkstuff)
+* [https://gitlab.com/johnsonjh/pkstuff](https://gitlab.com/johnsonjh/pkstuff)
 
 ## External links
 

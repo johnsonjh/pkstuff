@@ -1,0 +1,70 @@
+###############################################################################
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Jeffrey H. Johnson
+# scspell-id: 3332a94c-bb6e-11f1-bf4a-80ee73e9b8e7
+###############################################################################
+
+version = 1
+SPDX-PackageName = "crc"
+SPDX-PackageSupplier = "Jeffrey H. Johnson <johnsonjh.dev@gmail.com>"
+SPDX-PackageDownloadLocation = "https://github.com/johnsonjh/pkstuff"
+
+[[annotations]]
+path = ["pkzip/2.06/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1994 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-IBM"
+
+[[annotations]]
+path = ["pkzip/2.04g/docs/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1993 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Shareware"
+
+[[annotations]]
+path = ["pkzip/2.04g/registered/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1993 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Registered"
+
+[[annotations]]
+path = ["pkzip/2.04g/shareware/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1993 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Shareware"
+
+[[annotations]]
+path = ["pkzip/2.50/docs/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1999 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Shareware"
+
+[[annotations]]
+path = ["pkzip/2.50/registered/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1999 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Registered"
+
+[[annotations]]
+path = ["pkzip/2.50/shareware/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1999 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Shareware"
+
+[[annotations]]
+path = ["pklite/2.01/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1990-1996 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKLITE2-Shareware"
+
+[[annotations]]
+path = ["pklite/1.11p/**", "pklite/1.12p/**", "pklite/1.13p/**", "pklite/1.15p/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1990-1994 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKLITE1-Professional"
+
+[[annotations]]
+path = ["pklite/1.14/**", "pklite/1.50/**", "pklite/1.50f/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1990-1995 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKLITE1-Shareware"

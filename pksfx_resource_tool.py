@@ -2,7 +2,7 @@
 # pksfx_resource_tool.py
 # Copyright (c) 1995-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
 # Copyright (c) 2023-2026 Jason Summers <jason1@pobox.com>
-# SPDX-License-Identifer: MIT
+# SPDX-License-Identifier: MIT
 # scspell-id: aef58b52-bb51-11f1-ae98-80ee73e9b8e7
 
 from __future__ import annotations

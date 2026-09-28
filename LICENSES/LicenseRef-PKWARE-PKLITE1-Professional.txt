@@ -1,0 +1,15 @@
+Copryright (c) 1990-1995 PKWARE Inc.
+
+All Rights Reserved.
+
+You, the original purchaser, are granted a nonexclusive license to use
+this Software under the terms stated in this Agreement.  You may not
+use the Software on more than one computer (i.e. a single CPU) at the
+same time.  You may not rent or lease the Software, but you may
+transfer it on a permanent basis if the person receiving it agrees to
+the terms of the Agreement.
+
+PKWARE disclaims all warranties as to this software, whether express or
+implied, including without limitation any implied warranties of merchant-
+ability, fitness for a particular purpose, functionality or data integrity
+or protection.  See documentation for further disclaimers and information.

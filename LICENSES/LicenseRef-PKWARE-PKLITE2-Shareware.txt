@@ -1,0 +1,24 @@
+Copryright (c) 1990-1992, 1995, 1996 PKWARE Inc.
+
+All Rights Reserved.
+
+You are free to use, copy and distribute PKLITE for private noncommercial
+use IF:
+
+* NO FEE IS CHARGED FOR USE, COPYING, OR DISTRIBUTION.
+* IT IS NOT MODIFIED IN ANY WAY.
+
+Usage of the software to create compressed executables for commercial
+software requires registration of PKLITE Professional (R) Package
+for $146 plus shipping and handling.  This version includes an extra
+compression option so that compressed executables cannot be uncompressed
+by PKLITE.
+
+PKWARE DISCLAIMS ALL WARRANTIES AS TO THIS SOFTWARE, WHETHER EXPRESS OR
+IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF MERCHANT-
+ABILITY, FITNESS FOR A PARTICULAR PURPOSE, FUNCTIONALITY OR DATA INTEGRITY
+OR PROTECTION.  SEE DOCUMENTATION FOR FURTHER DISCLAIMERS AND INFORMATION.
+
+Portions of this software were obtained from BRM Technologies Ltd. and are
+protected by the following copyright:  Copyright 1993-1996 BRM Technologies
+Ltd.  All Rights Reserved.  Used with permission.

@@ -1,0 +1,17 @@
+Copyright (c) 1989-1999 PKWARE Inc.
+
+All Rights Reserved.
+
+PKWARE disclaims all warranties as to this software, whether express or
+implied, including without limitation any implied warranties of merchant-
+ability, fitness for a particular purpose, functionality or data integrity
+or protection.  See documentation for further disclaimers and information.
+
+For use on multiple machines or to use to distribute your information
+or software, a separate license is required.  See the file LICENSE.TXT
+for further information.
+
+This is a registered version and is only for use on those machine(s) for
+which it is licensed.
+
+This version is NOT TO BE DISTRIBUTED as Shareware.

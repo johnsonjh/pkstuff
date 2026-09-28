@@ -1,0 +1,22 @@
+Copyright (c) 1989-1994 PKWARE Inc.
+
+All Rights Reserved.
+
+This copy of PKZIP/PKUNZIP/PKSFX is licensed to IBM Corporation and
+is for use only by IBM employees and employees of IBM subsidiaries,
+and should not be distributed outside the IBM Corporation.
+
+The IBM licensed version does not contain the encryption feature of
+the PKWARE product and may therefore be freely distributed to non-US
+employees.  This is the only version of PKWARE's product that may be
+legally distributed and used within IBM.
+
+Product managers interested in including these programs with their
+products should read the LICENSE.DOC file in this package for
+important information regarding IBM's distribution license for these
+programs.
+
+PKWARE disclaims all warranties as to this software, whether express or
+implied, including without limitation any implied warranties of merchant-
+ability, fitness for a particular purpose, functionality or data integrity
+or protection.  See documentation for further disclaimers and information.

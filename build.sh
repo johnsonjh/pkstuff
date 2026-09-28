@@ -1,4 +1,8 @@
 #!/bin/sh
+# build.sh
+# Copyright (c) 2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
+# SPDX-License-Identifier: MIT
+# scspell-id: 00a84090-bb6e-11f1-ac18-80ee73e9b8e7
 # shellcheck disable=SC2086
 
 set -e

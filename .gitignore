@@ -1,3 +1,7 @@
+# .gitignore
+# Copyright (c) 2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
+# SPDX-License-Identifier: MIT
+# scspell-id: 1c509c02-bb6e-11f1-a6f1-80ee73e9b8e7
 /a.out
 /*.core
 /core

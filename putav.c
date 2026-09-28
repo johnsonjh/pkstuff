@@ -3,7 +3,7 @@
 /*
  * PUTAV: Put Authenticity Verification in PKZIP 2.04/2.06/2.50
  * Copyright (c) 1994-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
- * SPDX-License-Identifer: MIT
+ * SPDX-License-Identifier: MIT
  * scspell-id: 82e600c6-b93c-11f1-ada6-80ee73e9b8e7
  */
 

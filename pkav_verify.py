@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # pkav_verify.py
 # Copyright (c) 1995-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
-# SPDX-License-Identifer: MIT
+# SPDX-License-Identifier: MIT
 # scspell-id: 33662872-bb68-11f1-a745-80ee73e9b8e7
 
 import argparse

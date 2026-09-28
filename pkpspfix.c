@@ -4,7 +4,7 @@
  * PKPSPFIX: PKLITE Executable Postprocessor (add PSP protection code)
  * Copyright (c) 1993-2026 Jeffrey H. Johnson <johnsonjh.dev@gmail.com>
  * Copyright (c) 2023-2026 Jason Summers <jason1@pobox.com>
- * SPDX-License-Identifer: MIT
+ * SPDX-License-Identifier: MIT
  * scspell-id: 548da6f8-ba35-11f1-b565-80ee73e9b8e7
  */
 
