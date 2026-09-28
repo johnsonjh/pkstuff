@@ -43,11 +43,11 @@ well as binaries that have been ***properly*** unpacked, decrypted, and
 reverse engineering and analysis and also load faster on slow machines
 (like 8086/8088 systems).
 
-|                                          Directory | Description                   | Date        |
-|---------------------------------------------------:|:------------------------------|:------------|
-| [`pkzip/2.04g/docs`](pkzip/2.04g/docs)             | PKZIP 2.04 Documentation      | 1993-1994   |
-| [`pkzip/2.04g/shareware`](pkzip/2.04g/shareware)   | PKZIP 2.04g Shareware         | 02-01-1993  |
-| [`pkzip/2.04g/registered`](pkzip/2.04g/registered) | PKZIP 2.04g Registered        | 02-01-1993  |
+|                                          Directory | Description              | Date        |
+|---------------------------------------------------:|:-------------------------|:------------|
+| [`pkzip/2.04g/docs`](pkzip/2.04g/docs)             | PKZIP 2.04 Documentation | 1993-1994   |
+| [`pkzip/2.04g/shareware`](pkzip/2.04g/shareware)   | PKZIP 2.04g Shareware    | 02-01-1993  |
+| [`pkzip/2.04g/registered`](pkzip/2.04g/registered) | PKZIP 2.04g Registered   | 02-01-1993  |
 
 The files in these directories are meant to be *additive* (*or cumulative*):
 * The files in the **Documentation** directory apply to
@@ -69,9 +69,9 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 
 ### PKZIP 2.06 (IBM)
 
-|                            Directory | Description                   | Date        |
-|-------------------------------------:|:------------------------------|:------------|
-| [`2.06/ibm`](2.06/ibm)               | PKZIP **2.06** (IBM Licensed) | 01-24-1994  |
+|              Directory | Description                   | Date       |
+|-----------------------:|:------------------------------|:-----------|
+| [`2.06/ibm`](2.06/ibm) | PKZIP **2.06** (IBM Licensed) | 01-24-1994 |
 
 > [!NOTE]
 > The **IBM Licensed** PKZIP 2.06 release is equivalent to the **Registered**
@@ -86,11 +86,11 @@ The files in these directories are meant to be *additive* (*or cumulative*):
 The last DOS PKZIP 2.50 release available in original binary form, as well as
 ***properly*** unpacked, decrypted, and *PSP patched* unpacked executables.
 
-|                                     Directory | Description               | Date     |
-|----------------------------------------------:|:--------------------------|:---------|
-| [`2.50/docs`](2.50/docs)                      | PKZIP 2.50 Documentation  | 1999     |
-| [`2.50/shareware`](2.50/shareware)            | PKZIP 2.50 Shareware      | 03-01-99 |
-| [`2.50/registered`](2.50/registered)          | PKZIP 2.50 Registered     | 03-01-99 |
+|                                        Directory | Description              | Date     |
+|-------------------------------------------------:|:-------------------------|:---------|
+| [`pkzip/2.50/docs`](pkzip/2.50/docs)             | PKZIP 2.50 Documentation | 1999     |
+| [`pkzip/2.50/shareware`](pkzip/2.50/shareware)   | PKZIP 2.50 Shareware     | 03-01-99 |
+| [`pkzip/2.50/registered`](pkzip/2.50/registered) | PKZIP 2.50 Registered    | 03-01-99 |
 
 > [!WARNING]
 > This is the newest (and last) DOS PKZIP release, **2.50**, but unfortunately
