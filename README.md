@@ -112,6 +112,8 @@ The last DOS PKZIP 2.50 release available in original binary form, as well as
 The for *first time*, updated versions of my classic PKZIP utilities are
 being made available and distributed under the open source MIT license.
 
+<br>
+
 #### Authenticity Verification
 
 After the Authenticity Verification (PKAV) feature of the old PKZIP 1.x was
@@ -147,6 +149,8 @@ released showing how it works, *until now*.
   implementation of the PKAV 2.x verification algorithm.  It can verify
   PKAV information in both ZIP files and PKSFX self‑extracting executables.
 
+<br>
+
 #### PKSFX (self-extractor) tools
 
 These utilities help advanced users extract, analyze, and customize the
@@ -158,26 +162,26 @@ conversion to Python 3 and gaining some features from
 
 ##### `zip2exe_unpack.py`
 
-The [`zip2exe_unpack.py`](zip2exe_unpack.py) utility extracts the
-decompression stub from the (de‑PKLITE'd) Registered or Shareware versions
-of `ZIP2EXE.EXE`.
+* The [`zip2exe_unpack.py`](zip2exe_unpack.py) utility extracts the
+  decompression stub from the (de‑PKLITE'd) Registered or Shareware versions
+  of `ZIP2EXE.EXE`.
 
 ##### `pksfx_text_tool.py`
 
-The [`pksfx_text_tool.py`](pksfx_text_tool.py) utility can de‑obfuscate
-message blocks in the full (de‑PKLITE'd) PKSFX stub.  You can dump these
-blocks out to disk files for analysis, or de‑obfuscate them *in‑place*
-(in the PKSFX binary itself).  It also disables the de‑obfuscation engine,
-so the patched executable can be easily modified with the de‑obfuscated text
-in place.  This tool supports working with stub that have been reconstructed
-with `pksfx_resource_tool.py`.
+* The [`pksfx_text_tool.py`](pksfx_text_tool.py) utility can de‑obfuscate
+  message blocks in the full (de‑PKLITE'd) PKSFX stub.  You can dump these
+  blocks out to disk files for analysis, or de‑obfuscate them *in‑place*
+  (in the PKSFX binary itself).  It also disables the de‑obfuscation engine,
+  so the patched executable can be easily modified with the de‑obfuscated text
+  in place.  This tool supports working with stub that have been reconstructed
+  with `pksfx_resource_tool.py`.
 
 ##### `pksfx_resource_tool.py`
 
-The [`pksfx_resource_tool.py`](pksfx_resource_tool.py) utility allows
-analyzing, dumping, and patching of the obfuscated text resources (herald,
-usage, license terms, and registration information) in the full (de‑PKLITE'd)
-PKSFX stub.
+* The [`pksfx_resource_tool.py`](pksfx_resource_tool.py) utility allows
+  analyzing, dumping, and patching of the obfuscated text resources (herald,
+  usage, license terms, and registration information) in the full (de‑PKLITE'd)
+  PKSFX stub.
 
 ## Classic DOS PKLITE
 
@@ -255,18 +259,14 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 ### PKLITE utilities
 
-The for *first time*, updated versions of my classic PKLITE utilities are
+For the *first time*, updated versions of my classic PKLITE utilities are
 being released under available under the open source MIT license.
 
-#### `PKLAXFIX`
-
-* The [`PKLAXFIX`](pklaxfix.c) "PKLITE Executable Postprocessor (AX
-  restoration fix)" utility fixes a bug present in the generated compressed
-  executables of **all** versions of PKLITE before 1.50, where the `AX`
-  register was not properly restored after decompression.  Some DOS programs
-  depend on the correct AX register status to work correctly.  The current
-  `PKLAXFIX` tool has been updated to support fixing "scrambled" and `‑e`
-  (extra compression) executables.
+> [!TIP]
+> I **highly** recommend Jason Summers'
+> [`deark`](https://github.com/jsummers/deark) unpacker for PKLITE
+> decompression, since it reports if a PSP signature is present when
+> decompressing PKLITE packed executables.
 
 #### `PKPSPFIX`
 
@@ -280,10 +280,16 @@ being released under available under the open source MIT license.
   executable to set the PSP signature, so no other modifications to the
   program are needed for it to run correctly.
 
-> [!TIP]
-> I **highly** recommend decompressing using Jason Summers'
-> [`deark`](https://github.com/jsummers/deark) unpacker, which reports if a
-> PSP signature is present when decompressing PKLITE packed executables.
+#### `PKLAXFIX`
+
+* The [`PKLAXFIX`](pklaxfix.c) "PKLITE Executable Postprocessor (AX
+  restoration fix)" utility fixes a bug present in the generated *compressed*
+  executables of **all** versions of PKLITE before 1.50, where the `AX`
+  register was not properly restored after decompression.  Some DOS programs
+  depend on the correct AX register status to work correctly.  The current
+  `PKLAXFIX` tool has been updated to support fixing "scrambled" and `‑e`
+  (extra compression) executables.
+
 
 #### `PKL2FIX`
 
