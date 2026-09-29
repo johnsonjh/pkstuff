@@ -15,6 +15,7 @@
       - [`MAKEAV`](#makeav)
       - [`PUTAV`](#putav)
       - [`pkav_verify.py`](#pkav_verifypy)
+      - [PKAV for Info-ZIP](#pkav-for-info-zip)
     + [PKSFX (self-extractor) tools](#pksfx-self-extractor-tools)
       - [`zip2exe_unpack.py`](#zip2exe_unpackpy)
       - [`pksfx_text_tool.py`](#pksfx_text_toolpy)
@@ -147,6 +148,20 @@ released showing how it works, *until now*.
 * The [`pkav_verify.py`](pkav_verify.py) utility is an open source
   implementation of the PKAV 2.x verification algorithm.  It can verify
   PKAV information in both ZIP files and PKSFX self‑extracting executables.
+
+##### PKAV for Info-ZIP
+
+* [I have added full PKAV support to Info‑ZIP's ZIP, UnZIP, and UnZipSFX.](https://github.com/johnsonjh/infozip-av)
+  This support is built on Fedora's current
+  [`zip`](https://src.fedoraproject.org/rpms/zip) (`3.0‑46`, 2026‑07‑17),
+  [`unzip`](https://src.fedoraproject.org/rpms/unzip) (`6.0‑71`, 2026‑07‑27)
+  packages.
+
+  It adds new `‑‑pkav‑name` `‑‑pkav‑s1`, `‑‑pkav‑s2`, and `‑‑pkav‑avextra`
+  options to `zip`, and `‑‑show‑avextra‑on‑fail` to `unzip` and `unzipsfx`.
+
+  See the [johnsonjh/infozip‑av](https://github.com/johnsonjh/infozip-av)
+  repository for more information.
 
 #### PKSFX (self-extractor) tools
 
@@ -323,3 +338,4 @@ being released under available under the open source MIT license.
 * [Just Solve PKZIP article](http://justsolve.archiveteam.org/wiki/PKZIP)
 * [ModdingWiki PKLITE article](https://moddingwiki.shikadi.net/wiki/PKLite)
 * [PCjs PKZIP History article](https://www.pcjs.org/blog/2025/04/05/)
+* [PKAV‑enabled Info‑ZIP](https://github.com/johnsonjh/infozip-av)
