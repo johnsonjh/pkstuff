@@ -152,15 +152,13 @@ released showing how it works, *until now*.
 ##### PKAV for Info-ZIP
 
 * [I have added full PKAV support to Info‑ZIP's ZIP, UnZIP, and UnZipSFX.](https://github.com/johnsonjh/infozip-av)
+
   This support is built on Fedora's current
   [`zip`](https://src.fedoraproject.org/rpms/zip) (`3.0‑46`, 2026‑07‑17),
   [`unzip`](https://src.fedoraproject.org/rpms/unzip) (`6.0‑71`, 2026‑07‑27)
   packages.
 
-  It adds new `‑‑pkav‑name` `‑‑pkav‑s1`, `‑‑pkav‑s2`, and `‑‑pkav‑avextra`
-  options to `zip`, and `‑‑show‑avextra‑on‑fail` to `unzip` and `unzipsfx`.
-
-  See the [johnsonjh/infozip‑av](https://github.com/johnsonjh/infozip-av)
+  See the [`johnsonjh/infozip‑av`](https://github.com/johnsonjh/infozip-av)
   repository for more information.
 
 #### PKSFX (self-extractor) tools
