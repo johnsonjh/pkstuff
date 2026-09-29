@@ -34,6 +34,8 @@
   * [Latest known PKLITE versions](#latest-known-pklite-versions)
 - [License](#license)
 - [Availability](#availability)
+  * [DOS binaries](#dos-binaries)
+  * [Repository mirrors](#repository-mirrors)
 - [External links](#external-links)
 
 <!-- tocstop -->
