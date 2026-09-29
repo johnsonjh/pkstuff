@@ -6,6 +6,7 @@
 /*.core
 /core
 /core-*
+/.envrc
 /makeav
 /makeav.com
 /makeav.exe
