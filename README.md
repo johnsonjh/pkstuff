@@ -326,6 +326,13 @@ being released under available under the open source MIT license.
 
 ## Availability
 
+### DOS binaries
+
+* Compiled DOS binaries are available from
+  [GitHub Releases](https://github.com/johnsonjh/pkstuff/releases/latest).
+
+### Repository mirrors
+
 * [https://github.com/johnsonjh/pkstuff](https://github.com/johnsonjh/pkstuff)
 * [https://gitlab.com/johnsonjh/pkstuff](https://gitlab.com/johnsonjh/pkstuff)
 
