@@ -125,8 +125,13 @@ The new PKAV system was also quickly compromised, with PKAV 2 keygens
 appearing in mid‑1993.  PKAV 2 began to be phased out of PKZIP in version 4.0
 (which introduced modern cryptography), and support was removed in PKZIP 7.0.
 
-PKAV still a fun feature of the classic DOS PKZIP, but no source code was ever
-released showing how it works, *until now*.
+PKAV today is cryptographically useless, but supporting it is important for
+historical preservation and authenticity and unlocks the embedded AVEXTRA
+comments carried by many original PKZIP archives that would otherwise *only*
+be accessible using official PKWARE software.
+
+PKAV still a fun feature of the classic DOS PKZIP, but no source code or
+open implementation was ever released showing how it works, *until now*.
 
 ##### `MAKEAV`
 
