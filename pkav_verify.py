@@ -252,6 +252,21 @@ def verify(path, verbose=False):
     elif not h_ok:
         reason = "company authentication dword mismatch"
 
+    diag_company = None
+    diag_tail = b""
+    diag_seed_ok = False
+    if reason is not None and initial_acc != final_acc:
+        diag_password = password_from_accumulator(initial_acc)
+        diag_plain = zipcrypto_decrypt(outer_decode(av_payload), diag_password)
+        if len(diag_plain) >= 14:
+            diag_rest = diag_plain[12:]
+            diag_nul = diag_rest.find(b"\0")
+            if diag_nul > 0:
+                diag_company = diag_rest[:diag_nul]
+                diag_tail = diag_rest[diag_nul + 1 :]
+                diag_seed = struct.unpack_from("<I", diag_plain, 8)[0]
+                diag_seed_ok = seed_valid(diag_seed)
+
     result = {
         "status": "PASS" if reason is None else "FAIL",
         "reason": reason,
@@ -266,6 +281,9 @@ def verify(path, verbose=False):
         "seed": seed,
         "company": company,
         "tail": tail,
+        "diag_company": diag_company,
+        "diag_tail": diag_tail,
+        "diag_seed_ok": diag_seed_ok,
         "stamp": stamp_from_seed(seed),
         "seed_ok": s_ok,
         "h1_ok": h_ok,
@@ -320,6 +338,18 @@ def main():
                     "ok" if r["zip_crc_ok"] else "FAIL",
                 )
             )
+            if r["tail"]:
+                label = (
+                    "AVEXTRA bytes"
+                    if r["status"] == "PASS"
+                    else "AVEXTRA bytes (unverified)"
+                )
+                print("  %s: %r" % (label, r["tail"]))
+            elif r["status"] == "FAIL" and r.get("diag_tail") and r.get("diag_seed_ok"):
+                print(
+                    "  AVEXTRA bytes (unverified; recovered from stored metadata): %r"
+                    % r["diag_tail"]
+                )
             if ns.verbose:
                 print("  password bytes: %s" % r["password"].hex())
                 print("  EF_AV payload: %s" % r["payload"].hex())
