@@ -158,14 +158,14 @@ open implementation was ever released showing how it works, *until now*.
 
 ##### PKAV for Info-ZIP
 
-* [I have added full PKAV support to Info‑ZIP's ZIP, UnZIP, and UnZipSFX.](https://github.com/johnsonjh/infozip-av#pkav-for-infozip)
+* [I have added full PKAV (and FWKCS) support to Info‑ZIP's ZIP, UnZIP, and UnZipSFX.](https://github.com/johnsonjh/infozip-av#pkav-and-fwkcs-for-infozip)
 
   This support is built on Fedora's current
   [`zip`](https://src.fedoraproject.org/rpms/zip) (`3.0‑46`, 2026‑07‑17),
   [`unzip`](https://src.fedoraproject.org/rpms/unzip) (`6.0‑71`, 2026‑07‑27)
   packages.
 
-  See the `README.md` in the [`johnsonjh/infozip‑av`](https://github.com/johnsonjh/infozip-av/blob/pkav/README.md#pkav-for-infozip)
+  See the `README.md` in the [`johnsonjh/infozip‑av`](https://github.com/johnsonjh/infozip-av/blob/pkav/README.md#pkav-and-fwkcs-for-infozip)
   repository for more information.
 
 #### PKSFX (self-extractor) tools
