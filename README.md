@@ -105,7 +105,7 @@ The last DOS PKZIP 2.50 release available in original binary form, as well as
 
 > [!WARNING]
 > This is the newest (and last) DOS PKZIP release, **2.50**, but unfortunately
-> is is **NOT** **recommended for most users**.  It has **known bugs** (and
+> it is **NOT** **recommended for most users**.  It has **known bugs** (and
 > subtle issues) when used on vintage machines that have caused much user
 > frustration.  You *really* should be using the classic **2.04g**
 > (or **2.06**) releases unless you have a **very** **specific** reason
