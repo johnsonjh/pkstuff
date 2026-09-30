@@ -295,11 +295,11 @@ being released under available under the open source MIT license.
 
 #### `PKLAXFIX`
 
-* The [`PKLAXFIX`](pklaxfix.c) "PKLITE Executable Postprocessor (AX
+* The [`PKLAXFIX`](pklaxfix.c) "PKLITE Executable Postprocessor (`AX`
   restoration fix)" utility fixes a bug present in the generated *compressed*
   executables of **all** versions of PKLITE *before 1.50*, where the `AX`
   register was not properly restored after decompression.  Some DOS programs
-  depend on the correct AX register status to work correctly.  The current
+  depend on the correct `AX` register status to work correctly.  The current
   `PKLAXFIX` tool has been updated to support fixing "scrambled" and `‑e`
   (extra compression) executables.
 
