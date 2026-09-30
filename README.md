@@ -154,7 +154,8 @@ open implementation was ever released showing how it works, *until now*.
 
 * The [`pkav_verify.py`](pkav_verify.py) utility is an open source
   implementation of the PKAV 2.x verification algorithm.  It can verify
-  PKAV information in both ZIP files and PKSFX self‑extracting executables.
+  PKAV information (and decrypt and dump AVEXTRA data) in both ZIP files
+  and PKSFX self‑extracting executables.
 
 ##### PKAV for Info-ZIP
 
