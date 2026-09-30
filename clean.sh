@@ -13,6 +13,6 @@ for i in ./*.c; do
   rm -f "${i%.c}" 2> /dev/null || :
 done
 
-git clean -ndx 2> /dev/null || :
+git clean -ndx -e .envrc 2> /dev/null || :
 
 exit 0
