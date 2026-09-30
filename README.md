@@ -30,7 +30,6 @@
   * [PKLITE utilities](#pklite-utilities)
     + [`PKPSPFIX`](#pkpspfix)
     + [`PKLAXFIX`](#pklaxfix)
-    + [`PKL2FIX`](#pkl2fix)
   * [Latest known PKLITE versions](#latest-known-pklite-versions)
 - [License](#license)
 - [Availability](#availability)
@@ -303,12 +302,6 @@ being released under available under the open source MIT license.
   depend on the correct `AX` register status to work correctly.  The current
   `PKLAXFIX` tool has been updated to support fixing "scrambled" and `‑e`
   (extra compression) executables.
-
-#### `PKL2FIX`
-
-* The [`PKL2FIX`](pkl2fix.c) "PKLITE 2.01 Executable Postprocessor" is an
-  open source utility that patches PKLITE 2.01 generated compressed
-  executables to make them compatible with systems using 8086/8088 CPUs.
 
 ### Latest known PKLITE versions
 
