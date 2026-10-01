@@ -17,8 +17,8 @@
 
 /*****************************************************************************/
 
-#define COMPANY_MAX 52U
-#define SERIAL_MAX 16U
+#define COMPANY_MAX 51U
+#define SERIAL_LEN 7U
 #define PATCH_LEN 60U
 #define MIDDLE_LEN 52U
 #define MARKER_LEN 4U
@@ -223,22 +223,22 @@ parse_serial_line (const char *s, unsigned long *value_out)
 
       d = hex_value36 ((unsigned char)*p);
 
-      if (d < 0)
+      if (d < 0 || count >= SERIAL_LEN)
         {
           return 0;
         }
 
-      if (count >= SERIAL_MAX)
+      if (value > (0xFFFFFFFFUL - (unsigned long)d) / 36UL)
         {
           return 0;
         }
 
-      value = mask32 (value * 36UL + (unsigned long)d);
+      value = value * 36UL + (unsigned long)d;
       ++count;
       ++p;
     }
 
-  if (count == 0U)
+  if (count != SERIAL_LEN)
     {
       return 0;
     }
@@ -306,6 +306,94 @@ mix_serials (unsigned char s1[4], unsigned char s2[4],
       lane      = (lane + 1U) & 3U;
       ++i;
     }
+}
+
+/*****************************************************************************/
+
+static unsigned long
+company_fold (const unsigned char *name, unsigned int name_len)
+{
+  unsigned char fold[4];
+  unsigned int i;
+
+  fold[0] = fold[1] = fold[2] = fold[3] = 0U;
+
+  for (i = 0U; i < name_len; ++i)
+    {
+      fold[i & 3U] ^= name[i];
+    }
+
+  return load32le (fold);
+}
+
+/*****************************************************************************/
+
+static int
+pkav_seed_valid (unsigned long seed)
+{
+  unsigned long n;
+  unsigned int digit_sum;
+
+  seed = mask32 (seed);
+
+  if (seed < 26UL || ((seed - 26UL) % 157UL) != 0UL)
+    {
+      return 0;
+    }
+
+  n = seed;
+  digit_sum = 0U;
+
+  do
+    {
+      digit_sum += (unsigned int)(n % 10UL);
+      n /= 10UL;
+    }
+  while (n != 0UL);
+
+  return digit_sum == 62U;
+}
+
+/*****************************************************************************/
+
+static unsigned long
+pkav_expected_h1 (unsigned long seed, const unsigned char *name,
+                  unsigned int name_len)
+{
+  unsigned long crc;
+
+  crc = mask32 (seed);
+  crc = crc32_bytes (crc, name, name_len);
+  crc = mask32 (~crc);
+
+  return rol32 (crc, (unsigned int)(seed & 31UL));
+}
+
+/*****************************************************************************/
+
+static int
+pkav_serials_valid (const unsigned char *name, unsigned int name_len,
+                    unsigned long serial1, unsigned long serial2)
+{
+  unsigned long fold;
+  unsigned long seed;
+  unsigned long h1;
+
+  if (name_len == 0U)
+    {
+      return 0;
+    }
+
+  fold = company_fold (name, name_len);
+  seed = mask32 (serial1 ^ fold);
+  h1   = mask32 (serial2 ^ fold);
+
+  if (!pkav_seed_valid (seed))
+    {
+      return 0;
+    }
+
+  return h1 == pkav_expected_h1 (seed, name, name_len);
 }
 
 /*****************************************************************************/
@@ -561,11 +649,18 @@ main (int argc, char **argv)
 
   (void)printf (
     "\nEnter company name exactly as it "
-    "appears on the PKWARE documentation.\n");
+    "appears on the PKWARE documentation (maximum 51 characters).\n");
 
   rc = read_line ("Company Name : ", name, COMPANY_MAX, &name_len);
 
-  if (rc <= 0)
+  if (rc < 0)
+    {
+      (void)fprintf (stderr, "Company name is too long (maximum 51 characters).\n");
+
+      return EXIT_FAILURE;
+    }
+
+  if (rc == 0)
     {
       return EXIT_FAILURE;
     }
@@ -581,6 +676,14 @@ main (int argc, char **argv)
 
   if (!read_serial ("Serial Number 2: ", &serial2))
     {
+      return EXIT_FAILURE;
+    }
+
+  if (!pkav_serials_valid (name, name_len, serial1, serial2))
+    {
+      (void)fprintf (stderr,
+        "\nInvalid PKAV serial numbers for this company name.\n");
+
       return EXIT_FAILURE;
     }
 
