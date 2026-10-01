@@ -290,7 +290,7 @@ build_stub (unsigned char *stub, const char *sig, unsigned orig_ip,
   stub[t++] = 0xff;
   stub[t++] = 0x2e;
   put_le16 (stub + t, target_ptr);
-  t += 2U;
+  /* t += 2U; */
 
   /* Runtime far-jump pointer: IP is fixed, CS is filled in by the stub. */
   put_le16 (stub + STUB_TARGET_PTR_OFF, orig_ip);
@@ -461,6 +461,7 @@ main (int argc, char **argv)
   orig_cs = get_le16 (input + MZ_OFF_CS);
   old_checksum = get_le16 (input + MZ_OFF_CSUM);
 
+  /* cppcheck-suppress knownConditionTrueFalse */
   if (!build_stub (stub, sig, orig_ip, orig_cs, new_ip, new_cs))
     {
       (void)fprintf (stderr, "[!] Internal wrapper size error.\n");

@@ -1831,7 +1831,6 @@ main (void)
         unsigned long prefix_seed;
         unsigned int matches;
         int legacy_found;
-        char legacy_stamp[7];
 
         n = stamp_number (requested);
         legacy_found = 0;
@@ -1844,11 +1843,14 @@ main (void)
 
         if (legacy_found)
           {
+            char legacy_stamp[7];
+
             fmt_stamp (legacy_seed, legacy_stamp);
 
             if (stamp_prefix_equal (legacy_stamp, requested))
               {
                 seed = legacy_seed;
+
                 break;
               }
           }
@@ -1858,6 +1860,7 @@ main (void)
         if (matches == (unsigned int)1)
           {
             seed = prefix_seed;
+
             break;
           }
 
@@ -1874,6 +1877,7 @@ main (void)
         if (legacy_found)
           {
             seed = legacy_seed;
+
             break;
           }
 
