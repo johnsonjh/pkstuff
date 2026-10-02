@@ -5,12 +5,15 @@
 # scspell-id: 33662872-bb68-11f1-a745-80ee73e9b8e7
 
 import argparse
+import shutil
 import struct
+import subprocess
 import sys
 import zipfile
 
 MASK32 = 0xFFFFFFFF
 EF_AV = 0x0007
+PKAV1_FLAG = 0x2000
 
 
 def make_crc_table():
@@ -68,6 +71,10 @@ def outer_decode(data):
 
 def password_from_accumulator(acc):
     return bytes((((acc >> (4 * i)) & 0x0F) + 0x13) for i in range(8))
+
+
+def password_from_accumulator_v1(acc):
+    return bytes((((acc >> (4 * i)) & 0x0F) + 0x12) for i in range(8))
 
 
 def zipcrypto_init(password):
@@ -134,30 +141,97 @@ def stamp_from_seed(seed):
     )
 
 
-def read_member_ignoring_stored_crc(zf, zi):
-    f = zf.open(zi, "r")
-    if hasattr(f, "_expected_crc"):
-        f._expected_crc = None
+def checksums_from_stream(f):
+    import zlib
+
+    crc = 0
+    sum16 = 0
+    xor8 = 0
+    while True:
+        block = f.read(65536)
+        if not block:
+            break
+        crc = zlib.crc32(block, crc)
+        sum16 = (sum16 + sum(block)) & 0xFFFF
+        for b in block:
+            xor8 ^= b
+    return crc & MASK32, sum16, xor8
+
+
+def unzip_literal_pattern(name):
+    out = []
+    for c in name:
+        if c == "[":
+            out.append("[[]")
+        elif c == "]":
+            out.append("[]]")
+        elif c == "*":
+            out.append("[*]")
+        elif c == "?":
+            out.append("[?]")
+        else:
+            out.append(c)
+    return "".join(out)
+
+
+def read_member_with_unzip(path, zi):
+    import zlib
+
+    unzip = shutil.which("unzip")
+    if unzip is None:
+        raise RuntimeError(
+            "compression method %d is not supported by Python zipfile and "
+            "no Info-ZIP unzip executable was found" % zi.compress_type
+        )
+
+    proc = subprocess.Popen(
+        [unzip, "-qq", "-p", "--", path, unzip_literal_pattern(zi.filename)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    crc = 0
+    sum16 = 0
+    xor8 = 0
+    size = 0
+    while True:
+        block = proc.stdout.read(65536)
+        if not block:
+            break
+        size += len(block)
+        crc = zlib.crc32(block, crc)
+        sum16 = (sum16 + sum(block)) & 0xFFFF
+        for b in block:
+            xor8 ^= b
+    stderr = proc.stderr.read()
+    proc.wait()
+
+    if size != zi.file_size:
+        detail = stderr.decode("cp437", errors="replace").strip()
+        if detail:
+            detail = ": " + detail.splitlines()[-1]
+        raise RuntimeError(
+            "external unzip could not read %r (expected %d bytes, got %d)%s"
+            % (zi.filename, zi.file_size, size, detail)
+        )
+
+    return crc & MASK32, sum16, xor8
+
+
+def read_member_ignoring_stored_crc(zf, zi, path):
+    f = None
     try:
-        crc = 0
-        sum16 = 0
-        xor8 = 0
-        while True:
-            block = f.read(65536)
-            if not block:
-                break
-            import zlib
-
-            crc = zlib.crc32(block, crc)
-            sum16 = (sum16 + sum(block)) & 0xFFFF
-            for b in block:
-                xor8 ^= b
-        return crc & MASK32, sum16, xor8
+        f = zf.open(zi, "r")
+        if hasattr(f, "_expected_crc"):
+            f._expected_crc = None
+        return checksums_from_stream(f)
+    except NotImplementedError:
+        return read_member_with_unzip(path, zi)
     finally:
-        f.close()
+        if f is not None:
+            f.close()
 
 
-def verify(path, verbose=False):
+def verify_pkav2(path, zf):
     av_count = 0
     av_payload = None
     initial_acc = 0
@@ -165,42 +239,42 @@ def verify(path, verbose=False):
     marked = []
     zip_crc_ok = True
 
-    with zipfile.ZipFile(path, "r") as zf:
-        for zi in zf.infolist():
-            if not (zi.internal_attr & 0x0006):
-                continue
+    for zi in zf.infolist():
+        if not (zi.internal_attr & 0x0006):
+            continue
 
-            recs = av_records(zi.extra)
-            av_count += len(recs)
-            if recs:
-                av_payload = recs[-1]
+        recs = av_records(zi.extra)
+        av_count += len(recs)
+        if recs:
+            av_payload = recs[-1]
 
-            initial_acc = (initial_acc + zi.CRC) & MASK32
-            if zi.internal_attr & 0x0004:
-                initial_acc = (initial_acc + zi.external_attr) & MASK32
-            else:
-                initial_acc = (initial_acc + dos_datetime(zi)) & MASK32
+        initial_acc = (initial_acc + zi.CRC) & MASK32
+        if zi.internal_attr & 0x0004:
+            initial_acc = (initial_acc + zi.external_attr) & MASK32
+        else:
+            initial_acc = (initial_acc + dos_datetime(zi)) & MASK32
 
-            actual_crc, sum16, xor8 = read_member_ignoring_stored_crc(zf, zi)
-            if actual_crc != zi.CRC:
-                zip_crc_ok = False
+        actual_crc, sum16, xor8 = read_member_ignoring_stored_crc(zf, zi, path)
+        if actual_crc != zi.CRC:
+            zip_crc_ok = False
 
-            final_acc = (final_acc + actual_crc) & MASK32
-            if zi.internal_attr & 0x0004:
-                actual_aux = (
-                    (xor8 << 24) | (sum16 << 8) | (zi.external_attr & 0xFF)
-                ) & MASK32
-                final_acc = (final_acc + actual_aux) & MASK32
-            else:
-                actual_aux = None
-                final_acc = (final_acc + dos_datetime(zi)) & MASK32
+        final_acc = (final_acc + actual_crc) & MASK32
+        if zi.internal_attr & 0x0004:
+            actual_aux = (
+                (xor8 << 24) | (sum16 << 8) | (zi.external_attr & 0xFF)
+            ) & MASK32
+            final_acc = (final_acc + actual_aux) & MASK32
+        else:
+            actual_aux = None
+            final_acc = (final_acc + dos_datetime(zi)) & MASK32
 
-            marked.append((zi, actual_crc, sum16, xor8, actual_aux))
+        marked.append((zi, actual_crc, sum16, xor8, actual_aux))
 
     if not marked:
         return {
             "status": "NO_PKAV",
             "reason": "no DOS-host central entry has internal attributes & 0x0006",
+            "generation": 2,
             "zip_crc_ok": zip_crc_ok,
         }
 
@@ -208,6 +282,7 @@ def verify(path, verbose=False):
         return {
             "status": "FAIL",
             "reason": "expected exactly one EF_AV (0x0007) record, found %d" % av_count,
+            "generation": 2,
             "initial_acc": initial_acc,
             "final_acc": final_acc,
             "zip_crc_ok": zip_crc_ok,
@@ -217,6 +292,7 @@ def verify(path, verbose=False):
         return {
             "status": "FAIL",
             "reason": "AV payload shorter than 14 bytes (12-byte header + nonempty NUL-terminated company)",
+            "generation": 2,
             "initial_acc": initial_acc,
             "final_acc": final_acc,
             "zip_crc_ok": zip_crc_ok,
@@ -233,6 +309,7 @@ def verify(path, verbose=False):
         return {
             "status": "FAIL",
             "reason": "decrypted company name is empty or lacks a NUL terminator",
+            "generation": 2,
             "initial_acc": initial_acc,
             "final_acc": final_acc,
             "password": password,
@@ -269,6 +346,7 @@ def verify(path, verbose=False):
 
     result = {
         "status": "PASS" if reason is None else "FAIL",
+        "generation": 2,
         "reason": reason,
         "initial_acc": initial_acc,
         "final_acc": final_acc,
@@ -293,13 +371,157 @@ def verify(path, verbose=False):
     return result
 
 
+def verify_pkav1(path, zf, marked):
+    av_count = 0
+    av_payload = None
+    initial_acc = 0
+    final_acc = 0
+    checked = []
+    zip_crc_ok = True
+
+    for zi in marked:
+        recs = av_records(zi.extra)
+        av_count += len(recs)
+        if recs:
+            av_payload = recs[-1]
+        initial_acc = (initial_acc + zi.CRC + dos_datetime(zi)) & MASK32
+
+    if av_count == 0:
+        return {
+            "status": "NO_PKAV",
+            "reason": (
+                "PKAV1 flag 0x2000 is present but no central EF_AV "
+                "(0x0007) record was found"
+            ),
+            "generation": 1,
+            "zip_crc_ok": zip_crc_ok,
+        }
+
+    if av_count != 1 or av_payload is None:
+        return {
+            "status": "FAIL",
+            "reason": "expected exactly one PKAV1 EF_AV (0x0007) record, found %d"
+            % av_count,
+            "generation": 1,
+            "initial_acc": initial_acc,
+            "final_acc": initial_acc,
+            "zip_crc_ok": zip_crc_ok,
+        }
+
+    if len(av_payload) < 14:
+        return {
+            "status": "FAIL",
+            "reason": (
+                "AV payload shorter than 14 bytes "
+                "(12-byte header + nonempty NUL-terminated company)"
+            ),
+            "generation": 1,
+            "initial_acc": initial_acc,
+            "final_acc": initial_acc,
+            "zip_crc_ok": zip_crc_ok,
+        }
+
+    for zi in marked:
+        actual_crc, sum16, xor8 = read_member_ignoring_stored_crc(zf, zi, path)
+        if actual_crc != zi.CRC:
+            zip_crc_ok = False
+        final_acc = (final_acc + actual_crc + dos_datetime(zi)) & MASK32
+        checked.append((zi, actual_crc, sum16, xor8, None))
+
+    password = password_from_accumulator_v1(final_acc)
+    plain = zipcrypto_decrypt(outer_decode(av_payload), password)
+    opaque, aux1, seed = struct.unpack_from("<III", plain, 0)
+    rest = plain[12:]
+    nul = rest.find(b"\0")
+    company = rest[:nul] if nul > 0 else b""
+    tail = rest[nul + 1 :] if nul > 0 else b""
+
+    # PKUNZIP 1.10 validates bytes 8..11 of the decrypted 12-byte header as
+    # the AV seed.  The preceding two dwords are not the PKAV2 H1 check and
+    # must not be subjected to expected_h1().
+    s_ok = seed_valid(seed)
+
+    reason = None
+    if not zip_crc_ok:
+        reason = "AV-member CRC mismatch"
+    elif not s_ok:
+        reason = "seed validation failed"
+    elif nul <= 0:
+        reason = "decrypted company name is empty or lacks a NUL terminator"
+
+    diag_company = None
+    diag_tail = b""
+    diag_seed_ok = False
+    if reason is not None and initial_acc != final_acc:
+        diag_password = password_from_accumulator_v1(initial_acc)
+        diag_plain = zipcrypto_decrypt(outer_decode(av_payload), diag_password)
+        if len(diag_plain) >= 14:
+            diag_rest = diag_plain[12:]
+            diag_nul = diag_rest.find(b"\0")
+            if diag_nul > 0:
+                diag_company = diag_rest[:diag_nul]
+                diag_tail = diag_rest[diag_nul + 1 :]
+                diag_seed = struct.unpack_from("<I", diag_plain, 8)[0]
+                diag_seed_ok = seed_valid(diag_seed)
+
+    return {
+        "status": "PASS" if reason is None else "FAIL",
+        "reason": reason,
+        "generation": 1,
+        "initial_acc": initial_acc,
+        "final_acc": final_acc,
+        "password": password,
+        "payload": av_payload,
+        "plain": plain,
+        "opaque": opaque,
+        "h1": aux1,
+        "expected_h1": None,
+        "seed": seed,
+        "company": company,
+        "tail": tail,
+        "diag_company": diag_company,
+        "diag_tail": diag_tail,
+        "diag_seed_ok": diag_seed_ok,
+        "stamp": stamp_from_seed(seed),
+        "seed_ok": s_ok,
+        "h1_ok": None,
+        "zip_crc_ok": zip_crc_ok,
+        "marked": checked,
+    }
+
+
+def verify(path, verbose=False):
+    del verbose
+    with zipfile.ZipFile(path, "r") as zf:
+        # Preserve the established PKAV2 detector as authoritative.  Only
+        # consider the older convention when no PKAV2 marker is present.
+        if any(zi.internal_attr & 0x0006 for zi in zf.infolist()):
+            return verify_pkav2(path, zf)
+
+        marked_v1 = [
+            zi
+            for zi in zf.infolist()
+            if zi.create_system == 0 and (zi.flag_bits & PKAV1_FLAG)
+        ]
+        if not marked_v1:
+            return {
+                "status": "NO_PKAV",
+                "reason": (
+                    "no PKAV2 internal-attribute markers or DOS-host PKAV1 "
+                    "general-purpose flag 0x2000 markers"
+                ),
+                "zip_crc_ok": True,
+            }
+        return verify_pkav1(path, zf, marked_v1)
+
+
 def printable_company(b):
     return b.decode("cp437", errors="replace")
 
 
 def main():
     ap = argparse.ArgumentParser(
-        description="verify PKZIP 2.x Authenticity Verification data"
+        description="verify PKZIP 1.x/2.x Authenticity Verification data"
     )
     ap.add_argument("zipfile", nargs="+")
     ap.add_argument("-v", "--verbose", action="store_true")
@@ -317,27 +539,44 @@ def main():
         print("%s: %s" % (path, r["status"]))
         if r.get("reason"):
             print("  reason: %s" % r["reason"])
+        if r.get("generation") == 1:
+            print("  PKAV generation: 1.x")
         if "final_acc" in r:
             print(
                 "  accumulator: initial=%08x final=%08x"
                 % (r["initial_acc"], r["final_acc"])
             )
         if "seed" in r:
-            print(
-                "  decrypted: opaque=%08x h1=%08x seed=%08x"
-                % (r["opaque"], r["h1"], r["seed"])
-            )
-            print("  expected H1: %08x" % r["expected_h1"])
+            if r["generation"] == 2:
+                print(
+                    "  decrypted: opaque=%08x h1=%08x seed=%08x"
+                    % (r["opaque"], r["h1"], r["seed"])
+                )
+                print("  expected H1: %08x" % r["expected_h1"])
+            else:
+                print(
+                    "  decrypted: header0=%08x header1=%08x seed=%08x"
+                    % (r["opaque"], r["h1"], r["seed"])
+                )
             print("  company: %r" % printable_company(r["company"]))
             print("  AV stamp: %s" % r["stamp"])
-            print(
-                "  seed check: %s; company check: %s; AV-member CRCs: %s"
-                % (
-                    "ok" if r["seed_ok"] else "FAIL",
-                    "ok" if r["h1_ok"] else "FAIL",
-                    "ok" if r["zip_crc_ok"] else "FAIL",
+            if r["generation"] == 2:
+                print(
+                    "  seed check: %s; company check: %s; AV-member CRCs: %s"
+                    % (
+                        "ok" if r["seed_ok"] else "FAIL",
+                        "ok" if r["h1_ok"] else "FAIL",
+                        "ok" if r["zip_crc_ok"] else "FAIL",
+                    )
                 )
-            )
+            else:
+                print(
+                    "  seed check: %s; AV-member CRCs: %s"
+                    % (
+                        "ok" if r["seed_ok"] else "FAIL",
+                        "ok" if r["zip_crc_ok"] else "FAIL",
+                    )
+                )
             if r["tail"]:
                 label = (
                     "AVEXTRA bytes"
