@@ -52,6 +52,18 @@ SPDX-FileCopyrightText = "1989-1999 PKWARE Inc."
 SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Shareware"
 
 [[annotations]]
+path = ["pkzip/1.10/bin/**","pkzip/1.10/docs/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1989-1990 PKWARE Inc."
+SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-1"
+
+[[annotations]]
+path = ["pkzip/1.10/findav/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "1990-1991 HAL of PHOENIX, 1992 Dark Angel of PHALCON/SKISM"
+SPDX-License-Identifier = "CC-PDDC"
+
+[[annotations]]
 path = ["pklite/2.01/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "1990-1996 PKWARE Inc."
