@@ -10,6 +10,7 @@
   * [PKZIP 2.04g](#pkzip-204g)
   * [PKZIP 2.06 (IBM)](#pkzip-206-ibm)
   * [PKZIP 2.50](#pkzip-250)
+  * [PKZIP 1.10](#pkzip-110)
   * [PKZIP utilities](#pkzip-utilities)
     + [Authenticity Verification](#authenticity-verification)
       - [`MAKEAV`](#makeav)
@@ -110,6 +111,21 @@ The last DOS PKZIP 2.50 release available in original binary form, as well as
 > (or **2.06**) releases unless you have a **very** **specific** reason
 > not to.
 
+### PKZIP 1.10
+
+The last DOS PKZIP 1.10 release is also available.
+
+|                                Directory | Description                  | Date       |
+|-----------------------------------------:|:-----------------------------|:-----------|
+| [`pkzip/1.10/docs`](pkzip/1.10/docs)     | PKZIP **1.10** Documentation | 03‑15‑1990 |
+| [`pkzip/1.10/bin`](pkzip/1.10/bin)       | PKZIP **1.10** Executables   | 03‑15‑1990 |
+| [`pkzip/1.10/findav`](pkzip/1.10/findav) | PHALCON/SKISM FindAV **1.5** | 07‑27‑1992 |
+
+> [!WARNING]
+> PKZIP 1.10 is even more thoroughly obsolete than DOS PKZIP 2.x, and
+> is included **only** for the purposes of historical preservation and
+> researching the PKAV 1.x format.
+
 ### PKZIP utilities
 
 The for *first time*, updated versions of my classic PKZIP utilities are
@@ -119,7 +135,7 @@ being made available and distributed under the open source MIT license.
 
 After the Authenticity Verification (PKAV) feature of the old PKZIP 1.x was
 trivially compromised (see
-[40Hex, Number 8, Volume 2, Issue 4, File 3: FindAV v1.5 (July 27 1992)](https://newtotse.com/oldtotse/en/zines/chaos/chaos166.html),
+[40Hex, Number 8, Volume 2, Issue 4, File 3](pkzip/1.10/findav/findav15.txt),
 a completely new PKAV system was introduced for PKZIP 2.x.
 
 The new PKAV system was also quickly compromised, with PKAV 2 keygens

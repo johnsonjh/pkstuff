@@ -1,0 +1,108 @@
+40Hex Number 8 Volume 2 Issue 4 File 003
+
+-=PHALCON/SKISM=- Presents FindAv P/S Style!
+PD War Collection Program 2
+By Hal Of Pheonix
+Modified by: Dark Angel of PHALCON/SKISM
+
+FindAV version 1.5
+Released 27 Jul 92
+By Dark Angel of PHALCON/SKISM
+
+In the beginning, there was MakeAV and all its counterparts. These programs
+used a brute-force approach to find PKZIP serial numbers. They ran PUTAV,
+PKZIP, and PKUNZIP repeatedly until a legitimate serial number was found.
+Although they worked, these programs required hours, often days of running, as
+well as much wear and tear on the hard drive head. Then FindAV was released
+by HAL of PHOENIX.
+
+FindAV was many, many times faster than MakeAV. Instead of running the PKWare
+files over and over again, FindAV used an algorithmic approach similar to the
+one used by PKWare when calculating serial numbers for registered clients. It
+was a marvelous program, but it, too, had its limitations. The continual
+display of numbers was aesthetically pleasing, but it took much valuable
+processor time, slowing down the search for the holy serial number. E-FindAV
+was released, once again speeding the search time by a large factor. E-FindAV
+monitored the running of FindAV, turning off the display until the serial
+number was found. This was a tremendous improvement. However, the user had
+to sit through a tedious, lengthy, entirely unecessary introduction screen
+before E-FindAV would execute FindAV. This was unacceptable. Additionally,
+E-FindAV failed to fix some fundamental problems with FindAV.
+
+For one, FindAV stopped after finding the first serial number. While this is
+fine for most people, it is not desirable when finding existing serial
+number/validation string combinations. Second, FindAV had a few bugs. The
+first bug occured only in 386 mode. FindAV would "miss" some legitimate
+serial numbers which it would catch in 8086 mode. This was, once again,
+undesirable when looking for existing serial number/validation string
+combinations. FindAV would also run into an infinite loop in certain
+instances in 8086 mode. This, too, was unacceptable. Third, FindAV would not
+log the serial numbers found in a file. Thus, the user had to manually copy
+the number onto a sheet of paper and transfer it to a file for later
+reference. Fourth, FindAV would not let the user start searching for a serial
+number from any number except 1000. If the user wished to find starting from,
+say, 2 billion, he or she would be forced to create a MAKEAV.DAT file and
+hex-edit the appropriate values. Last, both FindAV and E-FindAV used
+rudimentary disassembly-proof code which precluded users from adding features
+to the program.
+
+FindAV version 1.5 fixes these problems. It is essentially the same program
+as the originally released version by HAL of PHOENIX, but with all the fixes
+and enhancements mentioned above.
+
+Command line options:
+/B - begin at number
+You can now start the search from any number, be it 0, 4,294,967,295 or
+anything in between. This serves several purposes. Should the data file be
+corrupted, it is not necessary to hexedit the data file to restart from the
+last position. This option also facilitates the coordinated running of FindAV
+on multiple machines. In this manner, each machine can start the search at a
+different point. The value following the /B overrides the value in the
+FindAV.DAT data file.
+
+Syntax:
+FindAV /B ###
+Example:
+FindAV /B 478293
+
+/S - supress output
+Searches may be expedited somewhat with this supress output option. This
+eliminates the unecessary on-screen reporting of a sucessful finding. Logging
+via the AVS.DAT file is preserved. The 'D'isplay command continues to
+function
+under this mode.
+
+Syntax:
+FindAV /S
+
+Valid keystrokes in FindAV:
+ESC - Terminate calculation
+Pressing the ESC key causes FindAV to terminate after saving the status of the
+run in FindAV.DAT.
+
+'D' - Display
+Pressing the 'D' key causes FindAV to display the current search number on the
+screen. This function was originally part of the main loop. However, it
+consumed countless clock cycles, so it was eliminated to save precious time.
+
+Files created by FindAV 1.5:
+AVS.DAT - log file
+The AVS.DAT file is created by FindAV. FindAV uses this file to record all
+sucessful serial number finds. It consists of the company name followed by
+multiple lines of serial numbers. If FindAV detects the file in the directory,
+it will append serial numbers to the end.
+
+FINDAV.DAT - save file
+The FindAV.DAT file is created by FindAV when the user terminates calculation.
+It contains the company name as well as the current search number. It is
+useful when the user does not wish to search an entire range in one running.
+FindAV will automatically resume operation if it detects FindAV in the current
+directory. FindAV 1.5 has data file compatability with version 1.0.
+
+Revision history:
+1.0 - Unknown - HAL of PHOENIX
+- initial release
+
+1.5 - 27 Jul 92 - Dark Angel of PHALCON/SKISM
+- Bug fixes, peephole optimisation, log file, nonstop action, anynumber
+begin.
