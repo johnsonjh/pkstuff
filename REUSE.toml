@@ -52,7 +52,7 @@ SPDX-FileCopyrightText = "1989-1999 PKWARE Inc."
 SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-Shareware"
 
 [[annotations]]
-path = ["pkzip/1.10/bin/**","pkzip/1.10/docs/**"]
+path = ["pkzip/1.10/bin/**","pkzip/1.10/docs/**","pkzip/1.10a/bin/pkzip.exe","pkzip/1.11/ibm/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "1989-1990 PKWARE Inc."
 SPDX-License-Identifier = "LicenseRef-PKWARE-PKZIP-1"

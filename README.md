@@ -10,7 +10,7 @@
   * [PKZIP 2.04g](#pkzip-204g)
   * [PKZIP 2.06 (IBM)](#pkzip-206-ibm)
   * [PKZIP 2.50](#pkzip-250)
-  * [PKZIP 1.10](#pkzip-110)
+  * [PKZIP 1.1x](#pkzip-11x)
   * [PKZIP utilities](#pkzip-utilities)
     + [Authenticity Verification](#authenticity-verification)
       - [`MAKEAV`](#makeav)
@@ -111,20 +111,33 @@ The last DOS PKZIP 2.50 release available in original binary form, as well as
 > (or **2.06**) releases unless you have a **very** **specific** reason
 > not to.
 
-### PKZIP 1.10
+### PKZIP 1.1x
 
-The last DOS PKZIP 1.10 release is also available.
+The last DOS PKZIP 1.x (1.10/1.10a/1.11) release is also available.
 
-|                                Directory | Description                  | Date       |
-|-----------------------------------------:|:-----------------------------|:-----------|
-| [`pkzip/1.10/docs`](pkzip/1.10/docs)     | PKZIP **1.10** Documentation | 03‑15‑1990 |
-| [`pkzip/1.10/bin`](pkzip/1.10/bin)       | PKZIP **1.10** Executables   | 03‑15‑1990 |
-| [`pkzip/1.10/findav`](pkzip/1.10/findav) | PHALCON/SKISM FindAV **1.5** | 07‑27‑1992 |
+|                                Directory | Description                        | Date       |
+|-----------------------------------------:|:-----------------------------------|:-----------|
+| [`pkzip/1.10/docs`](pkzip/1.10/docs)     | PKZIP **1.10** Documentation       | 03‑15‑1990 |
+| [`pkzip/1.10/bin`](pkzip/1.10/bin)       | PKZIP **1.10** Executables         | 03‑15‑1990 |
+| [`pkzip/1.10a/bin`](pkzip/1.10a/bin)     | PKZIP **1.10a** Patched Executable | 03‑15‑1990 |
+| [`pkzip/1.11/ibm`](pkzip/1.11/ibm)       | PKZIP **1.11** (**IBM Licensed**)  | 11‑23‑1990 |
+| [`pkzip/1.10/findav`](pkzip/1.10/findav) | PHALCON/SKISM FindAV **1.5**       | 07‑27‑1992 |
 
 > [!WARNING]
-> PKZIP 1.10 is even more thoroughly obsolete than DOS PKZIP 2.x, and
-> is included **only** for the purposes of historical preservation and
+> PKZIP 1.10 is even more thoroughly obsolete than DOS PKZIP 2.x.  It has
+> [known bugs](https://entropymine.wordpress.com/2020/02/18/pkzip-implode-bug-3/)
+> and is included **only** for the purposes of historical preservation and
 > researching the PKAV 1.x format.
+
+> [!NOTE]
+> The **IBM Licensed** PKZIP 1.11 release is equivalent to a **Registered**
+> PKZIP 1.10, except **it does not contain the encryption features of**
+> **2.04g** (so it could be exported and distributed to international IBM
+> employees), and it **contains a fix** for the well-known implode
+> [compression bug](https://entropymine.wordpress.com/2020/02/18/pkzip-implode-bug-3/)
+> affecting PKZIP 1.10.  There are no other differences known (at this time),
+> so you might want to use the patched 1.10a release, which simply backports
+> that fix from 1.11, and retains the 1.10 encryption capability.
 
 ### PKZIP utilities
 
