@@ -302,7 +302,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 ### PKLITE utilities
 
 For the *first time*, updated versions of my classic PKLITE utilities are
-being released under available under the open source MIT license.
+being released under the open source MIT license.
 
 > [!TIP]
 > I **highly** recommend Jason Summers'
