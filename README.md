@@ -209,7 +209,7 @@ conversion to Python 3 and gaining some features from
 ##### `zip2exe_unpack.py`
 
 * The [`zip2exe_unpack.py`](zip2exe_unpack.py) utility extracts the
-  decompression stub from the (de‑PKLITE'd) Registered or Shareware versions
+  decompression stubs from (de‑PKLITE'd) Registered or Shareware versions
   of `ZIP2EXE.EXE`.
 
 ##### `pksfx_text_tool.py`
@@ -219,8 +219,8 @@ conversion to Python 3 and gaining some features from
   blocks out to disk files for analysis, or de‑obfuscate them *in‑place*
   (in the PKSFX binary itself).  It also disables the de‑obfuscation engine,
   so the patched executable can be easily modified with the de‑obfuscated text
-  in place.  This tool supports working with stub that have been reconstructed
-  with `pksfx_resource_tool.py`.
+  in place.  This tool supports working with stubs that have been reconstructed
+  using `pksfx_resource_tool.py`.
 
 ##### `pksfx_resource_tool.py`
 
