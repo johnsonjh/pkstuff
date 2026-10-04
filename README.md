@@ -270,7 +270,7 @@ and analysis and also load faster on slow machines (like 8086/8088 systems).
 
 ##### `TEDSUO II [TED/UCF]` unpacker
 
-* The included a Python‑based [`unpacker`](pklite/1.50f/unpacked/ted_unpack.py)
+* The included Python‑based [`unpacker`](pklite/1.50f/unpacked/ted_unpack.py)
   is able to decrypt and unpack this `TEDSUO II [TED/UCF]` file, without
   executing any of its code directly.  It is currently specific to this file,
   but if other files are found that use the same packer, it would possible to
