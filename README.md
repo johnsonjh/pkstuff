@@ -132,12 +132,12 @@ The last DOS PKZIP 1.x (1.10/1.10a/1.11) release is also available.
 > [!NOTE]
 > The **IBM Licensed** PKZIP 1.11 release is equivalent to a **Registered**
 > PKZIP 1.10, except **it does not contain the encryption features of**
-> **2.04g** (so it could be exported and distributed to international IBM
+> **1.10** (so it could be exported and distributed to international IBM
 > employees), and it **contains a fix** for the well-known implode
 > [compression bug](https://entropymine.wordpress.com/2020/02/18/pkzip-implode-bug-3/)
 > affecting PKZIP 1.10.  There are no other differences known (at this time),
-> so you might want to use the patched 1.10a release, which simply backports
-> that fix from 1.11, and retains the 1.10 encryption capability.
+> so you might want to use the patched 1.10**a** release, which simply
+> backports that fix from 1.11, and retains the 1.10 encryption capability.
 
 ### PKZIP utilities
 
